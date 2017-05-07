@@ -1,0 +1,209 @@
+---
+title: "Giro Velogames Daily Update"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r, echo=FALSE}
+# Set stage number
+stage_no <- 2
+# Set league code. Choose from: 673022392215 (AusBus Rouleurs)[1], 760208202214 (Cunning Stunts)[2], 
+#                               760302262113 (4051 Rouleurs)[3], 940305525011 (Brissy Boys)[4]
+# Step 1: Load league details into R
+setwd("/home/a_friend/data_analysis/projects/velogames/")
+league_codes <- read.csv("2017_giro_velogames_leagues.csv")
+# Change the number below maually from 1 to 4 to generate data
+# for each of the four velogames leagues
+league_no <- 4
+league_code <- league_codes$league_no[league_no]
+league <- league_codes$league[league_no]
+```
+
+### Race Results - Stage `r stage_no`
+
+Stage 2 saw a far more predictable sprint finish, with the Orica Scott train working hard to avoid the same mistakes as yesterday. Unfortunately for the Australian team, Caleb Ewan suffered a mechanical issue in the final sprint (possibly a dropped chain, but more likely he came unclipped from his pedal) and dropped to ninth place. The Gorilla left the remaining sprinters in his wake and claimed victory. Will he go on to repeat his four Giro wins from 2016?
+
+http://www.cyclingnews.com/giro-ditalia/stage-2/results/
+   
+     
+     
+```{r, echo=FALSE, warning=FALSE, message=FALSE, results='asis'}
+
+require(XML)
+require(knitr)
+require(dplyr)
+require(ggplot2)
+setwd("/home/a_friend/data_analysis/projects/velogames/")
+giro_table_master <- read.csv(paste("giro_table_master_", league_code, ".csv", sep = ""))
+
+# Extract stage results from Cycling News
+stage_url <- paste("http://www.cyclingnews.com/races/giro-ditalia-2017/stage-", stage_no, "/results/", sep = "")
+download.file(stage_url, "stage_url.xml")
+stage_html <- htmlParse("stage_url.xml")
+
+# Extract table names/captions
+table_captions <- c("Stage Result", unlist(xpathApply(stage_html, "//table/caption", xmlValue)))
+# Find location (number) of tables we need for summary (stage result, GC, stage points and overall points)
+gc_table_location <- grep("^General Classification", table_captions, fixed = FALSE, ignore.case = TRUE)
+points_table_location <- grep("^Points", table_captions, fixed = FALSE, ignore.case = TRUE)
+target_tables <- c(1, gc_table_location, points_table_location)
+
+for(tbl in target_tables){
+  print(kable(" "))
+  print(kable(table_captions[tbl]))
+  print(kable(" "))
+  stage_table <- as.data.frame(readHTMLTable(stage_html)[tbl])
+  colnames(stage_table) <-  as.factor(unlist(stage_table[1,]))
+  stage_table <- stage_table[-1, ]
+  stage_table <- stage_table[1:10, 1:3]
+  print(kable(stage_table), row.names = FALSE)
+}
+```
+   
+    
+    
+### Velogames Results - `r league` - Stage `r stage_no`
+
+  
+#### Highest Scoring Riders 
+##### for the stage, from our teams
+   
+The riders earning maximum points for Stage `r stage_no` were:
+   
+```{r, echo=FALSE, warning=FALSE, message=FALSE, results='asis'}
+
+# Top scoring riders for stage
+
+# This dplyr subset looks at the total points for each
+# rider for the stage and lists them in descending order.
+rider_stage_score <- giro_table_master %>% 
+  filter(stage == stage_no) %>% 
+  select(rider, stage, "Total" = 12) %>% 
+  distinct %>% 
+  arrange(desc(Total))
+# Display as neat table using 'kable' function
+kable(rider_stage_score[1:10, ])
+
+```
+   
+   
+```{r, echo=FALSE, warning=FALSE, message=FALSE, results='asis'}
+# Top scoring riders cumulative
+```
+   
+   
+#### Top scoring teams for stage
+   
+```{r, echo=FALSE, warning=FALSE, message=FALSE, results='asis'}
+
+# Top scoring teams for stage
+
+# This dplyr subset looks at the total points for each
+# rider for the stage and lists them in descending order.
+team_stage_score <- giro_table_master %>% 
+  filter(stage == stage_no) %>% 
+  select(team, directeur, stage, "Total" = 12) %>% 
+  group_by(team, directeur) %>% 
+  summarise("Stage_Points" = sum(Total)) %>% 
+  arrange(desc(Stage_Points))
+
+```
+   
+So `r team_stage_score[1,2]` cleaned up stage 2, again with a team with an emphasis on sprinters. 
+   
+   
+```{r, echo=FALSE, warning=FALSE, message=FALSE, results='asis'}
+# Display as neat table using 'kable' function
+kable(team_stage_score)
+# Team scores by stage
+team_scores <- giro_table_master %>% 
+  group_by(stage, team) %>% 
+  summarise(sum(Tot)) %>% 
+  arrange(stage, desc(`sum(Tot)`))
+ggplot(data = team_scores, aes(x = stage, y = `sum(Tot)`)) + geom_line(aes(colour = team), size = 1.2) + labs(title ="Stage Score", x = "Stage", y = "Points") + theme(legend.position = "bottom")
+
+```
+   
+The picture for overall after `r stage_no` stages is:
+
+   
+```{r, echo=FALSE, warning=FALSE, message=FALSE, results='asis'}
+
+### Top scoring teams cumulative
+
+# Cumulative team scores by stage
+team_cu_scores <- giro_table_master %>% 
+  group_by(stage, team) %>% 
+  summarise(sum(Tot)) %>% 
+  group_by(team) %>%
+  mutate(cu_stage = cumsum(`sum(Tot)`))
+
+
+# Plot cumulative team scores
+ggplot(data = team_cu_scores, aes(x = stage, y = cu_stage, order = (team_cu_scores$team))) + geom_line(aes(colour = team), size = 1.2) + labs(title ="Cumulative Score", x = "Stage", y = "Points") + theme(legend.position = "bottom")
+
+
+
+```
+   
+#### Inside Look
+
+Here's a look inside the teams carving out early good form. 
+   
+``` {r, echo=FALSE, warning=FALSE, message=FALSE}
+# This dlplyr filter looks at the top 4 scoring riders from
+# the three teams that made the podium.
+
+stage_cu_podium <- team_cu_scores %>% 
+  filter(stage == 2) %>% 
+  arrange(desc(cu_stage))
+# View(stage_cu_podium)
+
+team_cu_rider_scores <- giro_table_master %>% 
+  group_by(team, rider) %>% 
+  summarise("Rider Total" = sum(Tot)) %>% 
+  filter(team %in% stage_cu_podium$team[1:3]) %>% 
+  arrange(team, desc(`Rider Total`)) %>% 
+  top_n(n = 3, wt = `Rider Total`) %>% 
+  rename("Rider" = rider, "Team" = team)
+kable(team_cu_rider_scores, caption = "Rider Scores - Top Teams")
+
+```
+
+Here's a more useful version of the table I sent out with the Stage 1 update. As well as identifying which riders have been selected the most times in our Velogames squads, it now includes which teams have each rider. It should be helpful in determining which of your squad are essentially a null contribution given they are matched in one or more other teams.
+
+``` {r, echo=FALSE, warning=FALSE, message=FALSE}
+
+# First create the table determining which riders have been selected the most times,
+# in descending order:
+rider_cost <- giro_table_master %>% 
+  filter(stage == 1) %>% 
+  group_by("Rider" = rider) %>% 
+  summarise("Times Selected" = n()) %>% 
+  arrange(desc(`Times Selected`))
+
+# Next add a column with the names of teams against the most popular riders:
+for(r in 1:length(rider_cost$Rider)){
+  rider_cost[r, 3] <- giro_table_master %>% 
+    filter(rider == rider_cost$Rider[r]) %>% 
+    distinct(team) %>% 
+    unlist() %>% 
+    paste(collapse = ",")
+}
+# Give the new column a name
+colnames(rider_cost)[3] <- "Selected by"
+
+kable(rider_cost[1:12,])
+
+```
+
+
+
+Expect more of the same tomorrow, with Stage 3 another flat race around the Sardinian countryside.
+
+http://www.cyclingnews.com/giro-ditalia/stage-3/
+
+
