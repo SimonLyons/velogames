@@ -10,6 +10,7 @@ setwd("/home/a_friend/data_analysis/projects/velogames/")
 league_codes <- read.csv("2017_giro_velogames_leagues.csv")
 
 # Ask for an input
+# Should consider turning this file into a FUNCTION
 # input_stage <- as.integer(readline(prompt = "Enter the latest stage you would like to webscrape:"))
 input_stage <- 4
 
