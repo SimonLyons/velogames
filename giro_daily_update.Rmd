@@ -9,7 +9,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ```{r, echo=FALSE}
 # Set stage number
-stage_no <- 2
+stage_no <- 3
 # Set league code. Choose from: 673022392215 (AusBus Rouleurs)[1], 760208202214 (Cunning Stunts)[2], 
 #                               760302262113 (4051 Rouleurs)[3], 940305525011 (Brissy Boys)[4]
 # Step 1: Load league details into R
@@ -24,9 +24,13 @@ league <- league_codes$league[league_no]
 
 ### Race Results - Stage `r stage_no`
 
-Stage 2 saw a far more predictable sprint finish, with the Orica Scott train working hard to avoid the same mistakes as yesterday. Unfortunately for the Australian team, Caleb Ewan suffered a mechanical issue in the final sprint (possibly a dropped chain, but more likely he came unclipped from his pedal) and dropped to ninth place. The Gorilla left the remaining sprinters in his wake and claimed victory. Will he go on to repeat his four Giro wins from 2016?
 
-http://www.cyclingnews.com/giro-ditalia/stage-2/results/
+
+Like your flatulent great-Uncle who enjoys a little too much curry, a bit of strong wind came to the Giro party overnight and made its presence known. Just when it looked like the Greipel show was just getting warmed up, the weather played its part and a small groups starting splitting out with under 10 kilometres to go. A dozen riders broke clear, dominated by the Quickstep squad who worked well to deliver their sprinter Fernando Gaviria to victory. The Columbian was followed by Rüdiger Selig and Giacomo Nizzolo. The main peloton, with the favoured sprinters and GC contenders crossed the line a scant 13 seconds later - but an eternity for Ewan and Greipel who will have been expecting a battle for the win. The gap was also enough for Gaviria to wrest the leader's jersey from Greipel.
+
+In GC news, Rohan Dennis crashed and lost 5 mins and Igor Zakarin's team again had to work feverishly to pull him back up to the main group. It will be interesting to see if these efforts have a longer term impact on his team and their ability to support him in the mountains. 
+
+http://www.cyclingnews.com/giro-ditalia/stage-3/results/
    
      
      
@@ -71,7 +75,7 @@ for(tbl in target_tables){
 #### Highest Scoring Riders 
 ##### for the stage, from our teams
    
-The riders earning maximum points for Stage `r stage_no` were:
+The riders earning maximum points for Stage `r stage_no`, and the teams that picked them were:
    
 ```{r, echo=FALSE, warning=FALSE, message=FALSE, results='asis'}
 
@@ -85,10 +89,32 @@ rider_stage_score <- giro_table_master %>%
   distinct %>% 
   arrange(desc(Total))
 # Display as neat table using 'kable' function
+# No longer display this table, as I'm using the new table calculated below.
+# kable(rider_stage_score[1:10, ])
+
+```
+
+
+``` {r, echo=FALSE, warning=FALSE, message=FALSE, results='asis'}
+
+# Next add a column with the names of teams against the high scoring stage riders:
+for(r in 1:length(rider_stage_score$rider)){
+  rider_stage_score[r, 4] <- giro_table_master %>% 
+    filter(rider == rider_stage_score$rider[r]) %>% 
+    distinct(team) %>% 
+    unlist() %>% 
+    paste(collapse = ",")
+}
+# Give the new column a name
+colnames(rider_stage_score)[4] <- "Selected by"
+
+# Display the resulting table
 kable(rider_stage_score[1:10, ])
 
 ```
-   
+
+
+
    
 ```{r, echo=FALSE, warning=FALSE, message=FALSE, results='asis'}
 # Top scoring riders cumulative
@@ -112,7 +138,7 @@ team_stage_score <- giro_table_master %>%
 
 ```
    
-So `r team_stage_score[1,2]` cleaned up stage 2, again with a team with an emphasis on sprinters. 
+So `r team_stage_score[1,2]` cleaned up stage 2, courtesy of his Italain stallion Fernando Gaviria. The points will be welcome for the Itchy Nads squad as they look for any scrap of good news in their battle to escape the bottom of the table.
    
    
 ```{r, echo=FALSE, warning=FALSE, message=FALSE, results='asis'}
@@ -175,6 +201,8 @@ kable(team_cu_rider_scores, caption = "Rider Scores - Top Teams")
 
 Here's a more useful version of the table I sent out with the Stage 1 update. As well as identifying which riders have been selected the most times in our Velogames squads, it now includes which teams have each rider. It should be helpful in determining which of your squad are essentially a null contribution given they are matched in one or more other teams.
 
+
+
 ``` {r, echo=FALSE, warning=FALSE, message=FALSE}
 
 # First create the table determining which riders have been selected the most times,
@@ -202,8 +230,8 @@ kable(rider_cost[1:12,])
 
 
 
-Expect more of the same tomorrow, with Stage 3 another flat race around the Sardinian countryside.
+The race has a rest day tonight as the riders travel off the island of Sardinia and onto the mainland. The sprinters will be missing in action as we see and early mountain top finish - on the occasion on the slopes of the famed Mount Etna!
 
-http://www.cyclingnews.com/giro-ditalia/stage-3/
+http://www.cyclingnews.com/giro-ditalia/stage-4/
 
 
