@@ -11,7 +11,7 @@ league_codes <- read.csv("2017_giro_velogames_leagues.csv")
 
 # Ask for an input
 # input_stage <- as.integer(readline(prompt = "Enter the latest stage you would like to webscrape:"))
-input_stage <- 3
+input_stage <- 4
 
 for(l in 1:4){
   # Download league specific giro master table
