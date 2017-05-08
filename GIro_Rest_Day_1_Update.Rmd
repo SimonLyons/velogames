@@ -1,0 +1,129 @@
+---
+title: "Giro Velogames Daily Update"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r, echo=FALSE}
+# Set stage number
+# stage_no <- 3
+# Set league code. Choose from: 673022392215 (AusBus Rouleurs)[1], 760208202214 (Cunning Stunts)[2], 
+#                               760302262113 (4051 Rouleurs)[3], 940305525011 (Brissy Boys)[4]
+# Step 1: Load league details into R
+setwd("/home/a_friend/data_analysis/projects/velogames/")
+league_codes <- read.csv("2017_giro_velogames_leagues.csv")
+# Change the number below maually from 1 to 4 to generate data
+# for each of the four velogames leagues
+league_no <- 4
+league_code <- league_codes$league_no[league_no]
+league <- league_codes$league[league_no]
+```
+
+### Rest Day No.1 - `r league`
+
+
+
+Just a quick update ahead of the Rest Day. The chart below is an interesting representation of Rider Cost vs the their Total Points accrued so far. It shows instantly which riders are bringing home the bacon and whether their points haul has been on the cheap. The size of each circle is proportional the the number of teams that have selected that rider. So riders with the smallest circle are going to have the biggest impact in separating their team from the pack.
+
+   
+     
+     
+```{r, echo=FALSE, warning=FALSE, message=FALSE, results='asis'}
+
+require(XML)
+require(knitr)
+require(dplyr)
+require(ggplot2)
+setwd("/home/a_friend/data_analysis/projects/velogames/")
+giro_table_master <- read.csv(paste("giro_table_master_", league_code, ".csv", sep = ""))
+
+# Build a table with unique riders, times selected, total points and cost
+  
+  # First build a table with individual rider totals
+  new_table <- giro_table_master %>% 
+    select(rider, Team,  stage, Cost, "Total" = 12) %>% 
+    distinct() %>% 
+    group_by(rider, Team, Cost) %>% 
+    summarise("Total" = sum(Total)) %>% 
+    arrange(rider)   # Arrange by rider so order is matched to next table
+  # View(new_table)
+  
+  
+  # Next build table with the number of times each rider has been selected
+  rider_times_selected <- giro_table_master %>% 
+    filter(stage == 1) %>% 
+    group_by("Rider" = rider) %>% 
+    summarise("Times Selected" = n()) %>% 
+    arrange(Rider)   # Again arrange by rider to match order from previous table
+  # View(rider_times_selected)
+  
+  # Add times selected column from 2nd table to 1st table
+  new_table[ , 5] <- rider_times_selected$`Times Selected`
+  colnames(new_table)[5] <- "Times_Selected"
+  
+  # Create plot showing Total Points, Cost and Times Selected for each rider
+  new_plot <- ggplot(data = new_table, aes(x = Cost, y = Total)) +
+    geom_point(aes(size = Times_Selected, colour = "blue")) + 
+    geom_text(data = subset(new_table, (Total > 50) | (Times_Selected >2)) ,   aes(label=rider),hjust=0, vjust=0, size = 4) + 
+    theme(legend.position="bottom") + scale_size(range = c(2,12)) + 
+    labs(title = "Rider Points vs Cost",   y = "Total Rider Points") 
+  
+  new_plot
+```
+   
+    
+    
+### Velogames Team Selection Breakdown
+
+I've expanded the most selected rider table to a full breakdown of the riders in each team.
+
+The cross-reference matrix below makes it easy to see which riders are in which team, allowing comparison between teams and easy identification of the riders that will make the biggest difference in separating your squad from the rest in pursuit of Velogames glory.
+
+For instanace, it's easy to see Benny was the only one of us to selected Aussie Rohan Dennis - and is now licking his wounds after seeing him crash last night on Stage 3.
+
+   
+```{r, echo=FALSE, warning=FALSE, message=FALSE, results='asis'}
+
+  # Build a list of the riders selected by the mini-league and the number
+  # of times they have been selected
+  rider_list <- giro_table_master %>% 
+    filter(stage == 1) %>% 
+    group_by(rider) %>% 
+    summarise("Times_Selected" = n()) %>% 
+    arrange(desc(Times_Selected))
+  
+  # Build a list of the directeurs in the mini-league
+  directeur_list <- giro_table_master %>% 
+    select(directeur) %>% 
+    distinct() %>% 
+    arrange(directeur)
+  
+  # Now create the cross-reference matrix which shows which riders have been selected by which directeurs
+  for (d in 1:length(directeur_list$directeur)){   # FOR loop to run through the list of team directeurs
+    rider_list[ , d+2] <- NA
+    colnames(rider_list)[(d+2)] <- toString(directeur_list$directeur[d])
+    
+    # Build list of team rider for specific team directeur 'd'
+    team_list <- giro_table_master %>% 
+      filter(directeur == directeur_list$directeur[d]) %>% 
+      select(rider) %>% 
+      distinct()
+    
+    # Next, for each directeur, run through the complete list of mini-league rideres
+    # and check to see if they are in 
+    for (r in 1:length(rider_list$rider)){   # FOR loop to run through the total list of riders in the mini-league
+      if(unlist(rider_list[r, 1]) %in% unlist(team_list)){
+        rider_list[r, d+2] <- "Yes"
+      } else  # End IF statement checking to see if rider exists in the directeur's team
+      {rider_list[r, d+2] <- ""}
+    }   # End FOR loop 'r'
+  }   # END FOR loop running through all of the directeurs
+  
+  kable(rider_list)
+
+
+```
+
