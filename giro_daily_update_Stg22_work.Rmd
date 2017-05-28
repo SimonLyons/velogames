@@ -1,0 +1,327 @@
+---
+title: "Giro Velogames Daily Update"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r, echo=FALSE}
+# Set stage number
+stage_no <- 21
+# Set league code. Choose from: 673022392215 (AusBus Rouleurs)[1], 760208202214 (Cunning Stunts)[2], 
+#                               760302262113 (4051 Rouleurs)[3], 940305525011 (Brissy Boys)[4]
+# Step 1: Load league details into R
+setwd("C:/aa Simon Lyons/2.0 Work/4.0 Data Analysis/4.6 Projects/velogames/Velogames_League_Tables")
+league_codes <- read.csv("2017_giro_velogames_leagues.csv")
+# Change the number below maually from 1 to 4 to generate data
+# for each of the four velogames leagues
+league_no <- 1
+league_code <- league_codes$league_no[league_no]
+league <- league_codes$league[league_no]
+```
+
+### Race Results - Stage `r stage_no`
+<br>
+<br>
+<br>
+Here's the non-spoiler 5min highlight clip on Youtube:
+<br>
+<br>
+https://youtu.be/hDzCWYsX_zM
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+A select group of GC contenders made the expected break on the final climb of last night's Stage 20 battle. Thibaut Pinot claimed his first Giro victory, taking the sprint ahead of Ilnur Zakarin and Nibali. Although Tom Dumoulin trailed this group and Pinot replaced the Dutchman in third position overall, Dumoulin sits only 53 seconds behind race leader Quintana. Not enough of a buffer for any of the riders holding the top three spots is the opinion of most top cycling analysts with Big Tom expected to gain at least as much as this in tonight's final stage Individual Time Trial. 
+<br>
+<br>
+Results on cycling news:
+<br>
+<br>
+`r paste("http://www.cyclingnews.com/giro-ditalia/stage-", stage_no, "/results/", sep = "") `
+<br>  
+
+     
+     
+```{r, echo=FALSE, warning=FALSE, message=FALSE, results='asis'}
+
+require(XML)
+require(knitr)
+require(dplyr)
+require(ggplot2)
+setwd("C:/aa Simon Lyons/2.0 Work/4.0 Data Analysis/4.6 Projects/velogames/Velogames_League_Tables")
+giro_table_master <- read.csv(paste("giro_table_master_", league_code, ".csv", sep = ""))
+colnames(giro_table_master) <- gsub("\n", "", colnames(giro_table_master))
+colnames(giro_table_master) <- gsub("\\.", "", colnames(giro_table_master))
+
+# Extract stage results from Cycling News
+stage_url <- paste("http://www.cyclingnews.com/races/giro-ditalia-2017/stage-", stage_no, "/results/", sep = "")
+download.file(stage_url, "stage_url.xml")
+stage_html <- htmlParse("stage_url.xml")
+
+# Extract table names/captions
+table_captions <- c("Stage Result", unlist(xpathApply(stage_html, "//table/caption", xmlValue)))
+# Find location (number) of tables we need for summary (stage result, GC, stage points and overall points)
+gc_table_location <- grep("^General Classification", table_captions, fixed = FALSE, ignore.case = TRUE)
+points_table_location <- grep("^Points", table_captions, fixed = FALSE, ignore.case = TRUE)
+target_tables <- c(1, gc_table_location, points_table_location)
+
+for(tbl in target_tables){
+  print(kable(" "))
+  print(kable(table_captions[tbl]))
+  print(kable(" "))
+  stage_table <- as.data.frame(readHTMLTable(stage_html)[tbl])
+  colnames(stage_table) <-  as.factor(unlist(stage_table[1,]))
+  stage_table <- stage_table[-1, ]
+  stage_table <- stage_table[1:10, 1:3]
+  print(kable(stage_table), row.names = FALSE)
+}
+```
+   
+    
+    
+### Velogames Results - `r league` - Stage `r stage_no`
+
+  
+#### Highest Scoring Riders 
+##### for the stage, from our teams
+   
+The riders earning maximum points for Stage `r stage_no`, and the teams that picked them were:
+<br>
+
+   
+```{r, echo=FALSE, warning=FALSE, message=FALSE, results='asis'}
+
+# Top scoring riders for stage
+
+# This dplyr subset looks at the total points for each
+# rider for the stage and lists them in descending order.
+rider_stage_score <- giro_table_master %>% 
+  filter(stage == stage_no) %>% 
+  select(rider, stage, "Total" = 12) %>% 
+  distinct %>% 
+  arrange(desc(Total))
+# Display as neat table using 'kable' function
+# No longer display this table, as I'm using the new table calculated below.
+# kable(rider_stage_score[1:10, ])
+
+```
+<br>
+
+``` {r, echo=FALSE, warning=FALSE, message=FALSE, results='asis'}
+
+# Next add a column with the names of teams against the high scoring stage riders:
+for(r in 1:length(rider_stage_score$rider)){
+  rider_stage_score[r, 4] <- giro_table_master %>% 
+    filter(rider == rider_stage_score$rider[r]) %>% 
+    distinct(team) %>% 
+    unlist() %>% 
+    paste(collapse = ",")
+}
+# Give the new column a name
+colnames(rider_stage_score)[4] <- "Selected by"
+
+# Display the resulting table
+kable(rider_stage_score[1:10, ])
+
+```
+
+<br>
+Another take on rider data is provided in the chart below displaying Rider Cost vs the their Total Points accrued so far. The size of each circle is proportional the the number of teams that have selected that rider. 
+
+   
+```{r, echo=FALSE, warning=FALSE, message=FALSE, results='asis'}
+# Top scoring riders cumulative
+
+# Build a table with unique riders, times selected, total points and cost
+  
+  # First build a table with individual rider totals
+  new_table <- giro_table_master %>% 
+    select(rider, Team,  stage, Cost, "Total" = 12) %>% 
+    distinct() %>% 
+    group_by(rider, Team, Cost) %>% 
+    summarise("Total" = sum(Total)) %>% 
+    arrange(rider)   # Arrange by rider so order is matched to next table
+  # View(new_table)
+  
+  
+  # Next build table with the number of times each rider has been selected
+  rider_times_selected <- giro_table_master %>% 
+    filter(stage == 1) %>% 
+    group_by("Rider" = rider) %>% 
+    summarise("Times Selected" = n()) %>% 
+    arrange(Rider)   # Again arrange by rider to match order from previous table
+  # View(rider_times_selected)
+  
+  # Add times selected column from 2nd table to 1st table
+  new_table[ , 5] <- rider_times_selected$`Times Selected`
+  colnames(new_table)[5] <- "Times_Selected"
+  
+  # Create plot showing Total Points, Cost and Times Selected for each rider
+  new_plot <- ggplot(data = new_table, aes(x = Cost, y = Total)) +
+    geom_point(aes(size = Times_Selected, colour = "blue")) + 
+    geom_text(data = subset(new_table, (Total > 100) | (Times_Selected >2)) ,   aes(label=rider),hjust=0, vjust=0, size = 4) + 
+    theme(legend.position="bottom") + scale_size(range = c(2,12)) + 
+    labs(title = "Rider Points vs Cost",   y = "Total Rider Points") 
+  
+  new_plot
+
+
+```
+   
+<br>   
+#### Top scoring teams for stage
+   
+```{r, echo=FALSE, warning=FALSE, message=FALSE, results='asis'}
+
+# Top scoring teams for stage
+
+# This dplyr subset looks at the total points for each
+# rider for the stage and lists them in descending order.
+team_stage_score <- giro_table_master %>% 
+  filter(stage == stage_no) %>% 
+  select(team, directeur, stage, "Total" = 12) %>% 
+  group_by(team, directeur) %>% 
+  summarise("Stage_Points" = sum(Total)) %>% 
+  arrange(desc(Stage_Points))
+
+```
+   
+<br>  
+So `r team_stage_score[1,2]` cleaned up stage `r stage_no`.
+<br>  
+   
+```{r, echo=FALSE, warning=FALSE, message=FALSE, results='asis'}
+# Display as neat table using 'kable' function
+kable(team_stage_score)
+# Team scores by stage
+team_scores <- giro_table_master %>% 
+  group_by(stage, team) %>% 
+  summarise(sum(Tot)) %>% 
+  arrange(stage, desc(`sum(Tot)`))
+ggplot(data = team_scores, aes(x = stage, y = `sum(Tot)`)) + geom_line(aes(colour = team), size = 1.2) + labs(title ="Stage Score", x = "Stage", y = "Points") + theme(legend.position = "bottom")
+
+```
+   
+<br>  
+The picture for overall after `r stage_no` stages is:
+<br>
+   
+```{r, echo=FALSE, warning=FALSE, message=FALSE, results='asis'}
+
+### Top scoring teams cumulative
+
+# Cumulative team scores by stage
+team_cu_scores <- giro_table_master %>% 
+  group_by(stage, team) %>% 
+  summarise(sum(Tot)) %>% 
+  group_by(team) %>%
+  mutate(cu_stage = cumsum(`sum(Tot)`))
+
+
+# Plot cumulative team scores
+ggplot(data = team_cu_scores, aes(x = stage, y = cu_stage, order = (team_cu_scores$team))) + geom_line(aes(colour = team), size = 1.2) + labs(title ="Cumulative Score", x = "Stage", y = "Points") + theme(legend.position = "bottom")
+
+team_overall <- team_cu_scores %>%
+  filter(stage == stage_no) %>% 
+  select("Team" = team, "Total" = cu_stage) %>% 
+  arrange(desc(Total))
+kable(team_overall)
+# View(team_overall)
+
+```
+   
+<br>
+   
+#### Inside Look
+   
+Here's a look inside the teams currently holding top spots on the GC podium. 
+<br>  
+   
+``` {r, echo=FALSE, warning=FALSE, message=FALSE}
+# This dlplyr filter looks at the top 4 scoring riders from
+# the three teams that made the podium.
+
+stage_cu_podium <- team_cu_scores %>% 
+  filter(stage == stage_no) %>% 
+  arrange(desc(cu_stage))
+# View(stage_cu_podium)
+
+# I've just changed this to use 'stage_cu_podium' instead of giro_table_master (11 May 17)
+# .... AND now I've just changed it back!
+team_cu_rider_scores <- giro_table_master %>% 
+  group_by(team, rider) %>% 
+  summarise("Rider Total" = sum(Tot)) %>% 
+  filter(team %in% stage_cu_podium$team[1:3]) %>% 
+  arrange(team, desc(`Rider Total`)) %>% 
+  top_n(n = 3, wt = `Rider Total`) %>% 
+  rename("Rider" = rider, "Team" = team)
+kable(team_cu_rider_scores, caption = "Rider Scores - Top Teams")
+
+```
+
+<br>
+Next up is Stage `r (stage_no + 1)`.
+<br>
+`r paste("http://www.cyclingnews.com/giro-ditalia/stage-", (stage_no + 1), "/", sep = "")`
+<br>
+
+### Team Cross Reference
+<br>
+
+Here's a more useful version of the table I sent out with the Stage 1 update. As well as identifying which riders have been selected the most times in our Velogames squads, it now includes which teams have each rider. It should be helpful in determining which of your squad are essentially a null contribution given they are matched in one or more other teams.
+<br>
+
+
+``` {r, echo=FALSE, warning=FALSE, message=FALSE}
+
+  # Build a list of the riders selected by the mini-league and the number
+  # of times they have been selected
+  rider_list <- giro_table_master %>% 
+    filter(stage == 1) %>% 
+    group_by(rider) %>% 
+    summarise("Times_Selected" = n()) %>% 
+    arrange(desc(Times_Selected))
+  
+  # Build a list of the directeurs in the mini-league
+  directeur_list <- giro_table_master %>% 
+    select(directeur) %>% 
+    distinct() %>% 
+    arrange(directeur)
+  
+  # Now create the cross-reference matrix which shows which riders have been selected by which directeurs
+  for (d in 1:length(directeur_list$directeur)){   # FOR loop to run through the list of team directeurs
+    rider_list[ , d+2] <- NA
+    colnames(rider_list)[(d+2)] <- toString(directeur_list$directeur[d])
+    
+    # Build list of team rider for specific team directeur 'd'
+    team_list <- giro_table_master %>% 
+      filter(directeur == directeur_list$directeur[d]) %>% 
+      select(rider) %>% 
+      distinct()
+    
+    # Next, for each directeur, run through the complete list of mini-league rideres
+    # and check to see if they are in 
+    for (r in 1:length(rider_list$rider)){   # FOR loop to run through the total list of riders in the mini-league
+      if(unlist(rider_list[r, 1]) %in% unlist(team_list)){
+        rider_list[r, d+2] <- "Yes"
+      } else  # End IF statement checking to see if rider exists in the directeur's team
+      {rider_list[r, d+2] <- ""}
+    }   # End FOR loop 'r'
+  }   # END FOR loop running through all of the directeurs
+  
+
+
+kable(rider_list)
+
+```
+
+
+
+
+
+
