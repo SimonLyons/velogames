@@ -16,7 +16,7 @@ setwd("/home/a_friend/data_analysis/projects/velogames/")
 league_codes <- read.csv("2017_giro_velogames_leagues.csv")
 
 # Step 2: For each league, extract the details for team, directeur and team_weblink
-for(s in 1:4){   # Loop through each of the four (4) leagues
+for(s in 1:5){   # Loop through each of the four (4) leagues
   league_code <- league_codes$league_no[s]
   velo_url <- paste("https://www.velogames.com/giro-ditalia/2017/leaguescores.php?league=", league_code, sep = "")
   assert_that(RCurl::url.exists(velo_url))
@@ -79,7 +79,7 @@ for (l in 1:4){   # Loop through all four (4) leagues
     directeur <- velo_table$directeur[t]
     team_table_master <- c()
     
-    for (s in 1:2){   # Loop through all of the stages for each team. Stage 22 gives bonus points!
+    for (s in 1:5){   # Loop through all of the stages for each team. Stage 22 gives bonus points!
       team_url <- paste("https://www.velogames.com/giro-ditalia/2017/", team_link, "&ga=13&st=", s, sep = "")
       download.file(team_url, "team_url.xml")
       team_html <- htmlParse("team_url.xml")

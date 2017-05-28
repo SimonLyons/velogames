@@ -12,7 +12,7 @@ league_codes <- read.csv("2017_giro_velogames_leagues.csv")
 # Ask for an input
 # Should consider turning this file into a FUNCTION
 # input_stage <- as.integer(readline(prompt = "Enter the latest stage you would like to webscrape:"))
-input_stage <- 4
+input_stage <- 20
 
 for(l in 1:4){
   # Download league specific giro master table
@@ -21,7 +21,7 @@ for(l in 1:4){
   
   # Check the latest stage number in the master table file
   latest_stage <- max(giro_table_master$stage)
-  
+
   #  Next - scrape data for new stages.
   # If the input from the user is larger than the maximum stage in the master table then assign
   # a list of stages to scrape
