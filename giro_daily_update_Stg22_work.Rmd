@@ -26,17 +26,20 @@ league <- league_codes$league[league_no]
 <br>
 <br>
 <br>
-Here's the non-spoiler 5min highlight clip on Youtube:
+Many of you no doubt already know the result, but here's the non-spoiler 5min highlight clip on Youtube:
 <br>
 <br>
-https://youtu.be/hDzCWYsX_zM
-<br>
-<br>
-<br>
+https://youtu.be/iBVVAbSllJk
 <br>
 <br>
 <br>
-A select group of GC contenders made the expected break on the final climb of last night's Stage 20 battle. Thibaut Pinot claimed his first Giro victory, taking the sprint ahead of Ilnur Zakarin and Nibali. Although Tom Dumoulin trailed this group and Pinot replaced the Dutchman in third position overall, Dumoulin sits only 53 seconds behind race leader Quintana. Not enough of a buffer for any of the riders holding the top three spots is the opinion of most top cycling analysts with Big Tom expected to gain at least as much as this in tonight's final stage Individual Time Trial. 
+<br>
+<br>
+<br>
+Although Time Trial specialist Tom Dumoulin was pipped by countryman Jos van Emden for victory in the final stage of the Giro D'Italia, the Dutchman was most interested in the finishing time of the little Columbian and wearer of the leaders' Maglia Rosa, the last rider to finish. Big Tom need not be concerned as his time gap over Quintana was more than enough to secure his first Grand Tour win. Duloulin's victory in the 100th edition of the Giro was historic for more than one reason, given it's the first Grand Tour victory for a Dutch rider since Joop Zoetemelk won the 1980 Tour de France.
+<br>
+<br>
+Nairo Quintana limited his time loss to finish second overall with last year's winner Vincenzo Nibali claiming the final spot on the podium.
 <br>
 <br>
 Results on cycling news:
@@ -67,8 +70,8 @@ stage_html <- htmlParse("stage_url.xml")
 table_captions <- c("Stage Result", unlist(xpathApply(stage_html, "//table/caption", xmlValue)))
 # Find location (number) of tables we need for summary (stage result, GC, stage points and overall points)
 gc_table_location <- grep("^General Classification", table_captions, fixed = FALSE, ignore.case = TRUE)
-points_table_location <- grep("^Points", table_captions, fixed = FALSE, ignore.case = TRUE)
-target_tables <- c(1, gc_table_location, points_table_location)
+# points_table_location <- grep("^Points", table_captions, fixed = FALSE, ignore.case = TRUE)
+target_tables <- c(1, gc_table_location)
 
 for(tbl in target_tables){
   print(kable(" "))
@@ -84,15 +87,21 @@ for(tbl in target_tables){
    
     
     
-### Velogames Results - `r league` - Stage `r stage_no`
+### Velogames Results - `r league` - Final
+<br>
+It's worth pointing out the method used by Velogames for calculating points after the final stage. Velogames awards points in the normal manner for Stage 21, but then awards points using an imaginary Stage 22 for Bonus Points based on rider finishing positions in accordance with the game rules:
+<br>
+<br>
+https://www.velogames.com/giro-ditalia/2017/scores.php
+<br>
+<br>
 
-  
 #### Highest Scoring Riders 
-##### for the stage, from our teams
+##### for Stage `r stage_no`, from our teams
    
 The riders earning maximum points for Stage `r stage_no`, and the teams that picked them were:
 <br>
-
+<br>
    
 ```{r, echo=FALSE, warning=FALSE, message=FALSE, results='asis'}
 
@@ -110,6 +119,7 @@ rider_stage_score <- giro_table_master %>%
 # kable(rider_stage_score[1:10, ])
 
 ```
+<br>
 <br>
 
 ``` {r, echo=FALSE, warning=FALSE, message=FALSE, results='asis'}
@@ -130,8 +140,56 @@ kable(rider_stage_score[1:10, ])
 
 ```
 
+
 <br>
-Another take on rider data is provided in the chart below displaying Rider Cost vs the their Total Points accrued so far. The size of each circle is proportional the the number of teams that have selected that rider. 
+
+#### Highest Scoring Riders 
+##### for Stage `r (stage_no+1)`, from our teams
+   
+The riders earning maximum points from the Bonus Points on offer (Stage `r (stage_no+1)`), and the teams that picked them were:
+<br>
+<br>
+   
+```{r, echo=FALSE, warning=FALSE, message=FALSE, results='asis'}
+
+# Top scoring riders for stage
+
+# This dplyr subset looks at the total points for each
+# rider for the stage and lists them in descending order.
+rider_stage_score <- giro_table_master %>% 
+  filter(stage == (stage_no+1)) %>% 
+  select(rider, stage, "Total" = 12) %>% 
+  distinct %>% 
+  arrange(desc(Total))
+# Display as neat table using 'kable' function
+# No longer display this table, as I'm using the new table calculated below.
+# kable(rider_stage_score[1:10, ])
+
+```
+<br>
+<br>
+
+``` {r, echo=FALSE, warning=FALSE, message=FALSE, results='asis'}
+
+# Next add a column with the names of teams against the high scoring stage riders:
+for(r in 1:length(rider_stage_score$rider)){
+  rider_stage_score[r, 4] <- giro_table_master %>% 
+    filter(rider == rider_stage_score$rider[r]) %>% 
+    distinct(team) %>% 
+    unlist() %>% 
+    paste(collapse = ",")
+}
+# Give the new column a name
+colnames(rider_stage_score)[4] <- "Selected by"
+
+# Display the resulting table
+kable(rider_stage_score[1:10, ])
+
+```
+
+
+<br>
+The chart below demonstrates what a difference Tom Dumoulin made in the Velogames comp. Whilst Nario and Vincenzo also earnt a stack of points for their teams, their relative cost made them much poorer value. Bobby Jengels stands out as being excellent value as was Pozzovivo. 
 
    
 ```{r, echo=FALSE, warning=FALSE, message=FALSE, results='asis'}
@@ -174,7 +232,12 @@ Another take on rider data is provided in the chart below displaying Rider Cost 
 ```
    
 <br>   
+<br>
+
 #### Top scoring teams for stage
+
+
+Points from the ITT:
    
 ```{r, echo=FALSE, warning=FALSE, message=FALSE, results='asis'}
 
@@ -203,12 +266,52 @@ team_scores <- giro_table_master %>%
   group_by(stage, team) %>% 
   summarise(sum(Tot)) %>% 
   arrange(stage, desc(`sum(Tot)`))
-ggplot(data = team_scores, aes(x = stage, y = `sum(Tot)`)) + geom_line(aes(colour = team), size = 1.2) + labs(title ="Stage Score", x = "Stage", y = "Points") + theme(legend.position = "bottom")
+# ggplot(data = team_scores, aes(x = stage, y = `sum(Tot)`)) + geom_line(aes(colour = team), size = 1.2) + labs(title ="Stage Score", x = "Stage", y = "Points") + theme(legend.position = "bottom")
 
 ```
    
 <br>  
-The picture for overall after `r stage_no` stages is:
+<br>
+
+Bonus Points (Stage 22):
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE, results='asis'}
+
+# Top scoring teams for stage
+
+# This dplyr subset looks at the total points for each
+# rider for the stage and lists them in descending order.
+team_stage_score <- giro_table_master %>% 
+  filter(stage == (stage_no + 1)) %>% 
+  select(team, directeur, stage, "Total" = 12) %>% 
+  group_by(team, directeur) %>% 
+  summarise("Stage_Points" = sum(Total)) %>% 
+  arrange(desc(Stage_Points))
+
+```
+   
+<br>  
+So `r team_stage_score[1,2]` cleaned up stage `r stage_no`.
+<br>  
+   
+```{r, echo=FALSE, warning=FALSE, message=FALSE, results='asis'}
+# Display as neat table using 'kable' function
+kable(team_stage_score)
+# Team scores by stage
+team_scores <- giro_table_master %>% 
+  group_by(stage, team) %>% 
+  summarise(sum(Tot)) %>% 
+  arrange(stage, desc(`sum(Tot)`))
+ggplot(data = team_scores, aes(x = stage, y = `sum(Tot)`)) + geom_line(aes(colour = team), size = 1.2) + labs(title ="Stage Score", x = "Stage", y = "Points") + theme(legend.position = "bottom")
+
+```
+ 
+
+
+<br>  
+<br>
+The final overall results after `r stage_no` stages is:
+<br>
 <br>
    
 ```{r, echo=FALSE, warning=FALSE, message=FALSE, results='asis'}
@@ -222,10 +325,6 @@ team_cu_scores <- giro_table_master %>%
   group_by(team) %>%
   mutate(cu_stage = cumsum(`sum(Tot)`))
 
-
-# Plot cumulative team scores
-ggplot(data = team_cu_scores, aes(x = stage, y = cu_stage, order = (team_cu_scores$team))) + geom_line(aes(colour = team), size = 1.2) + labs(title ="Cumulative Score", x = "Stage", y = "Points") + theme(legend.position = "bottom")
-
 team_overall <- team_cu_scores %>%
   filter(stage == stage_no) %>% 
   select("Team" = team, "Total" = cu_stage) %>% 
@@ -233,13 +332,19 @@ team_overall <- team_cu_scores %>%
 kable(team_overall)
 # View(team_overall)
 
+
+# Plot cumulative team scores
+ggplot(data = team_cu_scores, aes(x = stage, y = cu_stage, order = (team_cu_scores$team))) + geom_line(aes(colour = team), size = 1.2) + labs(title ="Cumulative Score", x = "Stage", y = "Points") + theme(legend.position = "bottom")
+
+
+
 ```
    
 <br>
    
 #### Inside Look
    
-Here's a look inside the teams currently holding top spots on the GC podium. 
+Here's a look inside the teams taking top spots on the Velogames GC podium for this 100th edition of the Giro. 
 <br>  
    
 ``` {r, echo=FALSE, warning=FALSE, message=FALSE}
@@ -265,9 +370,6 @@ kable(team_cu_rider_scores, caption = "Rider Scores - Top Teams")
 ```
 
 <br>
-Next up is Stage `r (stage_no + 1)`.
-<br>
-`r paste("http://www.cyclingnews.com/giro-ditalia/stage-", (stage_no + 1), "/", sep = "")`
 <br>
 
 ### Team Cross Reference
