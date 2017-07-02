@@ -12,10 +12,10 @@ knitr::opts_chunk$set(echo = TRUE)
 stage_no <- 1
 # Step 1: Load league details into R
 setwd("/home/a_friend/data_analysis/projects/velogames/")
-league_codes <- read.csv("2017_tdf_velogames_leagues.csv")
+league_codes <- read.csv("2017_tdf_velogames_leagues.csv", stringsAsFactors = FALSE)
 # Change the number below maually from 1 to 3 to generate data
 # for each of the four velogames leagues
-league_no <- 2
+league_no <- 3
 league_code <- league_codes$league_no[league_no]
 league <- league_codes$league[league_no]
 ```
@@ -28,14 +28,14 @@ league <- league_codes$league[league_no]
 Here's the non-spoiler 5min highlight clip on Youtube:
 <br>
 <br>
-https://youtu.be/hDzCWYsX_zM
+https://youtu.be/07e_uXhRRm4
 <br>
 <br>
 <br>
 <br>
 <br>
 <br>
-[INSERT COMMENTARY]. 
+Le Tour is underway. I've been away for the weekend and have had to rush the first update, so the details below are a bit rough. I'll smooth things out over the next couple of days. You may know that the first stage was marked by particularly wet weather resulting in some nasty crashes during the short individual time trail. The highest profile of which was Valverde's. The poor Spaniard crashed into a barrier slashing open his leg and breaking his knee cap, ending his stage and Tour participation. Many of the favourites for this time trial took the safe option, including Richie Porte and finished further down than was anticipated. Chris Froome did the best of the GC favrourites.
 <br>
 <br>
 Results on cycling news:
@@ -126,7 +126,7 @@ for(r in 1:length(rider_stage_score$rider)){
 colnames(rider_stage_score)[4] <- "Selected by"
 
 # Display the resulting table
-kable(rider_stage_score[1:10, ])
+kable(rider_stage_score[1:5, ])
 
 ```
 
@@ -221,7 +221,7 @@ team_cu_scores <- tdf_table_master %>%
   summarise(sum(Tot)) %>% 
   group_by(team) %>%
   mutate(cu_stage = cumsum(`sum(Tot)`))
-
+# View(team_cu_scores)
 
 # Plot cumulative team scores
 ggplot(data = team_cu_scores, aes(x = stage, y = cu_stage, order = (team_cu_scores$team))) + geom_line(aes(colour = team), size = 1.2) + labs(title ="Cumulative Score", x = "Stage", y = "Points") + theme(legend.position = "bottom")
@@ -240,15 +240,18 @@ kable(team_overall)
 #### Inside Look
    
 Here's a look inside the teams currently holding top spots on the GC podium. 
+
+Actually - I can't get this bit of code to work for some frustrating reason, so I'm leaving it out and sending the update without it.
 <br>  
    
 ``` {r, echo=FALSE, warning=FALSE, message=FALSE}
 # This dlplyr filter looks at the top 4 scoring riders from
 # the three teams that made the podium.
 
-stage_cu_podium <- team_cu_scores %>%
-  # filter(stage == stage_no) %>%
-  arrange(desc(cu_stage))
+# This bit is crapping itself during the 'knit'. Needs work....
+# stage_cu_podium <- team_cu_scores %>%
+#   filter(stage == stage_no) %>%
+#   arrange(desc(cu_stage))
 # View(stage_cu_podium)
 
 # team_cu_rider_scores <- tdf_table_master %>%
@@ -272,7 +275,7 @@ Next up is Stage `r (stage_no + 1)`.
 ### Team Cross Reference
 <br>
 
-Here's a more useful version of the table I sent out with the Stage 1 update. As well as identifying which riders have been selected the most times in our Velogames squads, it now includes which teams have each rider. It should be helpful in determining which of your squad are essentially a null contribution given they are matched in one or more other teams.
+Here's the team breakdown for each of squads. Start dissecting!
 <br>
 
 
