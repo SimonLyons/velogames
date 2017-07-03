@@ -11,8 +11,8 @@ knitr::opts_chunk$set(echo = TRUE)
 # Set stage number
 stage_no <- 1
 # Step 1: Load league details into R
-# setwd("/home/a_friend/data_analysis/projects/velogames/")
-setwd("C:/aa Simon Lyons/2.0 Work/4.0 Data Analysis/4.6 Projects/velogames/")
+setwd("/home/a_friend/data_analysis/projects/velogames/")
+# setwd("C:/aa Simon Lyons/2.0 Work/4.0 Data Analysis/4.6 Projects/velogames/")
 league_codes <- read.csv("2017_tdf_velogames_leagues.csv", stringsAsFactors = FALSE)
 # Change the number below maually from 1 to 3 to generate data
 # for each of the four velogames leagues
