@@ -10,7 +10,10 @@ require(assertthat)
 require(RCurl)
 
 # Step 1: Load league details into R
+# HP Laptop directory
 setwd("/home/a_friend/data_analysis/projects/velogames/")
+# Work laptop directory
+setwd("C:/aa Simon Lyons/2.0 Work/4.0 Data Analysis/4.6 Projects/velogames/")
 league_codes <- read.csv("2017_tdf_velogames_leagues.csv")
 
 # Step 2: For each league, extract the details for team, directeur and team_weblink
@@ -61,7 +64,7 @@ require(RCurl)
 setwd("/home/a_friend/data_analysis/projects/velogames/")
 league_codes <- read.csv("2017_tdf_velogames_leagues.csv")
 
-for (l in 1:3){   # Loop through all three (3) leagues
+for (l in 1:2){   # Loop through all three (3) leagues
   league_code <- league_codes$league_no[l]
   velo_table <- read.csv(paste("league_details_", league_code, ".csv", sep = ""))
   n_teams <- nrow(velo_table)
@@ -76,7 +79,7 @@ for (l in 1:3){   # Loop through all three (3) leagues
     directeur <- velo_table$directeur[t]
     team_table_master <- c()
     
-    for (s in 1:1){   # Loop through all of the stages for each team. Stage 22 gives bonus points!
+    for (s in 1:2){   # Loop through all of the stages for each team. Stage 22 gives bonus points!
       team_url <- paste("https://www.velogames.com/tour-de-france/2017/", team_link, "&ga=13&st=", s, sep = "")
       download.file(team_url, "team_url.xml")
       team_html <- htmlParse("team_url.xml")
