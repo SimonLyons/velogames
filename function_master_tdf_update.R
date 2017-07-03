@@ -11,7 +11,7 @@ league_codes <- read.csv("2017_tdf_velogames_leagues.csv")
 # Ask for an input
 # Should consider turning this file into a FUNCTION
 # input_stage <- as.integer(readline(prompt = "Enter the latest stage you would like to webscrape:"))
-input_stage <- 2
+input_stage <- 3
 
 for(l in 1:3){
   # Download league specific tdf master table

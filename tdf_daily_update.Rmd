@@ -9,14 +9,14 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ```{r, echo=FALSE}
 # Set stage number
-stage_no <- 1
+stage_no <- 3
 # Step 1: Load league details into R
 setwd("/home/a_friend/data_analysis/projects/velogames/")
 # setwd("C:/aa Simon Lyons/2.0 Work/4.0 Data Analysis/4.6 Projects/velogames/")
 league_codes <- read.csv("2017_tdf_velogames_leagues.csv", stringsAsFactors = FALSE)
 # Change the number below maually from 1 to 3 to generate data
 # for each of the four velogames leagues
-league_no <- 1
+league_no <- 2
 league_code <- league_codes$league_no[league_no]
 league <- league_codes$league[league_no]
 ```
@@ -29,16 +29,16 @@ league <- league_codes$league[league_no]
 Here's the non-spoiler 5min highlight clip on Youtube:
 <br>
 <br>
-https://youtu.be/07e_uXhRRm4
+https://youtu.be/KqPfah2w_RA
 <br>
 <br>
 <br>
 <br>
 <br>
 <br>
-Le Tour is underway. I've been away for the weekend and have had to rush the first update, so the details below are a bit rough. I'll smooth things out over the next couple of days. You may know that the first stage was marked by particularly wet weather resulting in some nasty crashes during the short individual time trail. The highest profile of which was Valverde's. The poor Spaniard crashed into a barrier slashing open his leg and breaking his knee cap, ending his stage and Tour participation. Many of the favourites for this time trial took the safe option, including Richie Porte and finished further down than was anticipated. Chris Froome did the best of the GC favrourites.
+The tough incline at the finish of Stage 3 produced the expected results with sprinting rouleurs Peter Sagan and Michael Matthews battling it out for victory. In an indication of how steep the last kilometre was, Team BMC's Richie Porte led the peleton up the hill and into the final straight.
 <br>
-<br>
+<br> 
 Results on cycling news:
 <br>
 <br>
@@ -93,7 +93,8 @@ for(tbl in target_tables){
    
 The riders earning maximum points for Stage `r stage_no`, and the teams that picked them were:
 <br>
-
+<br>
+A MASSIVE stage for 'Sinky' and his band of misfits with his squad taking out positions 1, 2, 3 & 5! We all made out reasonably, but combinations of riders finishing up the order from Ed, Ralph and Dick gave their squads big totals as well.
    
 ```{r, echo=FALSE, warning=FALSE, message=FALSE, results='asis'}
 
@@ -211,6 +212,10 @@ ggplot(data = team_scores, aes(x = stage, y = `sum(Tot)`)) + geom_line(aes(colou
 <br>  
 The picture for overall after `r stage_no` stages is:
 <br>
+<br>
+So 'Sinky' takes the overall lead, followed by Ed who isn't doing too badly.... so far.... 
+<br>
+<br>
    
 ```{r, echo=FALSE, warning=FALSE, message=FALSE, results='asis'}
 
@@ -240,9 +245,9 @@ kable(team_overall)
    
 #### Inside Look
    
-Here's a look inside the teams currently holding top spots on the GC podium. 
+<!-- Here's a look inside the teams currently holding top spots on the GC podium. 
 
-Actually - I can't get this bit of code to work for some frustrating reason, so I'm leaving it out and sending the update without it.
+Actually - I can't get this bit of code to work for some frustrating reason, so I'm leaving it out and sending the update without it. -->
 <br>  
    
 ``` {r, echo=FALSE, warning=FALSE, message=FALSE}
@@ -250,20 +255,20 @@ Actually - I can't get this bit of code to work for some frustrating reason, so 
 # the three teams that made the podium.
 
 # This bit is crapping itself during the 'knit'. Needs work....
-stage_cu_podium <- team_cu_scores %>%
-  filter(stage == stage_no) %>%
-  arrange(desc(cu_stage))
+# stage_cu_podium <- team_cu_scores %>%
+#   filter(stage == stage_no) %>%
+#   arrange(desc(cu_stage))
 # View(stage_cu_podium)
 
-team_cu_rider_scores <- tdf_table_master %>%
-  group_by(team, rider) %>%
-  summarise("Rider Total" = sum(Tot)) %>%
-  filter(team %in% stage_cu_podium$team[1:3]) %>%
-  arrange(team, desc(`Rider Total`)) %>%
-  top_n(n = 3, wt = `Rider Total`) %>%
-  rename("Rider" = rider, "Team" = team)
+# team_cu_rider_scores <- tdf_table_master %>%
+#   group_by(team, rider) %>%
+#   summarise("Rider Total" = sum(Tot)) %>%
+#   filter(team %in% stage_cu_podium$team[1:3]) %>%
+#   arrange(team, desc(`Rider Total`)) %>%
+#   top_n(n = 3, wt = `Rider Total`) %>%
+#   rename("Rider" = rider, "Team" = team)
 # View(team_cu_rider_scores)
-kable(team_cu_rider_scores, caption = "Rider Scores - Top Teams")
+# kable(team_cu_rider_scores, caption = "Rider Scores - Top Teams")
 
 ```
 
