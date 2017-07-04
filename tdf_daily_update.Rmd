@@ -9,14 +9,14 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ```{r, echo=FALSE}
 # Set stage number
-stage_no <- 3
+stage_no <- 4
 # Step 1: Load league details into R
 setwd("/home/a_friend/data_analysis/projects/velogames/")
 # setwd("C:/aa Simon Lyons/2.0 Work/4.0 Data Analysis/4.6 Projects/velogames/")
 league_codes <- read.csv("2017_tdf_velogames_leagues.csv", stringsAsFactors = FALSE)
 # Change the number below maually from 1 to 3 to generate data
 # for each of the four velogames leagues
-league_no <- 2
+league_no <- 3
 league_code <- league_codes$league_no[league_no]
 league <- league_codes$league[league_no]
 ```
@@ -26,19 +26,22 @@ league <- league_codes$league[league_no]
 <br>
 <br>
 <br>
-Here's the non-spoiler 5min highlight clip on Youtube:
+Here's the non-spoiler 4min highlight clip on Youtube:
 <br>
 <br>
-https://youtu.be/KqPfah2w_RA
-<br>
-<br>
-<br>
+https://youtu.be/XXI0rjW0aEQ
 <br>
 <br>
 <br>
-The tough incline at the finish of Stage 3 produced the expected results with sprinting rouleurs Peter Sagan and Michael Matthews battling it out for victory. In an indication of how steep the last kilometre was, Team BMC's Richie Porte led the peleton up the hill and into the final straight.
 <br>
+<br>
+<br>
+Bigger news than the Stage victory by Frenchman Arnaud Démare was the announcement by officials that World Champion Peter Sagan had been disqualified from the Tour De France and would be heading home. An incident with Mark Cavendish in the final straight leading to a significant crash was deemed unacceptable by race organisers and the biggest name in world cycling is now packing his bags and heading home for burnouts in his Dukes of Hazard inspired Dodge Charger:
+<br>
+<br>
+http://theradavist.com/2017/06/watch-peter-sagan-do-donuts/
 <br> 
+<br>
 Results on cycling news:
 <br>
 <br>
@@ -94,7 +97,7 @@ for(tbl in target_tables){
 The riders earning maximum points for Stage `r stage_no`, and the teams that picked them were:
 <br>
 <br>
-A MASSIVE stage for 'Sinky' and his band of misfits with his squad taking out positions 1, 2, 3 & 5! We all made out reasonably, but combinations of riders finishing up the order from Ed, Ralph and Dick gave their squads big totals as well.
+
    
 ```{r, echo=FALSE, warning=FALSE, message=FALSE, results='asis'}
 
@@ -213,7 +216,6 @@ ggplot(data = team_scores, aes(x = stage, y = `sum(Tot)`)) + geom_line(aes(colou
 The picture for overall after `r stage_no` stages is:
 <br>
 <br>
-So 'Sinky' takes the overall lead, followed by Ed who isn't doing too badly.... so far.... 
 <br>
 <br>
    

@@ -2,6 +2,8 @@
 # Created to webscrape new stage data and combine with
 # the exsiting master table
 
+# .libPaths( c( .libPaths(), "/home/a_friend/R/x86_64-pc-linux-gnu-library/3.4") )
+
 require(XML)
 require(dplyr)
 
@@ -11,7 +13,7 @@ league_codes <- read.csv("2017_tdf_velogames_leagues.csv")
 # Ask for an input
 # Should consider turning this file into a FUNCTION
 # input_stage <- as.integer(readline(prompt = "Enter the latest stage you would like to webscrape:"))
-input_stage <- 3
+input_stage <- 4
 
 for(l in 1:3){
   # Download league specific tdf master table
