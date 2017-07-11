@@ -9,14 +9,14 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ```{r, echo=FALSE}
 # Set stage number
-stage_no <- 4
+stage_no <- 10
 # Step 1: Load league details into R
 setwd("/home/a_friend/data_analysis/projects/velogames/")
 # setwd("C:/aa Simon Lyons/2.0 Work/4.0 Data Analysis/4.6 Projects/velogames/")
 league_codes <- read.csv("2017_tdf_velogames_leagues.csv", stringsAsFactors = FALSE)
 # Change the number below maually from 1 to 3 to generate data
 # for each of the four velogames leagues
-league_no <- 3
+league_no <- 2
 league_code <- league_codes$league_no[league_no]
 league <- league_codes$league[league_no]
 ```
@@ -29,17 +29,16 @@ league <- league_codes$league[league_no]
 Here's the non-spoiler 4min highlight clip on Youtube:
 <br>
 <br>
-https://youtu.be/XXI0rjW0aEQ
+https://youtu.be/5R_strDvBOE
 <br>
 <br>
 <br>
 <br>
 <br>
 <br>
-Bigger news than the Stage victory by Frenchman Arnaud Démare was the announcement by officials that World Champion Peter Sagan had been disqualified from the Tour De France and would be heading home. An incident with Mark Cavendish in the final straight leading to a significant crash was deemed unacceptable by race organisers and the biggest name in world cycling is now packing his bags and heading home for burnouts in his Dukes of Hazard inspired Dodge Charger:
 <br>
 <br>
-http://theradavist.com/2017/06/watch-peter-sagan-do-donuts/
+<br>
 <br> 
 <br>
 Results on cycling news:
@@ -47,8 +46,13 @@ Results on cycling news:
 <br>
 `r paste("http://www.cyclingnews.com/tour-de-france/stage-", stage_no, "/results/", sep = "") `
 <br>  
-
-     
+<br>
+<br>
+<br>
+<br>
+Probably of interest to many of us at this point is which riders are no longer part of the peloton, either through accident, illness or missing the time-cut!
+<br>
+<br>
      
 ```{r, echo=FALSE, warning=FALSE, message=FALSE, results='asis'}
 
@@ -57,6 +61,33 @@ require(knitr)
 require(dplyr)
 require(ggplot2)
 # setwd("/home/a_friend/data_analysis/projects/velogames/")
+
+# Temporary list of DNF riders
+
+require(rvest)
+
+# Wikipedia list of 2017 TDF riders
+wiki_tdf_2017 <- "https://en.wikipedia.org/wiki/List_of_teams_and_cyclists_in_the_2017_Tour_de_France"
+# Scrape web data
+download.file(wiki_tdf_2017, "wiki_tdf_2017.xml")
+wiki_tdf_2017_parse <- read_html("wiki_tdf_2017.xml")
+
+# Extract table with riders
+riders_tdf <- wiki_tdf_2017_parse %>% 
+  html_nodes(xpath = "//table") %>% 
+  html_table(fill = TRUE)
+riders_tdf <- as.data.frame(riders_tdf[3])
+
+# Filter DNF riders
+riders_DNF <- riders_tdf %>% 
+  filter(!Pos. == "") %>% 
+  select(Name, Nationality, Team, Pos.)
+
+# Print (kable)
+print(kable(riders_DNF), row.names = FALSE)
+
+############################
+
 tdf_table_master <- read.csv(paste("tdf_table_master_", league_code, ".csv", sep = ""))
 colnames(tdf_table_master) <- gsub("\n", "", colnames(tdf_table_master))
 colnames(tdf_table_master) <- gsub("\\.", "", colnames(tdf_table_master))
@@ -97,7 +128,7 @@ for(tbl in target_tables){
 The riders earning maximum points for Stage `r stage_no`, and the teams that picked them were:
 <br>
 <br>
-
+<br>
    
 ```{r, echo=FALSE, warning=FALSE, message=FALSE, results='asis'}
 
@@ -137,7 +168,7 @@ kable(rider_stage_score[1:5, ])
 
 <br>
 Another take on rider data is provided in the chart below displaying Rider Cost vs the their Total Points accrued so far. The size of each circle is proportional the the number of teams that have selected that rider. 
-
+<br>
    
 ```{r, echo=FALSE, warning=FALSE, message=FALSE, results='asis'}
 # Top scoring riders cumulative
@@ -199,6 +230,7 @@ team_stage_score <- tdf_table_master %>%
 <br>  
 So `r team_stage_score[1,2]` cleaned up stage `r stage_no`.
 <br>  
+<br>
    
 ```{r, echo=FALSE, warning=FALSE, message=FALSE, results='asis'}
 # Display as neat table using 'kable' function
@@ -283,9 +315,9 @@ Next up is Stage `r (stage_no + 1)`.
 ### Team Cross Reference
 <br>
 
-Here's the team breakdown for each of squads. Start dissecting!
+Here's the team breakdown for each of squads. 
 <br>
-
+<br>
 
 ``` {r, echo=FALSE, warning=FALSE, message=FALSE}
 
