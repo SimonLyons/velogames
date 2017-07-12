@@ -9,14 +9,14 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ```{r, echo=FALSE}
 # Set stage number
-stage_no <- 10
+stage_no <- 11
 # Step 1: Load league details into R
 setwd("/home/a_friend/data_analysis/projects/velogames/")
 # setwd("C:/aa Simon Lyons/2.0 Work/4.0 Data Analysis/4.6 Projects/velogames/")
 league_codes <- read.csv("2017_tdf_velogames_leagues.csv", stringsAsFactors = FALSE)
 # Change the number below maually from 1 to 3 to generate data
 # for each of the four velogames leagues
-league_no <- 3
+league_no <- 2
 league_code <- league_codes$league_no[league_no]
 league <- league_codes$league[league_no]
 ```
@@ -29,7 +29,7 @@ league <- league_codes$league[league_no]
 Here's the non-spoiler 4min highlight clip on Youtube:
 <br>
 <br>
-https://youtu.be/5R_strDvBOE
+https://youtu.be/FCi7JPxHYoU
 <br>
 <br>
 <br>
@@ -39,7 +39,7 @@ https://youtu.be/5R_strDvBOE
 <br>
 <br>
 <br>
-Boom! Another win to German sprinter Marcel Kittel.Everyone else was just watching....
+Boom! Another win to German sprinter Marcel Kittel.Everyone else was just watching.... [Did I say this yesterday??]
 <br> 
 <br>
 Results on cycling news:
@@ -51,7 +51,7 @@ Results on cycling news:
 <br>
 <br>
 <br>
-Probably of interest to many of us at this point is which riders are no longer part of the peloton, either through accident, illness or missing the time-cut!
+I've moved the DNF Riders List to the end of the email. Astana rider Dario Cataldo didn't make the end of the stage last night.
 <br>
 <br>
      
@@ -61,33 +61,8 @@ require(XML)
 require(knitr)
 require(dplyr)
 require(ggplot2)
-# setwd("/home/a_friend/data_analysis/projects/velogames/")
-
-# Temporary list of DNF riders
-
 require(rvest)
-
-# Wikipedia list of 2017 TDF riders
-wiki_tdf_2017 <- "https://en.wikipedia.org/wiki/List_of_teams_and_cyclists_in_the_2017_Tour_de_France"
-# Scrape web data
-download.file(wiki_tdf_2017, "wiki_tdf_2017.xml")
-wiki_tdf_2017_parse <- read_html("wiki_tdf_2017.xml")
-
-# Extract table with riders
-riders_tdf <- wiki_tdf_2017_parse %>% 
-  html_nodes(xpath = "//table") %>% 
-  html_table(fill = TRUE)
-riders_tdf <- as.data.frame(riders_tdf[3])
-
-# Filter DNF riders
-riders_DNF <- riders_tdf %>% 
-  filter(!Pos. == "") %>% 
-  select(Name, Nationality, Team, Pos.)
-
-# Print (kable)
-print(kable(riders_DNF), row.names = FALSE)
-
-############################
+# setwd("/home/a_friend/data_analysis/projects/velogames/")
 
 tdf_table_master <- read.csv(paste("tdf_table_master_", league_code, ".csv", sep = ""))
 colnames(tdf_table_master) <- gsub("\n", "", colnames(tdf_table_master))
@@ -362,9 +337,41 @@ Here's the team breakdown for each of squads.
 kable(rider_list)
 
 ```
+<br>
+<br>
+### DNF Riders
+<br>
+<br>
+Probably of interest to many of us at this point is which riders are no longer part of the peloton, either through accident, illness or missing the time-cut!
+<br>
+<br>
+```{r, echo=FALSE, warning=FALSE, message=FALSE, results='asis'}
+
+# Temporary list of DNF riders
+
+# Wikipedia list of 2017 TDF riders
+wiki_tdf_2017 <- "https://en.wikipedia.org/wiki/List_of_teams_and_cyclists_in_the_2017_Tour_de_France"
+# Scrape web data
+download.file(wiki_tdf_2017, "wiki_tdf_2017.xml")
+wiki_tdf_2017_parse <- read_html("wiki_tdf_2017.xml")
+
+# Extract table with riders
+riders_tdf <- wiki_tdf_2017_parse %>% 
+  html_nodes(xpath = "//table") %>% 
+  html_table(fill = TRUE)
+riders_tdf <- as.data.frame(riders_tdf[3])
+
+# Filter DNF riders
+riders_DNF <- riders_tdf %>% 
+  filter(!Pos. == "") %>% 
+  select(Name, Nationality, Team, Pos.)
+
+# Print (kable)
+print(kable(riders_DNF), row.names = FALSE)
+
+############################
 
 
-
-
+```
 
 
