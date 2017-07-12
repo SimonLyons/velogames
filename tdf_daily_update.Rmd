@@ -16,7 +16,7 @@ setwd("/home/a_friend/data_analysis/projects/velogames/")
 league_codes <- read.csv("2017_tdf_velogames_leagues.csv", stringsAsFactors = FALSE)
 # Change the number below maually from 1 to 3 to generate data
 # for each of the four velogames leagues
-league_no <- 2
+league_no <- 3
 league_code <- league_codes$league_no[league_no]
 league <- league_codes$league[league_no]
 ```
