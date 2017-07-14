@@ -9,7 +9,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ```{r, echo=FALSE}
 # Set stage number
-stage_no <- 11
+stage_no <- 13
 # Step 1: Load league details into R
 setwd("/home/a_friend/data_analysis/projects/velogames/")
 # setwd("C:/aa Simon Lyons/2.0 Work/4.0 Data Analysis/4.6 Projects/velogames/")
@@ -29,7 +29,7 @@ league <- league_codes$league[league_no]
 Here's the non-spoiler 4min highlight clip on Youtube:
 <br>
 <br>
-https://youtu.be/FCi7JPxHYoU
+https://youtu.be/26IbM7xWbsU
 <br>
 <br>
 <br>
@@ -39,7 +39,9 @@ https://youtu.be/FCi7JPxHYoU
 <br>
 <br>
 <br>
-Boom! Another win to German sprinter Marcel Kittel.Everyone else was just watching.... [Did I say this yesterday??]
+<br>
+<br>
+The predicted attacks for Stage 13 eventuated early and by the time the riders reached the final ascent to the Mur de Péguère there were time splits on the road between some of the GC favourites. Frenchman Warren Barguil prevailed in a four man sprint to acheive the cycling dream of many countrymen of the bleu-blanc-rouge by winning a Tour De France stage on la Fête nationale. Barguil finished ahead of Contador, Quintana and Landa who all made up 1minute and 48 seconds on the group containing Fabio Aru, Froome, Bardet and Uran. GC placings are essentially unchanged, although both Landa and Quintana are now much closer to the overall lead.
 <br> 
 <br>
 Results on cycling news:
@@ -51,7 +53,6 @@ Results on cycling news:
 <br>
 <br>
 <br>
-I've moved the DNF Riders List to the end of the email. Astana rider Dario Cataldo didn't make the end of the stage last night.
 <br>
 <br>
      
