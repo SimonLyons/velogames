@@ -9,14 +9,14 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ```{r, echo=FALSE}
 # Set stage number
-stage_no <- 13
+stage_no <- 15
 # Step 1: Load league details into R
 setwd("/home/a_friend/data_analysis/projects/velogames/")
 # setwd("C:/aa Simon Lyons/2.0 Work/4.0 Data Analysis/4.6 Projects/velogames/")
 league_codes <- read.csv("2017_tdf_velogames_leagues.csv", stringsAsFactors = FALSE)
 # Change the number below maually from 1 to 3 to generate data
 # for each of the four velogames leagues
-league_no <- 3
+league_no <- 2
 league_code <- league_codes$league_no[league_no]
 league <- league_codes$league[league_no]
 ```
@@ -29,7 +29,7 @@ league <- league_codes$league[league_no]
 Here's the non-spoiler 4min highlight clip on Youtube:
 <br>
 <br>
-https://youtu.be/26IbM7xWbsU
+https://www.youtube.com/watch?v=9hdsooYrZRw
 <br>
 <br>
 <br>
@@ -41,7 +41,9 @@ https://youtu.be/26IbM7xWbsU
 <br>
 <br>
 <br>
-The predicted attacks for Stage 13 eventuated early and by the time the riders reached the final ascent to the Mur de Péguère there were time splits on the road between some of the GC favourites. Frenchman Warren Barguil prevailed in a four man sprint to acheive the cycling dream of many countrymen of the bleu-blanc-rouge by winning a Tour De France stage on la Fête nationale. Barguil finished ahead of Contador, Quintana and Landa who all made up 1minute and 48 seconds on the group containing Fabio Aru, Froome, Bardet and Uran. GC placings are essentially unchanged, although both Landa and Quintana are now much closer to the overall lead.
+The motto for this tour might fast be turning into 'take nothing for granted'. The hilly stage 14 course was evidently going to suit the puncheurs such as Greg van Avermaet and Philipe Gilbert and at the steep finish the 26 year old Australian nicknamed "Bling" prevailed in Rodez by sprinting past Van Avermaet, Edvald Boasson Hagen taking third. It was Michael Matthews' first TDF win since Stage 10 of the 2016 edition and is a boost in his chase for the Green jersey. 
+<br> 
+<br>
 <br> 
 <br>
 Results on cycling news:
