@@ -9,7 +9,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ```{r, echo=FALSE}
 # Set stage number
-stage_no <- 15
+stage_no <- 19
 # Step 1: Load league details into R
 setwd("/home/a_friend/data_analysis/projects/velogames/")
 # setwd("C:/aa Simon Lyons/2.0 Work/4.0 Data Analysis/4.6 Projects/velogames/")
@@ -29,7 +29,7 @@ league <- league_codes$league[league_no]
 Here's the non-spoiler 4min highlight clip on Youtube:
 <br>
 <br>
-https://www.youtube.com/watch?v=9hdsooYrZRw
+https://youtu.be/k2YM6BxgsMw
 <br>
 <br>
 <br>
@@ -41,9 +41,7 @@ https://www.youtube.com/watch?v=9hdsooYrZRw
 <br>
 <br>
 <br>
-The motto for this tour might fast be turning into 'take nothing for granted'. The hilly stage 14 course was evidently going to suit the puncheurs such as Greg van Avermaet and Philipe Gilbert and at the steep finish the 26 year old Australian nicknamed "Bling" prevailed in Rodez by sprinting past Van Avermaet, Edvald Boasson Hagen taking third. It was Michael Matthews' first TDF win since Stage 10 of the 2016 edition and is a boost in his chase for the Green jersey. 
-<br> 
-<br>
+
 <br> 
 <br>
 Results on cycling news:
