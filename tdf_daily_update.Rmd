@@ -16,7 +16,7 @@ setwd("/home/a_friend/data_analysis/projects/velogames/")
 league_codes <- read.csv("2017_tdf_velogames_leagues.csv", stringsAsFactors = FALSE)
 # Change the number below maually from 1 to 3 to generate data
 # for each of the four velogames leagues
-league_no <- 2
+league_no <- 3
 league_code <- league_codes$league_no[league_no]
 league <- league_codes$league[league_no]
 ```
@@ -29,7 +29,7 @@ league <- league_codes$league[league_no]
 Here's the non-spoiler 4min highlight clip on Youtube:
 <br>
 <br>
-https://youtu.be/k2YM6BxgsMw
+https://youtu.be/BE1IfSzIel0
 <br>
 <br>
 <br>
@@ -41,7 +41,7 @@ https://youtu.be/k2YM6BxgsMw
 <br>
 <br>
 <br>
-
+Making up for his narrowest of defeats on stages seven and sixteen, Edvald Boasson Hagen soloed away from a large breakaway group to take his first TDF stage win since 2011. The win did much to make up for a disappointing tour for the Dimension Data team. Boasson Hagen was followed by Nikias Arndt with Jens Keukeliere taking third in a bunch sprint. The peloton with GC contenders finished a further 12 minutes back. Tonight's Individual Time Trial should prove to be the final battle for overall placings.
 <br> 
 <br>
 Results on cycling news:
