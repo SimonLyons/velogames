@@ -9,14 +9,14 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ```{r, echo=FALSE}
 # Set stage number
-stage_no <- 19
+stage_no <- 21
 # Step 1: Load league details into R
 setwd("/home/a_friend/data_analysis/projects/velogames/")
 # setwd("C:/aa Simon Lyons/2.0 Work/4.0 Data Analysis/4.6 Projects/velogames/")
 league_codes <- read.csv("2017_tdf_velogames_leagues.csv", stringsAsFactors = FALSE)
 # Change the number below maually from 1 to 3 to generate data
 # for each of the four velogames leagues
-league_no <- 3
+league_no <- 1
 league_code <- league_codes$league_no[league_no]
 league <- league_codes$league[league_no]
 ```
@@ -29,7 +29,7 @@ league <- league_codes$league[league_no]
 Here's the non-spoiler 4min highlight clip on Youtube:
 <br>
 <br>
-https://youtu.be/BE1IfSzIel0
+https://www.youtube.com/watch?v=3Ze0us3L9co
 <br>
 <br>
 <br>
@@ -41,7 +41,10 @@ https://youtu.be/BE1IfSzIel0
 <br>
 <br>
 <br>
-Making up for his narrowest of defeats on stages seven and sixteen, Edvald Boasson Hagen soloed away from a large breakaway group to take his first TDF stage win since 2011. The win did much to make up for a disappointing tour for the Dimension Data team. Boasson Hagen was followed by Nikias Arndt with Jens Keukeliere taking third in a bunch sprint. The peloton with GC contenders finished a further 12 minutes back. Tonight's Individual Time Trial should prove to be the final battle for overall placings.
+Polish rider Maciej Bodnar collected the biggest win of his career by winning the Stage 20 Individual Time Trial in Marseille last night. Chris Froome finished strongly only six seconds behind Bodnar to secure his yellow jersey and with it his grip on a fourth Tour De France success. Bardet did not do as well, losing significant time and allowing Uran to jump over him into second. Bardet holds third over Landa by only one second. Michel Kwiatkowski finishied second on the stage, only one second behind fellow Pole Bodnar. Amazing given how much work we've seen Kwiatkowski perform on behalf of his SKY team leader at the front of the peloton over the last three weeks.
+<br> 
+<br>
+The mostly flat 22.5km course was market by a nasty climb with grades of up to 16%. Many of the riders looked pretty awkward climbing this sharp ascent on their TT machines!
 <br> 
 <br>
 Results on cycling news:
