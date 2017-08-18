@@ -1,0 +1,175 @@
+---
+title: "4051 Rouleurs 2016 Vuelta Recap"
+date: "19 August 2017"
+output: 
+  html_document:
+    theme: "cosmo"   # I also like 'spacelab' and 'yeti'
+    highlight: "default"   # I also like 'tango'
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+### Introduction
+
+With the 2017 Tour De France set to commence wheels rolling tonight, it's perhaps a good time to reflect on our performance twelve months earlier. 
+
+The new product plastic wrap was off by the time our valiant Velogamers lined up for the second Grand Tour of 2016. Numbers and anticipation had increased with the stage set for a gloves-off battle for Veolgames glory. 
+
+With 14 teams there was the opportunity for 14 unique teams and 126 riders in total. However the short list of favoured athletes in each category ultimately led us to select our squads from only 59 of the 198 riders starting the Tour at the Mont Saint-Michel island monastery on the 2nd of July, 2016.
+
+```{r cars, echo=FALSE, warning=FALSE, message=FALSE}
+
+# Open .csv file with Wilston Dads Giro 2016 data
+setwd("/home/a_friend/data_analysis/projects/velogames/2016 Vuelta Recap/")
+# CS - 131601094614, 4051 - 741602135413, AusBus - 231701090915
+vuelta_table_master <- read.csv(file = "vuelta_table_master_131601094614.csv", sep = ",")
+colnames(vuelta_table_master) <- gsub("\\.", "", colnames(vuelta_table_master))
+
+require(dplyr)
+require(knitr)
+
+# Calculate which riders were the most selected by our teams
+rider_cost <- vuelta_table_master %>% 
+  filter(stage == 1) %>% 
+  group_by("Rider" = rider) %>% 
+  summarise("Times Selected" = n()) %>% 
+  arrange(desc(`Times Selected`))
+kable(rider_cost[1:12,])
+
+# View(vuelta_table_master)
+```
+
+The most popular rider was Columbian `r rider_cost$Rider[1]` with `r rider_cost[1,2]` of us selecting Nairoman to do battle on French roads.
+
+### Top Ten Riders
+
+But of course, picking riders on reputation and past performance was no guarantee of success in the first of the year's Grand Tours. The top ten highest scoring riders for the Giro, in order were:
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+
+# require(dplyr)
+rider_scores_dplyr <- vuelta_table_master %>% 
+  select(rider, stage, Tot) %>% 
+  distinct %>% 
+  group_by(rider) %>% 
+  summarise(sum(Tot)) %>% 
+  arrange(desc(`sum(Tot)`))
+# View(rider_scores_dplyr)
+
+require(ggplot2)
+ggplot(data = rider_scores_dplyr[1:10, ], aes(x = factor(rider_scores_dplyr$rider[1:10]), y = rider_scores_dplyr$`sum(Tot)`[1:10])) + geom_bar(stat = "identity", fill = "pink") + scale_x_discrete(limits = rider_scores_dplyr$rider[1:10]) + xlab("Rider") + ylab("Score") + theme(axis.text.x = element_text(angle = 60, hjust = 1))
+
+
+```
+
+
+The top ten highest scoring riders for the Giro, based on Return on Investment were:
+
+``` {r, echo=FALSE, warning=FALSE, message=FALSE}
+
+rider_value_dplyr <- vuelta_table_master %>% 
+  mutate(ROI = Tot / Cost) %>% 
+  select(rider, stage, ROI) %>% 
+  distinct %>% 
+  group_by(rider) %>% 
+  summarise(sum(ROI)) %>% 
+  arrange(desc(`sum(ROI)`))
+# View(rider_value_dplyr)
+
+ggplot(data = rider_value_dplyr[1:10, ], aes(x = factor(rider_value_dplyr$rider[1:10]), y = rider_value_dplyr$`sum(ROI)`[1:10])) + geom_bar(stat = "identity", fill = "blue") + scale_x_discrete(limits = rider_value_dplyr$rider[1:10]) + xlab("Rider") + ylab("ROI") + theme(axis.text.x = element_text(angle = 60, hjust = 1))
+
+```
+
+The ROI data is insightful in that it reveals which riders provided the best bang for buck. Although expensive picks such as Sagan ultimately proved good investments, teams backing Adan Yates must have been cheering all the way to the Velocredit bank!
+
+
+### Overall Team Performance
+
+At the end of a tightly fought three week battle the Jackal took top step on the podium by an extremely slim margin over Fiorini's Old Tricks. However it required bonus point allocations on the final stage for Andrew's team to unseat Chris' old boys who had essentially led from start to finish and seemed destined for victory.
+
+``` {r, echo=FALSE, warning=FALSE, message=FALSE}
+# This dplyr subset looks at the total points for each
+# team overall and lists them in descending order.
+team_total <- vuelta_table_master %>% 
+  group_by("Team" = team, "Directeur" = directeur) %>% 
+  summarise(sum(Tot)) %>% 
+  arrange(desc(`sum(Tot)`)) %>% 
+  rename("Total" = `sum(Tot)`)
+# Display as neat table using 'kable' function
+kable(team_total)
+
+```
+
+
+### Individual Stage Performance
+
+The scores for each stage paint a picture of early success for the team of Old Tricks.
+
+``` {r, echo=FALSE, warning=FALSE, message=FALSE}
+
+# Team scores by stage
+team_scores <- vuelta_table_master %>% 
+  group_by(stage, team) %>% 
+  summarise(sum(Tot)) %>% 
+  arrange(stage, desc(`sum(Tot)`))
+ggplot(data = team_scores, aes(x = stage, y = `sum(Tot)`)) + geom_line(aes(colour = team), size = 1.2) + labs(title ="Stage Score", x = "Stage", y = "Points") + theme(legend.position = "bottom")
+
+# Cumulative team scores by stage
+team_cu_scores <- vuelta_table_master %>% 
+  group_by(stage, team) %>% 
+  summarise(sum(Tot)) %>% 
+  group_by(team) %>%
+  mutate(cu_stage = cumsum(`sum(Tot)`))
+# Determine final placings
+final_placings <- team_cu_scores %>%
+  filter(stage == 21) %>%
+  select(team, cu_stage) %>%
+  arrange(desc(cu_stage)) %>%
+  select(team)
+# as.list(final_placings)
+
+# View(team_cu_scores)
+# Plot cumulative team scores
+ggplot(data = team_cu_scores, aes(x = stage, y = cu_stage, order = (team_cu_scores$team))) + geom_line(aes(colour = team), size = 1.2) + labs(title ="Cumulative Score", x = "Stage", y = "Points") + theme(legend.position = "bottom")
+
+```
+
+The top teams all had Peter Sagan, combined with either Chris Froome or Romain Bardet. 
+
+``` {r, echo=FALSE, warning=FALSE, message=FALSE}
+# This dlplyr filter looks at the top 4 scoring riders from
+# the three teams that made the podium.
+team_cu_rider_scores <- vuelta_table_master %>% 
+  group_by(team, rider) %>% 
+  summarise("Rider Total" = sum(Tot)) %>% 
+  filter(team %in% final_placings$team[1:3]) %>% 
+  arrange(team, desc(`Rider Total`)) %>% 
+  top_n(n = 4, wt = `Rider Total`) %>% 
+  rename("Rider" = rider, "Team" = team)
+kable(team_cu_rider_scores)
+
+```
+
+
+The bottom three teams all selected riders enjoying a successful Giro and associated large total points, but they just didn't have enough of them! Yes - my team of losers finished holding supporting the rest of the table......
+
+``` {r, echo=FALSE, warning=FALSE, message=FALSE}
+# This dlplyr filter looks at the top 4 scoring riders from
+# the three teams that made the podium.
+team_bt_rider_scores <- vuelta_table_master %>% 
+  group_by(team, rider) %>% 
+  summarise("Rider Total" = sum(Tot)) %>% 
+  filter(team %in% final_placings$team[(nrow(final_placings)-2):nrow(final_placings)]) %>% 
+  arrange(team, desc(`Rider Total`)) %>% 
+  top_n(n = 4, wt = `Rider Total`) %>% 
+  rename("Rider" = rider, "Team" = team)
+# Display as neat table using 'kable'
+kable(team_bt_rider_scores)
+
+````
+
+
+Perhaps there's some lessons in there as you look to finalise your squads for this year's Tour. Get your team in before the cutoff early this evening!
+
