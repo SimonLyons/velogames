@@ -1,5 +1,5 @@
 ---
-title: "4051 Rouleurs 2016 Vuelta Recap"
+title: "AusBus 2016 Vuelta Recap"
 date: "19 August 2017"
 output: 
   html_document:
@@ -13,18 +13,17 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ### Introduction
 
-With the 2017 Tour De France set to commence wheels rolling tonight, it's perhaps a good time to reflect on our performance twelve months earlier. 
+With the 2017 Vuelta a España set to commence wheels rolling tonight, it's perhaps a good time to reflect on our performance twelve months earlier. 
 
-The new product plastic wrap was off by the time our valiant Velogamers lined up for the second Grand Tour of 2016. Numbers and anticipation had increased with the stage set for a gloves-off battle for Veolgames glory. 
+With 14 teams there was the opportunity for 9 unique teams and 81 riders in total. However the short list of favoured athletes in each category ultimately led us to select our squads from only 49 of the 198 riders starting the team time trial to Castrelo de Miño on the 20th of August, 2016.
 
-With 14 teams there was the opportunity for 14 unique teams and 126 riders in total. However the short list of favoured athletes in each category ultimately led us to select our squads from only 59 of the 198 riders starting the Tour at the Mont Saint-Michel island monastery on the 2nd of July, 2016.
 
 ```{r cars, echo=FALSE, warning=FALSE, message=FALSE}
 
 # Open .csv file with Wilston Dads Giro 2016 data
 setwd("/home/a_friend/data_analysis/projects/velogames/2016 Vuelta Recap/")
 # CS - 131601094614, 4051 - 741602135413, AusBus - 231701090915
-vuelta_table_master <- read.csv(file = "vuelta_table_master_131601094614.csv", sep = ",")
+vuelta_table_master <- read.csv(file = "vuelta_table_master_231701090915.csv", sep = ",")
 colnames(vuelta_table_master) <- gsub("\\.", "", colnames(vuelta_table_master))
 
 require(dplyr)
@@ -41,11 +40,11 @@ kable(rider_cost[1:12,])
 # View(vuelta_table_master)
 ```
 
-The most popular rider was Columbian `r rider_cost$Rider[1]` with `r rider_cost[1,2]` of us selecting Nairoman to do battle on French roads.
+The most popular rider was Columbian `r rider_cost$Rider[1]` with `r rider_cost[1,2]` of us selecting the always smiling Orica team member to do battle on Spanish roads.
 
 ### Top Ten Riders
 
-But of course, picking riders on reputation and past performance was no guarantee of success in the first of the year's Grand Tours. The top ten highest scoring riders for the Giro, in order were:
+But of course, picking riders on reputation and past performance was no guarantee of success in the last of the year's Grand Tours. The top ten highest scoring riders for the Vuelta, in order were:
 
 ```{r, echo=FALSE, warning=FALSE, message=FALSE}
 
@@ -64,8 +63,10 @@ ggplot(data = rider_scores_dplyr[1:10, ], aes(x = factor(rider_scores_dplyr$ride
 
 ```
 
+It's interesting to see that while Contador finished just off the podium in fourth place, he was a bit of a grey-man through the stages and didn't actually acrue a lot of Velocredits or even finish in the top ten riders based on ROI. Speaking of which...
 
-The top ten highest scoring riders for the Giro, based on Return on Investment were:
+
+The top ten highest scoring riders for the Vuelta, based on Return on Investment were:
 
 ``` {r, echo=FALSE, warning=FALSE, message=FALSE}
 
@@ -82,12 +83,12 @@ ggplot(data = rider_value_dplyr[1:10, ], aes(x = factor(rider_value_dplyr$rider[
 
 ```
 
-The ROI data is insightful in that it reveals which riders provided the best bang for buck. Although expensive picks such as Sagan ultimately proved good investments, teams backing Adan Yates must have been cheering all the way to the Velocredit bank!
+The ROI data is insightful in that it reveals which riders provided the best bang for buck. Although expensive picks such as Quintana ultimately proved good investments, teams backing Ruben Fernandez must have been cheering all the way to the Velocredit bank!
 
 
 ### Overall Team Performance
 
-At the end of a tightly fought three week battle the Jackal took top step on the podium by an extremely slim margin over Fiorini's Old Tricks. However it required bonus point allocations on the final stage for Andrew's team to unseat Chris' old boys who had essentially led from start to finish and seemed destined for victory.
+At the end of a tightly fought three week battle Steve's safety first helmets took top step on the podium by a comfortable margin over Billy's squad. 
 
 ``` {r, echo=FALSE, warning=FALSE, message=FALSE}
 # This dplyr subset looks at the total points for each
@@ -105,7 +106,8 @@ kable(team_total)
 
 ### Individual Stage Performance
 
-The scores for each stage paint a picture of early success for the team of Old Tricks.
+Steve's team emerged in a controlling fashion from about Stage 7 and didn't look like relinquishing the lead for the remainder of the race.  
+
 
 ``` {r, echo=FALSE, warning=FALSE, message=FALSE}
 
@@ -136,7 +138,9 @@ ggplot(data = team_cu_scores, aes(x = stage, y = cu_stage, order = (team_cu_scor
 
 ```
 
-The top teams all had Peter Sagan, combined with either Chris Froome or Romain Bardet. 
+ 
+Steve's selection of big scoring Quintana and Valverde were differentiators for his squad.
+
 
 ``` {r, echo=FALSE, warning=FALSE, message=FALSE}
 # This dlplyr filter looks at the top 4 scoring riders from
@@ -152,8 +156,8 @@ kable(team_cu_rider_scores)
 
 ```
 
+Dave Hazzard was reliant on Chaves to do his heavy lifting, but the points haul per rider fell away quickly after that. He saved Bail's sorry bunch from the bottom spot.
 
-The bottom three teams all selected riders enjoying a successful Giro and associated large total points, but they just didn't have enough of them! Yes - my team of losers finished holding supporting the rest of the table......
 
 ``` {r, echo=FALSE, warning=FALSE, message=FALSE}
 # This dlplyr filter looks at the top 4 scoring riders from
@@ -171,5 +175,5 @@ kable(team_bt_rider_scores)
 ````
 
 
-Perhaps there's some lessons in there as you look to finalise your squads for this year's Tour. Get your team in before the cutoff early this evening!
+Perhaps there's some lessons in there as you look to finalise your squads for this year's Vuelta Get your team in before the cutoff early this evening!
 
