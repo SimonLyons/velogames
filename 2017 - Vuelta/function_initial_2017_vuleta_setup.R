@@ -61,19 +61,19 @@ require(assertthat)
 require(RCurl)
 
 # Step 1: Load league details into R
-setwd("/home/a_friend/data_analysis/projects/velogames/")
-league_codes <- read.csv("2017_tdf_velogames_leagues.csv")
+setwd("/home/a_friend/data_analysis/projects/velogames/2017 - Vuelta/")
+league_codes <- read.csv("2017_vuelta_velogames_leagues.csv")
 
-for (l in 1:2){   # Loop through all three (3) leagues
+for (l in 1:2){   # Loop through all two (2) leagues
   league_code <- league_codes$league_no[l]
   velo_table <- read.csv(paste("league_details_", league_code, ".csv", sep = ""))
   n_teams <- nrow(velo_table)
-  tdf_table_master <- c()
+  vuelta_table_master <- c()
   velo_table <- read.csv(paste("league_details_", league_code, ".csv", sep = ""), header = TRUE, sep = ",")
   
   team_table_master_02 <- c()
   
-  for (t in 1:n_teams){   # Loop through each of the 11 teams
+  for (t in 1:n_teams){   # Loop through each of the "t" teams
     team_link <- velo_table$team_weblink[t]
     team <- velo_table$team[t]
     directeur <- velo_table$directeur[t]
@@ -119,12 +119,11 @@ for (l in 1:2){   # Loop through all three (3) leagues
     team_table_master_02[[t]] <- team_table_master_01
     
   }   # End loop through the number of teams (t)
+  vuelta_table_master <- do.call(rbind, team_table_master_02)[ , -14]
+  write.csv(vuelta_table_master, file = paste("vuelta_table_master_", league_code, ".csv", sep = ""), sep = ",", row.names = FALSE, col.names = TRUE)
   
-  tdf_table_master <- do.call(rbind, team_table_master_02)[ , -14]
-  write.csv(tdf_table_master, file = paste("tdf_table_master_", league_code, ".csv", sep = ""), sep = ",", row.names = FALSE, col.names = TRUE)
   
-  
-}   # End loop through all three leagues
+}   # End loop through all "l" leagues
 #####################
 
 

@@ -7,21 +7,21 @@
 require(XML)
 require(dplyr)
 
-setwd("/home/a_friend/data_analysis/projects/velogames/")
-league_codes <- read.csv("2017_tdf_velogames_leagues.csv")
+setwd("/home/a_friend/data_analysis/projects/velogames/2017 - Vuelta/")
+league_codes <- read.csv("2017_vuelta_velogames_leagues.csv")
 
 # Ask for an input
 # Should consider turning this file into a FUNCTION
 # input_stage <- as.integer(readline(prompt = "Enter the latest stage you would like to webscrape:"))
-input_stage <-22
+input_stage <-1
 
-for(l in 1:3){
+for(l in 1:2){
   # Download league specific tdf master table
   league_code <- league_codes$league_no[l]
-  tdf_table_master <- read.csv(paste("tdf_table_master_", league_code, ".csv", sep = ""))
+  vuelta_table_master <- read.csv(paste("vuelta_table_master_", league_code, ".csv", sep = ""))
   
   # Check the latest stage number in the master table file
-  latest_stage <- max(tdf_table_master$stage)
+  latest_stage <- max(vuelta_table_master$stage)
 
   #  Next - scrape data for new stages.
   # If the input from the user is larger than the maximum stage in the master table then assign
@@ -30,7 +30,7 @@ for(l in 1:3){
     stages_to_scrape <- (latest_stage+1):input_stage
     
     require(XML)
-    n_teams <- n_distinct(tdf_table_master$directeur) 
+    n_teams <- n_distinct(vuelta_table_master$directeur) 
     team_table_master_02 <- c()
     velo_table <- read.csv(paste("league_details_", league_code, ".csv", sep = ""), header = TRUE, sep = ",")
     
@@ -80,18 +80,18 @@ for(l in 1:3){
       
     }
     
-    tdf_table_master_new <- do.call(rbind, team_table_master_02)[ , -14]
-    colnames(tdf_table_master_new) <- gsub("\n", "", colnames(tdf_table_master_new))
-    colnames(tdf_table_master) <- gsub("\\.", "", colnames(tdf_table_master))
+    vuelta_table_master_new <- do.call(rbind, team_table_master_02)[ , -14]
+    colnames(vuelta_table_master_new) <- gsub("\n", "", colnames(vuelta_table_master_new))
+    colnames(vuelta_table_master) <- gsub("\\.", "", colnames(vuelta_table_master))
     
     # Combine newly scraped stages with existing master table file
-    tdf_table_master <- rbind(tdf_table_master, tdf_table_master_new)
+    vuelta_table_master <- rbind(vuelta_table_master, vuelta_table_master_new)
     # Remove any duplicate rows
-    tdf_table_master <- tdf_table_master %>%  filter(!duplicated(tdf_table_master))
-    # View(tdf_table_master)
+    vuelta_table_master <- vuelta_table_master %>%  filter(!duplicated(vuelta_table_master))
+    # View(vuelta_table_master)
   }   # End of IF statement confirming input stage is larger than max giro table master stage
   
-  write.csv(tdf_table_master, file = paste("tdf_table_master_", league_code, ".csv", sep = ""), 
+  write.csv(vuelta_table_master, file = paste("vuelta_table_master_", league_code, ".csv", sep = ""), 
             sep = ",", row.names = FALSE, col.names = TRUE)
   
 }   # End of loop through 3 velogames leagues
