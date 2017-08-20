@@ -79,8 +79,8 @@ for (l in 1:2){   # Loop through all two (2) leagues
     directeur <- velo_table$directeur[t]
     team_table_master <- c()
     
-    for (s in 1:2){   # Loop through all of the stages for each team. Stage 22 gives bonus points!
-      team_url <- paste("https://www.velogames.com/tour-de-france/2017/", team_link, "&ga=13&st=", s, sep = "")
+    for (s in 1:1){   # Loop through all of the stages for each team. Stage 22 gives bonus points!
+      team_url <- paste("https://www.velogames.com/vuelta-a-espana/2017/", team_link, "&ga=13&st=", s, sep = "")
       download.file(team_url, "team_url.xml")
       team_html <- htmlParse("team_url.xml")
       # Extract table header data

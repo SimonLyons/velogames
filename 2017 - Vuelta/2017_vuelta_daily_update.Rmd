@@ -9,7 +9,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ```{r, echo=FALSE}
 # Set stage number
-stage_no <- 1
+stage_no <- 2
 # Step 1: Load league details into R
 setwd("/home/a_friend/data_analysis/projects/velogames/2017 - Vuelta/")
 # setwd("C:/aa Simon Lyons/2.0 Work/4.0 Data Analysis/4.6 Projects/velogames/")
@@ -29,7 +29,7 @@ league <- league_codes$league[league_no]
 Here's the non-spoiler 4min highlight clip on Youtube:
 <br>
 <br>
-https://www.youtube.com/watch?v=3Ze0us3L9co
+https://youtu.be/6JtwXrHdits
 <br>
 <br>
 <br>
@@ -41,7 +41,7 @@ https://www.youtube.com/watch?v=3Ze0us3L9co
 <br>
 <br>
 <br>
-Polish rider Maciej Bodnar collected the biggest win of his career by winning the Stage 20 Individual Time Trial in Marseille last night. Chris Froome finished strongly only six seconds behind Bodnar to secure his yellow jersey and with it his grip on a fourth Tour De France success. Bardet did not do as well, losing significant time and allowing Uran to jump over him into second. Bardet holds third over Landa by only one second. Michel Kwiatkowski finishied second on the stage, only one second behind fellow Pole Bodnar. Amazing given how much work we've seen Kwiatkowski perform on behalf of his SKY team leader at the front of the peloton over the last three weeks.
+Welcome to the start of (possibly) daily updates for our Vuelta a Espana Velogames competition. Once again the Vuelta kicked off with a Team Time Trial, however the race started for the first time in its history in France. The 13.7km stage kicked off the 2017 edition in Nimes.
 <br> 
 <br>
 <br> 
@@ -72,7 +72,7 @@ colnames(vuelta_table_master) <- gsub("\\.", "", colnames(vuelta_table_master))
 
 # View(vuelta_table_master)
 # Extract stage results from Cycling News
-stage_url <- paste("http://www.cyclingnews.com/races/tour-de-france/stage-", stage_no, "/results/", sep = "")
+stage_url <- paste("http://www.cyclingnews.com/races/vuelta-a-espana/stage-", stage_no, "/results/", sep = "")
 download.file(stage_url, "stage_url.xml")
 stage_html <- htmlParse("stage_url.xml")
 
@@ -188,8 +188,8 @@ Another take on rider data is provided in the chart below displaying Rider Cost 
 ```
    
 <br>   
-#### Top scoring teams for stage
-   
+### Top scoring teams for stage
+<br> 
 ```{r, echo=FALSE, warning=FALSE, message=FALSE, results='asis'}
 
 # Top scoring teams for stage
@@ -239,55 +239,52 @@ team_cu_scores <- vuelta_table_master %>%
   summarise(sum(Tot)) %>% 
   group_by(team) %>%
   mutate(cu_stage = cumsum(`sum(Tot)`))
-# View(team_cu_scores)
+View(team_cu_scores)
+# View(vuelta_table_master)
 
 # Plot cumulative team scores
 ggplot(data = team_cu_scores, aes(x = stage, y = cu_stage, order = (team_cu_scores$team))) + geom_line(aes(colour = team), size = 1.2) + labs(title ="Cumulative Score", x = "Stage", y = "Points") + theme(legend.position = "bottom")
 
 team_overall <- team_cu_scores %>%
-  filter(stage == stage_no) %>% 
+  filter(stage == stage) %>% 
   select("Team" = team, "Total" = cu_stage) %>% 
   arrange(desc(Total))
 kable(team_overall)
 # View(team_overall)
 
 ```
-   
 <br>
-   
 #### Inside Look
-   
-<!-- Here's a look inside the teams currently holding top spots on the GC podium. 
-
-Actually - I can't get this bit of code to work for some frustrating reason, so I'm leaving it out and sending the update without it. -->
 <br>  
-   
+Here's a look inside the teams currently holding top spots on the GC podium. 
+<br>  
+<br>  
 ``` {r, echo=FALSE, warning=FALSE, message=FALSE}
 # This dlplyr filter looks at the top 4 scoring riders from
 # the three teams that made the podium.
 
 # This bit is crapping itself during the 'knit'. Needs work....
-# stage_cu_podium <- team_cu_scores %>%
-#   filter(stage == stage_no) %>%
-#   arrange(desc(cu_stage))
-# View(stage_cu_podium)
+stage_cu_podium <- as.data.frame(team_cu_scores) %>%
+  filter(stage == as.integer(stage_no)) %>%
+  arrange(desc(cu_stage))
+View(stage_cu_podium)
 
-# team_cu_rider_scores <- vuelta_table_master %>%
-#   group_by(team, rider) %>%
-#   summarise("Rider Total" = sum(Tot)) %>%
-#   filter(team %in% stage_cu_podium$team[1:3]) %>%
-#   arrange(team, desc(`Rider Total`)) %>%
-#   top_n(n = 3, wt = `Rider Total`) %>%
-#   rename("Rider" = rider, "Team" = team)
+team_cu_rider_scores <- vuelta_table_master %>%
+  group_by(team, rider) %>%
+  summarise("Rider Total" = sum(Tot)) %>%
+  filter(team %in% stage_cu_podium$team[1:3]) %>%
+  arrange(team, desc(`Rider Total`)) %>%
+  top_n(n = 3, wt = `Rider Total`) %>%
+  rename("Rider" = rider, "Team" = team)
 # View(team_cu_rider_scores)
-# kable(team_cu_rider_scores, caption = "Rider Scores - Top Teams")
+kable(team_cu_rider_scores, caption = "Rider Scores - Top Teams")
 
 ```
 
 <br>
 Next up is Stage `r (stage_no + 1)`.
 <br>
-`r paste("http://www.cyclingnews.com/tour-de-france/stage-", (stage_no + 1), "/", sep = "")`
+`r paste("http://www.cyclingnews.com/vuelta-a-espana/stage-", (stage_no + 1), "/", sep = "")`
 <br>
 
 ### Team Cross Reference
@@ -341,36 +338,42 @@ kable(rider_list)
 ```
 <br>
 <br>
-### DNF Riders
-<br>
-<br>
-Probably of interest to many of us at this point is which riders are no longer part of the peloton, either through accident, illness or missing the time-cut!
-<br>
-<br>
+
 ```{r, echo=FALSE, warning=FALSE, message=FALSE, results='asis'}
+
+
+# ### DNF Riders
+# <br>
+# <br>
+# Probably of interest to many of us at this point is which riders are no longer part of the peloton, either through accident, illness or missing the time-cut!
+# <br>
+# <br>
+
+
+
 
 # Temporary list of DNF riders
 
 # Wikipedia list of 2017 Vuelta riders
 ###### Currently have issues pasting in the Wikipedia website for the Vuelta. 
-wiki_vuelta_2017 <- "https://en.wikipedia.org/wiki/List_of_teams_and_cyclists_in_the_2017_Vuelta_a_Espa%C3%B1a"
+# wiki_vuelta_2017 <- "https://en.wikipedia.org/wiki/List_of_teams_and_cyclists_in_the_2017_Vuelta_a_Espa%C3%B1a"
 # Scrape web data
-download.file(wiki_vuelta_2017, "wiki_vuelta_2017.xml")
-wiki_vuelta_2017_parse <- read_html("wiki_vuelta_2017.xml")
+# download.file(wiki_vuelta_2017, "wiki_vuelta_2017.xml")
+# wiki_vuelta_2017_parse <- read_html("wiki_vuelta_2017.xml")
 
 # Extract table with riders
-riders_vuelta <- wiki_vuelta_2017_parse %>% 
-  html_nodes(xpath = "//table") %>% 
-  html_table(fill = TRUE)
-riders_vuelta <- as.data.frame(riders_vuelta[3])
+# riders_vuelta <- wiki_vuelta_2017_parse %>% 
+#   html_nodes(xpath = "//table") %>% 
+#   html_table(fill = TRUE)
+# riders_vuelta <- as.data.frame(riders_vuelta[3])
 
 # Filter DNF riders
-riders_DNF <- riders_vuelta %>% 
-  filter(!Pos. == "") %>% 
-  select(Name, Nationality, Team, Pos.)
+# riders_DNF <- riders_vuelta %>% 
+#   filter(!Pos. == "") %>% 
+#   select(Name, Nationality, Team, Pos.)
 
 # Print (kable)
-print(kable(riders_DNF), row.names = FALSE)
+# print(kable(riders_DNF), row.names = FALSE)
 
 ############################
 
