@@ -16,7 +16,7 @@ league_codes <- read.csv("2017_vuelta_velogames_leagues.csv")
 input_stage <-2
 
 for(l in 1:2){
-  # Download league specific tdf master table
+  # Download league specific master table
   league_code <- league_codes$league_no[l]
   vuelta_table_master <- read.csv(paste("vuelta_table_master_", league_code, ".csv", sep = ""))
   
@@ -41,7 +41,7 @@ for(l in 1:2){
       team_table_master <- c()
       
       for (s in stages_to_scrape){   # Loop through all of the new stages (up to )
-        team_url <- paste("https://www.velogames.com/tour-de-france/2017/", team_link, "&ga=13&st=", s, sep = "")
+        team_url <- paste("https://www.velogames.com/vuelta-a-espana/2017/", team_link, "&ga=13&st=", s, sep = "")
         download.file(team_url, "team_url.xml")
         team_html <- htmlParse("team_url.xml")
         # Extract table header data

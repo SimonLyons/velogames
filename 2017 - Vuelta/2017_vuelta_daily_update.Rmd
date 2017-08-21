@@ -9,7 +9,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ```{r, echo=FALSE}
 # Set stage number
-stage_no <- 2
+stage_no <- 3
 # Step 1: Load league details into R
 setwd("/home/a_friend/data_analysis/projects/velogames/2017 - Vuelta/")
 # setwd("C:/aa Simon Lyons/2.0 Work/4.0 Data Analysis/4.6 Projects/velogames/")
@@ -29,7 +29,7 @@ league <- league_codes$league[league_no]
 Here's the non-spoiler 4min highlight clip on Youtube:
 <br>
 <br>
-https://youtu.be/6JtwXrHdits
+https://youtu.be/wnkzVcggHWU
 <br>
 <br>
 <br>
@@ -41,9 +41,10 @@ https://youtu.be/6JtwXrHdits
 <br>
 <br>
 <br>
-Welcome to the start of (possibly) daily updates for our Vuelta a Espana Velogames competition. Once again the Vuelta kicked off with a Team Time Trial, however the race started for the first time in its history in France. The 13.7km stage kicked off the 2017 edition in Nimes.
+Action in the first sprint stage of the Vuelta start in the last 20 kilometres with several teams attempting to take advantage of strong winds. With 8km to go Quickstep put in a move that split the peloton and with 1km to go Quickstep rider Yves Lampaert surged clear alone and took the win ahead of team mate Matteo Trentin and Adam Blythe from Aqua Sports. Lampaert and Trentin are now 1st and 2nd on GC also. 
 <br> 
 <br>
+Nibali somehow managed to go with the Quickstep break and finished on the same time, 5 seconds ahead of Chaves and 8 seconds ahead of Chris Froome and Aru. Many of the other GC contenders finished with the main peleton 13 seconds down on Lampaert.
 <br> 
 <br>
 Results on cycling news:
@@ -187,7 +188,7 @@ Another take on rider data is provided in the chart below displaying Rider Cost 
 
 ```
    
-<br>   
+  
 ### Top scoring teams for stage
 <br> 
 ```{r, echo=FALSE, warning=FALSE, message=FALSE, results='asis'}
@@ -239,26 +240,29 @@ team_cu_scores <- vuelta_table_master %>%
   summarise(sum(Tot)) %>% 
   group_by(team) %>%
   mutate(cu_stage = cumsum(`sum(Tot)`))
-View(team_cu_scores)
+# View(team_cu_scores)
 # View(vuelta_table_master)
 
 # Plot cumulative team scores
 ggplot(data = team_cu_scores, aes(x = stage, y = cu_stage, order = (team_cu_scores$team))) + geom_line(aes(colour = team), size = 1.2) + labs(title ="Cumulative Score", x = "Stage", y = "Points") + theme(legend.position = "bottom")
 
 team_overall <- team_cu_scores %>%
-  filter(stage == stage) %>% 
+  filter(stage == stage_no) %>% 
   select("Team" = team, "Total" = cu_stage) %>% 
   arrange(desc(Total))
 kable(team_overall)
 # View(team_overall)
 
 ```
-<br>
+
+
 #### Inside Look
-<br>  
+
+ 
 Here's a look inside the teams currently holding top spots on the GC podium. 
-<br>  
-<br>  
+
+
+  
 ``` {r, echo=FALSE, warning=FALSE, message=FALSE}
 # This dlplyr filter looks at the top 4 scoring riders from
 # the three teams that made the podium.
@@ -267,7 +271,7 @@ Here's a look inside the teams currently holding top spots on the GC podium.
 stage_cu_podium <- as.data.frame(team_cu_scores) %>%
   filter(stage == as.integer(stage_no)) %>%
   arrange(desc(cu_stage))
-View(stage_cu_podium)
+# View(stage_cu_podium)
 
 team_cu_rider_scores <- vuelta_table_master %>%
   group_by(team, rider) %>%
