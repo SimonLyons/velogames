@@ -9,14 +9,14 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ```{r, echo=FALSE}
 # Set stage number
-stage_no <- 4
+stage_no <- 3
 # Step 1: Load league details into R
 setwd("/home/a_friend/data_analysis/projects/velogames/2017 - Vuelta/")
 # setwd("C:/aa Simon Lyons/2.0 Work/4.0 Data Analysis/4.6 Projects/velogames/")
 league_codes <- read.csv("2017_vuelta_velogames_leagues.csv", stringsAsFactors = FALSE)
 # Change the number below maually from 1 to 3 to generate data
 # for each of the four velogames leagues
-league_no <-1
+league_no <-2
 league_code <- league_codes$league_no[league_no]
 league <- league_codes$league[league_no]
 ```
@@ -328,7 +328,7 @@ Here's the team breakdown for each of squads.
       select(rider) %>% 
       distinct()
     
-    # Next, for each directeur, run through the complete list of mini-league rideres
+    # Next, for each directeur, run through the complete list of mini-league riders
     # and check to see if they are in 
     for (r in 1:length(rider_list$rider)){   # FOR loop to run through the total list of riders in the mini-league
       if(unlist(rider_list[r, 1]) %in% unlist(team_list)){
@@ -370,6 +370,16 @@ riders_vuelta <- as.data.frame(riders_vuelta[2])
 riders_DNF <- riders_vuelta %>% 
    filter(!Pos. == "") %>% 
    select(Name, Nationality, Team, Pos.)
+
+for (d in 1: length(riders_DNF$Name)){
+  riders_DNF[d , 5] <- vuelta_table_master %>% 
+    filter(rider == riders_DNF$Name[d]) %>% 
+    distinct(directeur) %>% 
+    unlist() %>% 
+    paste(collapse = ",")
+}
+
+colnames(riders_DNF)[5] <- "Selected by"
 
 # Print (kable)
 print(kable(riders_DNF), row.names = FALSE)
