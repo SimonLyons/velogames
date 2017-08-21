@@ -340,13 +340,11 @@ Here's the team breakdown for each of squads.
 kable(rider_list)
 
 ```
-### DNF Riders
-<br>
-<br>
-Probably of interest to many of us at this point is which riders are no longer part of the peloton, either through accident, illness or missing the time-cut!
-<br>
-<br>
 
+
+### DNF Riders
+
+Probably of interest to many of us at this point is which riders are no longer part of the peloton, either through accident, illness or missing the time-cut!
 
 
 ```{r, echo=FALSE, warning=FALSE, message=FALSE, results='asis'}
