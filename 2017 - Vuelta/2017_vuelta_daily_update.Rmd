@@ -355,25 +355,24 @@ kable(rider_list)
 # Temporary list of DNF riders
 
 # Wikipedia list of 2017 Vuelta riders
-###### Currently have issues pasting in the Wikipedia website for the Vuelta. 
-# wiki_vuelta_2017 <- "https://en.wikipedia.org/wiki/List_of_teams_and_cyclists_in_the_2017_Vuelta_a_Espa%C3%B1a"
+wiki_vuelta_2017 <- "https://en.wikipedia.org/wiki/List_of_teams_and_cyclists_in_the_2017_Vuelta_a_Espa%C3%B1a"
 # Scrape web data
-# download.file(wiki_vuelta_2017, "wiki_vuelta_2017.xml")
-# wiki_vuelta_2017_parse <- read_html("wiki_vuelta_2017.xml")
+download.file(wiki_vuelta_2017, "wiki_vuelta_2017.xml")
+wiki_vuelta_2017_parse <- read_html("wiki_vuelta_2017.xml")
 
 # Extract table with riders
-# riders_vuelta <- wiki_vuelta_2017_parse %>% 
-#   html_nodes(xpath = "//table") %>% 
-#   html_table(fill = TRUE)
-# riders_vuelta <- as.data.frame(riders_vuelta[3])
+riders_vuelta <- wiki_vuelta_2017_parse %>% 
+   html_nodes(xpath = "//table") %>% 
+   html_table(fill = TRUE)
+riders_vuelta <- as.data.frame(riders_vuelta[2])
 
 # Filter DNF riders
-# riders_DNF <- riders_vuelta %>% 
-#   filter(!Pos. == "") %>% 
-#   select(Name, Nationality, Team, Pos.)
+riders_DNF <- riders_vuelta %>% 
+   filter(!Pos. == "") %>% 
+   select(Name, Nationality, Team, Pos.)
 
 # Print (kable)
-# print(kable(riders_DNF), row.names = FALSE)
+print(kable(riders_DNF), row.names = FALSE)
 
 ############################
 
