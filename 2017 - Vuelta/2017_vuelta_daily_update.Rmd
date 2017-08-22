@@ -9,7 +9,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ```{r, echo=FALSE}
 # Set stage number
-stage_no <- 3
+stage_no <- 4
 # Step 1: Load league details into R
 setwd("/home/a_friend/data_analysis/projects/velogames/2017 - Vuelta/")
 # setwd("C:/aa Simon Lyons/2.0 Work/4.0 Data Analysis/4.6 Projects/velogames/")
@@ -24,12 +24,10 @@ league <- league_codes$league[league_no]
 ### Race Results - Stage `r stage_no`
 
 <br>
-<br>
-<br>
 Here's the non-spoiler 4min highlight clip on Youtube:
 <br>
 <br>
-https://youtu.be/KllHDR66x_M
+https://youtu.be/agk6UGf69jU
 <br>
 <br>
 <br>
@@ -41,13 +39,10 @@ https://youtu.be/KllHDR66x_M
 <br>
 <br>
 <br>
-Perhaps the defining image of the first climbing stage of the 2017 Vuelta will be the footage of el Pistolero being dropped by the main contenders and effectively ending any chance the great champion had of finishing the Vuelta on the podium. Condator had expressed high hopes for the final Grand Tour of his career, but it seems the fairy tale is well and truly over for one of the cycling greats. 
+Thirty seven degree temperatures were not enough to slow the onslaught of the Quickstep-Floors team who upped the pace to drag in the breakaway with 8 kilometres to go and deliver their Italian sprinter Matteo Trentin to the perfect spot for the flat, stage finishing sprint. Trentin comfortably came around Juan José Lobato for the victory with Tom van Asbroeck in third. 
 <br> 
 <br>
-el Clenbuterol's chances were dashed by some fierce action on the final two climbs of the day. Once the break was reeled in by Team Sky the pace continued and Contador was out the back. Froome and Team Sky signaled their aggressive intentions for the tour by attacking on the descent. On the final climb Froome attacked again, taking only Chavez with him and distancing Nibali. However the group came back together and Nibali made use of his superior descending skills to rejoin and then sprint past to take the stage victory. He was followed by Quickstep rider David de la Cruz with Froome in third. Thanks to intermediate and finish bonus seconds Froome is now the race leader. 
-<br> 
-<br>
-The small finishing selection contained riders most likely to be challenging for the overall Vuelta title this year and included Bardet, Bardet, Chaves, Aru, Pozzovivo and somehow, perennial Amercian GC wilting flower Tejay van Garderen. The Yates twins were distanced by more than 20 seconds and Meintjes and Zakarin by over 50 seconds. Steven Kruijswijk finished more than a minute back. GC hopes are surely over for Contador and Majka who both crossed the finish line more than two and a half minutes behind Nibali.
+There was no real change in GC standings with the exceptions of Rafa Majka strangely losing further time (while his team was driving the pace on the front of the peloton!) and Pozzovivo and Moreno being involved in a crash just shy of the 3km barrier. Pozzovivo drops out of the top ten and competition for the podium. Had the crash occured inside the 3km banner they would have received the same time as the peloton crossing the finish line.
 <br> 
 <br>
 Results on cycling news:
@@ -151,6 +146,7 @@ kable(rider_stage_score[1:5, ])
 <br>
 Another take on rider data is provided in the chart below displaying Rider Cost vs the their Total Points accrued so far. The size of each circle is proportional the the number of teams that have selected that rider. 
 <br>
+<br>
    
 ```{r, echo=FALSE, warning=FALSE, message=FALSE, results='asis'}
 # Top scoring riders cumulative
@@ -193,7 +189,7 @@ Another take on rider data is provided in the chart below displaying Rider Cost 
    
   
 ### Top scoring teams for stage
-<br> 
+
 ```{r, echo=FALSE, warning=FALSE, message=FALSE, results='asis'}
 
 # Top scoring teams for stage
@@ -239,7 +235,7 @@ The picture for overall after `r stage_no` stages is:
 
 # Cumulative team scores by stage
 team_cu_scores <- vuelta_table_master %>% 
-  group_by(stage, team) %>% 
+  group_by(stage, team, directeur) %>% 
   summarise(sum(Tot)) %>% 
   group_by(team) %>%
   mutate(cu_stage = cumsum(`sum(Tot)`))
@@ -251,7 +247,7 @@ ggplot(data = team_cu_scores, aes(x = stage, y = cu_stage, order = (team_cu_scor
 
 team_overall <- team_cu_scores %>%
   filter(stage == stage_no) %>% 
-  select("Team" = team, "Total" = cu_stage) %>% 
+  select("Team" = team,  "Directer" = directeur, "Total" = cu_stage) %>% 
   arrange(desc(Total))
 kable(team_overall)
 # View(team_overall)
