@@ -9,14 +9,14 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ```{r, echo=FALSE}
 # Set stage number
-stage_no <- 4
+stage_no <- 1
 # Step 1: Load league details into R
 setwd("/home/a_friend/data_analysis/projects/velogames/2017 - Vuelta/")
 # setwd("C:/aa Simon Lyons/2.0 Work/4.0 Data Analysis/4.6 Projects/velogames/")
 league_codes <- read.csv("2017_vuelta_velogames_leagues.csv", stringsAsFactors = FALSE)
 # Change the number below maually from 1 to 3 to generate data
 # for each of the four velogames leagues
-league_no <-2
+league_no <-1
 league_code <- league_codes$league_no[league_no]
 league <- league_codes$league[league_no]
 ```
@@ -39,10 +39,7 @@ https://youtu.be/agk6UGf69jU
 <br>
 <br>
 <br>
-Thirty seven degree temperatures were not enough to slow the onslaught of the Quickstep-Floors team who upped the pace to drag in the breakaway with 8 kilometres to go and deliver their Italian sprinter Matteo Trentin to the perfect spot for the flat, stage finishing sprint. Trentin comfortably came around Juan José Lobato for the victory with Tom van Asbroeck in third. 
-<br> 
-<br>
-There was no real change in GC standings with the exceptions of Rafa Majka strangely losing further time (while his team was driving the pace on the front of the peloton!) and Pozzovivo and Moreno being involved in a crash just shy of the 3km barrier. Pozzovivo drops out of the top ten and competition for the podium. Had the crash occured inside the 3km banner they would have received the same time as the peloton crossing the finish line.
+A breakaway prevailed on last night's stage with Astana's Alexey Lutsenko taking the biggest win of his career by riding off from the break on the punishing final climb up to Alcossebre. A small group of GC contenders, including Froome, Contador and Chaves finished four and a half minutes later but with Froome still safely in the red leader's jersey. Somewhat surprisingly, American Tejay van Garderen (the wilting flower of Grand Tours and whipping bag of US cycling fans) finished only 8 seconds behind the Froome group and slipped into second place overall. Further time was lost by all the other GC combatants, including Aru, the Yates brothers, Nibali and Bardet. 
 <br> 
 <br>
 Results on cycling news:
