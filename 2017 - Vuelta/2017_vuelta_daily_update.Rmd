@@ -9,7 +9,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ```{r, echo=FALSE}
 # Set stage number
-stage_no <- 1
+stage_no <- 7
 # Step 1: Load league details into R
 setwd("/home/a_friend/data_analysis/projects/velogames/2017 - Vuelta/")
 # setwd("C:/aa Simon Lyons/2.0 Work/4.0 Data Analysis/4.6 Projects/velogames/")
@@ -27,7 +27,7 @@ league <- league_codes$league[league_no]
 Here's the non-spoiler 4min highlight clip on Youtube:
 <br>
 <br>
-https://youtu.be/agk6UGf69jU
+https://youtu.be/a4bfgbR9VM4
 <br>
 <br>
 <br>
@@ -39,7 +39,7 @@ https://youtu.be/agk6UGf69jU
 <br>
 <br>
 <br>
-A breakaway prevailed on last night's stage with Astana's Alexey Lutsenko taking the biggest win of his career by riding off from the break on the punishing final climb up to Alcossebre. A small group of GC contenders, including Froome, Contador and Chaves finished four and a half minutes later but with Froome still safely in the red leader's jersey. Somewhat surprisingly, American Tejay van Garderen (the wilting flower of Grand Tours and whipping bag of US cycling fans) finished only 8 seconds behind the Froome group and slipped into second place overall. Further time was lost by all the other GC combatants, including Aru, the Yates brothers, Nibali and Bardet. 
+A cyclist from the breakaway took victory for the second stage running with Tomasz Marczynski (Lotto Soudal) claiming the biggest win of his career ahead of Pawel Poljanski and Enric Mas. The group of main GC favourites were only 26 seconds back. Two things stood out on the stage, the strangest of which was American Tejay van Garderen's overall victory chances coming quite literally crashing down. The BMC team leader ate bitumen twice in the last 40 kilometres. Both crashes appeared fairly innocuous and looked more like rookie errors made by someone on a road bike for the first time. The other significant observation was the return to form of Alberto Contador who for a second stage put the GC contenders under pressure. El Clenbuterol attacked taking only Froome and Chaves, dropping the likes of Aru and Nibali. However the group came back together on the descent into the finish. It would appear the show isn't quite over for the Spanish champion on his swan-song race.
 <br> 
 <br>
 Results on cycling news:
@@ -244,7 +244,7 @@ ggplot(data = team_cu_scores, aes(x = stage, y = cu_stage, order = (team_cu_scor
 
 team_overall <- team_cu_scores %>%
   filter(stage == stage_no) %>% 
-  select("Team" = team,  "Directer" = directeur, "Total" = cu_stage) %>% 
+  select("Team" = team,  "Directeur" = directeur, "Total" = cu_stage) %>% 
   arrange(desc(Total))
 kable(team_overall)
 # View(team_overall)
