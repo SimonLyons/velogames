@@ -13,7 +13,7 @@ league_codes <- read.csv("2017_vuelta_velogames_leagues.csv")
 # Ask for an input
 # Should consider turning this file into a FUNCTION
 # input_stage <- as.integer(readline(prompt = "Enter the latest stage you would like to webscrape:"))
-input_stage <-6
+input_stage <-8
 
 for(l in 1:2){
   # Download league specific master table
