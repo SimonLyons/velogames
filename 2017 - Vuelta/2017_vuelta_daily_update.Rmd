@@ -9,14 +9,14 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ```{r, echo=FALSE}
 # Set stage number
-stage_no <- 8
+stage_no <- 9
 # Step 1: Load league details into R
 setwd("/home/a_friend/data_analysis/projects/velogames/2017 - Vuelta/")
 # setwd("C:/aa Simon Lyons/2.0 Work/4.0 Data Analysis/4.6 Projects/velogames/")
 league_codes <- read.csv("2017_vuelta_velogames_leagues.csv", stringsAsFactors = FALSE)
 # Change the number below maually from 1 to 3 to generate data
 # for each of the four velogames leagues
-league_no <-1
+league_no <-2
 league_code <- league_codes$league_no[league_no]
 league <- league_codes$league[league_no]
 ```
@@ -27,7 +27,7 @@ league <- league_codes$league[league_no]
 Here's the non-spoiler 4min highlight clip on Youtube:
 <br>
 <br>
-https://youtu.be/7dqo0PoQgQ8
+https://youtu.be/86xhwYTbFGI
 <br>
 <br>
 <br>
@@ -39,9 +39,9 @@ https://youtu.be/7dqo0PoQgQ8
 <br>
 <br>
 <br>
-Breakaway, breakaway. Another stage of the Vuelta, another breakaway (apparently tonight's Stage 8 suits a breakaway too!)
+Another stage for the breakaway, except this one was reeled in by the efforts of Team SKY and Cannondale-Drapac before the final climb of the day. With 500m to go Chris Froome put in a powerful acceleration, rewarding his team for their work in hauling in the breakaway and taking a commanding victory, with Chaves in second and Michael Woods in third. It was the Brit's first stage win in a Grand Tour since the 2016 Vuelta and it's already looking like the Tour de France champion has his first Vuelta a Espana title in the bag. At this point it's certainly his to lose with none of his GC rivals looking anywhere near as strong.
 <br>
-The Velogames site has not yet been updated with points for Stage 8, so this is a race results only email. Stage 7 featured an explosive final climb with splintered both the breakaway and the chasing GC contenders. Julian Alaphilippe was able to hang on to Rafal Majka as Majka accelerated up the final climb and was able to easily outpace Jan Polanc and Majka on the flat few hundred metres to the finish. It was a similar story with the GC boys, with Froome laying down the pain. Contador was able to go with the race leader and outsprinted him at the the line. The pair gained ground on everyone else. Nibali led a small group incliduding Aru, Chaves and Zakarin across the finish 17 seconds later. 
+Tonight is the first rest day, ahead of Stage 10 on Tuesday night which contains a First Category climb followed by a twenty kilometre descent to the finish. Custom made for the climbers with great descending skills like Nibali and Bardet. Should be exciting!
 <br>
 <br>
 Results on cycling news:
