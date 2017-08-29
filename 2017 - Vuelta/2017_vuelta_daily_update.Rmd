@@ -9,14 +9,14 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ```{r, echo=FALSE}
 # Set stage number
-stage_no <- 9
+stage_no <- 11
 # Step 1: Load league details into R
 setwd("/home/a_friend/data_analysis/projects/velogames/2017 - Vuelta/")
 # setwd("C:/aa Simon Lyons/2.0 Work/4.0 Data Analysis/4.6 Projects/velogames/")
 league_codes <- read.csv("2017_vuelta_velogames_leagues.csv", stringsAsFactors = FALSE)
 # Change the number below maually from 1 to 3 to generate data
 # for each of the four velogames leagues
-league_no <-2
+league_no <-1
 league_code <- league_codes$league_no[league_no]
 league <- league_codes$league[league_no]
 ```
@@ -27,7 +27,7 @@ league <- league_codes$league[league_no]
 Here's the non-spoiler 4min highlight clip on Youtube:
 <br>
 <br>
-https://youtu.be/86xhwYTbFGI
+https://youtu.be/15Q0dUNT0Ug
 <br>
 <br>
 <br>
@@ -39,9 +39,10 @@ https://youtu.be/86xhwYTbFGI
 <br>
 <br>
 <br>
-Another stage for the breakaway, except this one was reeled in by the efforts of Team SKY and Cannondale-Drapac before the final climb of the day. With 500m to go Chris Froome put in a powerful acceleration, rewarding his team for their work in hauling in the breakaway and taking a commanding victory, with Chaves in second and Michael Woods in third. It was the Brit's first stage win in a Grand Tour since the 2016 Vuelta and it's already looking like the Tour de France champion has his first Vuelta a Espana title in the bag. At this point it's certainly his to lose with none of his GC rivals looking anywhere near as strong.
+Italian Matteo Trentin is establishing himself as the form rider of the Vuelta 2017 as the Quickstep-Floors rider took his second stage victory under very different circumstances to the mass bunch sprint finish of Stage 4. Trentin was part of a breakaway separating itself at the 80km mark and was able to stay with a small group as it ascended the final nasty climb of the Collado Bermejo. He was then able to stick to descending fastman Jose Joaquin Rojas with Trentin easily overpowering the Spaniard for the Stage victory in the sprint. 
 <br>
-Tonight is the first rest day, ahead of Stage 10 on Tuesday night which contains a First Category climb followed by a twenty kilometre descent to the finish. Custom made for the climbers with great descending skills like Nibali and Bardet. Should be exciting!
+<br>
+Although Nibali attempted to put time into Froome on the technical and damp descent they finished together. Irishman Nicholas Roche was more successful with the same tactic and finished 29 seconds ahead of the Froome group. Enough to leapfrog him over Nibali into third spot overall.
 <br>
 <br>
 Results on cycling news:
