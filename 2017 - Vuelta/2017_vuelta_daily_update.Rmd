@@ -9,7 +9,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ```{r, echo=FALSE}
 # Set stage number
-stage_no <- 11
+stage_no <- 13
 # Step 1: Load league details into R
 setwd("/home/a_friend/data_analysis/projects/velogames/2017 - Vuelta/")
 # setwd("C:/aa Simon Lyons/2.0 Work/4.0 Data Analysis/4.6 Projects/velogames/")
@@ -27,7 +27,7 @@ league <- league_codes$league[league_no]
 Here's the non-spoiler 4min highlight clip on Youtube:
 <br>
 <br>
-https://youtu.be/JWVJdzpCZxM
+https://youtu.be/mtb869SaRBs
 <br>
 <br>
 <br>
@@ -39,7 +39,7 @@ https://youtu.be/JWVJdzpCZxM
 <br>
 <br>
 <br>
-A huge mountain top finish at the Observatorio Astronomico de Calar Alto located at over two thousand metres above sea level was always going to support a high level of action between the overall race contenders and last night's Stage 11 did not disappoint. Although twenty-three year old Astana rider Miguel Angel Lopez was able to produce a late surge that distanced Froome and the other GC contenders and allow him to claim the stage victory, the real action was all behind the diminutive Columbian (there's clearly a Columbian cycling factory marked 'diminutive'). Alberto Contador attacked several times but was eventually dropped, as were Fabio Aru, Nicholas Roche and Estaban Chaves. Vincenzo Nibali also attacked several times but finished on the wheel of Froome, fourteen seconds behind stage winner Lopez. A group containing Bardet, Contador and Zakarin was a further 16 seconds back with the other main contenders crossing the finish line well over a minute behind Froome and Nibali. Nibali climbs into second place with Chaves holding third narrowly over David de la Cruz.
+Tomasz Marczynski from Lotto-Soudal claimed his second Vuelta stage victory this year on a lumpy stage supportive of a breakaway. He was able to drop Omar Fraile (Dimension Data) and Jose Joaquin Rojas (Movistar) on the final climb and solo'd away to victory on the descent. Further back Alerberto Contador put his foot on the gas with yet more attacking. Chris Froome and Team SKY had things largely under control until Froome crashed twice on the descent. He still has the red leader's jersey but lost time to all of his main rivals. Contador is now back inside the top ten on GC. 
 <br>
 <br>
 <br>
