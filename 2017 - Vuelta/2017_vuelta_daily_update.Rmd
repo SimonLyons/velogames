@@ -9,7 +9,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ```{r, echo=FALSE}
 # Set stage number
-stage_no <- 15
+stage_no <- 16
 # Step 1: Load league details into R
 setwd("/home/a_friend/data_analysis/projects/velogames/2017 - Vuelta/")
 # setwd("C:/aa Simon Lyons/2.0 Work/4.0 Data Analysis/4.6 Projects/velogames/")
@@ -27,7 +27,7 @@ league <- league_codes$league[league_no]
 Here's the non-spoiler 4min highlight clip on Youtube:
 <br>
 <br>
-https://youtu.be/3w7OKRpIxhY
+https://youtu.be/vVx1ZwoOSqM
 <br>
 <br>
 <br>
@@ -39,12 +39,7 @@ https://youtu.be/3w7OKRpIxhY
 <br>
 <br>
 <br>
-A big Happy Fathers' Day shout out. I hope you find a way to enjoy a fabulous day with your kids or do something special with your Dad. Stage 14 was signature Vuelta mountain goat profile with the first out-of-category climb of the Vuelta taking the riders to a finish at 1,800m. 
-<br>
-<br>
-Bora-Hansgrohe team leader Rafal Majka, who lost buckets of time during the first week and is out of GC contention, was the sole member of the breakaway to prevail, taking the stage victory with a small gap over a hard-chasing group of GC favourites. All the main action of the stage was behind him during the last 5km of the climb to La Pandera. Bardet and Chaves tooks turns to attack but were eventually gapped and lost time to Froome. Nibali and Contador brought the real fight and took off in the hunt for Majka in addition to building a time gap over Froome. But the Sky juggernaut stuck stoutly to their normal gameplan of riding tempo (and presumably to wattage) and eventually cynched off the advantage. Big names including Fabio Aru and Roman Bardet were shed in the process. Aru's team mate Miguel Angel Lopez launched a searing attack inside the last 2km and crossed the line in second place. He was shortly followed by a small group containing Nibali, Froome, Zakarin and Kelderman, with Contador just a few seconds later.  
-<br>
-Time lost by Chaves means the Orica-Scott team leader dropped from third to fifth, with Sunweb captain Kelderman now in third, Zakarin fourth. Expect more of the same GC fireworks tonight with the short Stage 15 finishing at an even higher altitude. Riders will battle up the 2,510m summit of the Sierra Nevada ski resort. Woo hoo!
+With a rest day immediately ahead and the finish line atop the highest point of this year's Vuelta last night's Stage 15 was always expected to draw our contenders in their battle for podium spots. Adding to his victory on Stage 11, the small statured Miguel Ángel López from team Astana launched a searing attack with around three kilometres to go on the final climb, sharply leaving the best climbers in the world behind. Efforts earlier by Nibali and Contador amounted to nothing with Team Sky slowly dragging both in. Just prior to the one kilometre banner Katusha team leader Zakarin bolted off the front, not elicting any significant reaction from SKY. Shortly afterwards Condator faded away and Fabio Aru lost touch with the Froome group. López, known to Columbian fans as 'Superman' crossed the finish line alone at Alto Hoya de la Mora with Zakarin a further 36 seconds back. Wilco Kelderman finished third however Zakarin secured enough time to oust Welderman from third spot overall. 
 <br>
 <br>
 Results on cycling news:
