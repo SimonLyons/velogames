@@ -9,7 +9,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ```{r, echo=FALSE}
 # Set stage number
-stage_no <- 16
+stage_no <- 17
 # Step 1: Load league details into R
 setwd("/home/a_friend/data_analysis/projects/velogames/2017 - Vuelta/")
 # setwd("C:/aa Simon Lyons/2.0 Work/4.0 Data Analysis/4.6 Projects/velogames/")
@@ -39,7 +39,10 @@ https://youtu.be/vVx1ZwoOSqM
 <br>
 <br>
 <br>
-With a rest day immediately ahead and the finish line atop the highest point of this year's Vuelta last night's Stage 15 was always expected to draw our contenders in their battle for podium spots. Adding to his victory on Stage 11, the small statured Miguel Ángel López from team Astana launched a searing attack with around three kilometres to go on the final climb, sharply leaving the best climbers in the world behind. Efforts earlier by Nibali and Contador amounted to nothing with Team Sky slowly dragging both in. Just prior to the one kilometre banner Katusha team leader Zakarin bolted off the front, not elicting any significant reaction from SKY. Shortly afterwards Condator faded away and Fabio Aru lost touch with the Froome group. López, known to Columbian fans as 'Superman' crossed the finish line alone at Alto Hoya de la Mora with Zakarin a further 36 seconds back. Wilco Kelderman finished third however Zakarin secured enough time to oust Welderman from third spot overall. 
+Race leader Chris Froome extended his buffer over all of his rivals by winning Stage 16 in commanding fashion. Wilco Kelderman finished in a time 29 seconds down on the Team SKY leader to take second place and sneak over Ilnur Zakarin into third position on GC. Vincenzo Nibali was 57 seconds behind Froome, just ahead of Zakarin.
+<br>
+<br>
+The big losers for the stage were Fabio Aru and Estaban Chaves who lost more time than it takes Fiorini to change his third flat and fell down the GC standings. 
 <br>
 <br>
 Results on cycling news:
