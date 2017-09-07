@@ -12,6 +12,7 @@ knitr::opts_chunk$set(echo = TRUE)
 stage_no <- 17
 # Step 1: Load league details into R
 setwd("/home/a_friend/data_analysis/projects/velogames/2017 - Vuelta/")
+# setwd("C:/aa Simon Lyons/2.0 Work/4.0 Data Analysis/4.6 Projects/velogames/2017 - Vuelta/")
 # setwd("C:/aa Simon Lyons/2.0 Work/4.0 Data Analysis/4.6 Projects/velogames/")
 league_codes <- read.csv("2017_vuelta_velogames_leagues.csv", stringsAsFactors = FALSE)
 # Change the number below maually from 1 to 3 to generate data
@@ -27,7 +28,7 @@ league <- league_codes$league[league_no]
 Here's the non-spoiler 4min highlight clip on Youtube:
 <br>
 <br>
-https://youtu.be/vVx1ZwoOSqM
+https://youtu.be/wo-LIKpqSM0
 <br>
 <br>
 <br>
@@ -39,10 +40,7 @@ https://youtu.be/vVx1ZwoOSqM
 <br>
 <br>
 <br>
-Race leader Chris Froome extended his buffer over all of his rivals by winning Stage 16 in commanding fashion. Wilco Kelderman finished in a time 29 seconds down on the Team SKY leader to take second place and sneak over Ilnur Zakarin into third position on GC. Vincenzo Nibali was 57 seconds behind Froome, just ahead of Zakarin.
-<br>
-<br>
-The big losers for the stage were Fabio Aru and Estaban Chaves who lost more time than it takes Fiorini to change his third flat and fell down the GC standings. 
+Here's the late update on scoring for our Velogames squads.  As discussed in my earlier email today, it was a terrific stage with cracks showing in the Froome and Team SKY armour and Contador showing form reminiscent of the best from him storied career. 
 <br>
 <br>
 Results on cycling news:
