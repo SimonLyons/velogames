@@ -17,7 +17,7 @@ setwd("/home/a_friend/data_analysis/projects/velogames/2017 - Vuelta/")
 league_codes <- read.csv("2017_vuelta_velogames_leagues.csv", stringsAsFactors = FALSE)
 # Change the number below maually from 1 to 3 to generate data
 # for each of the four velogames leagues
-league_no <-1
+league_no <-2
 league_code <- league_codes$league_no[league_no]
 league <- league_codes$league[league_no]
 ```
@@ -28,7 +28,7 @@ league <- league_codes$league[league_no]
 Here's the non-spoiler 4min highlight clip on Youtube:
 <br>
 <br>
-https://youtu.be/wo-LIKpqSM0
+https://youtu.be/cOVrKPDaxbU
 <br>
 <br>
 <br>
@@ -40,7 +40,6 @@ https://youtu.be/wo-LIKpqSM0
 <br>
 <br>
 <br>
-Here's the late update on scoring for our Velogames squads.  As discussed in my earlier email today, it was a terrific stage with cracks showing in the Froome and Team SKY armour and Contador showing form reminiscent of the best from him storied career. 
 <br>
 <br>
 Results on cycling news:
