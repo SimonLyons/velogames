@@ -9,7 +9,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ```{r, echo=FALSE}
 # Set stage number
-stage_no <- 18
+stage_no <- 19
 # Step 1: Load league details into R
 setwd("/home/a_friend/data_analysis/projects/velogames/2017 - Vuelta/")
 # setwd("C:/aa Simon Lyons/2.0 Work/4.0 Data Analysis/4.6 Projects/velogames/2017 - Vuelta/")
@@ -17,7 +17,7 @@ setwd("/home/a_friend/data_analysis/projects/velogames/2017 - Vuelta/")
 league_codes <- read.csv("2017_vuelta_velogames_leagues.csv", stringsAsFactors = FALSE)
 # Change the number below maually from 1 to 3 to generate data
 # for each of the four velogames leagues
-league_no <-2
+league_no <-1
 league_code <- league_codes$league_no[league_no]
 league <- league_codes$league[league_no]
 ```
@@ -28,7 +28,7 @@ league <- league_codes$league[league_no]
 Here's the non-spoiler 4min highlight clip on Youtube:
 <br>
 <br>
-https://youtu.be/cOVrKPDaxbU
+https://youtu.be/MJ7LcgKRj6o
 <br>
 <br>
 <br>
@@ -40,6 +40,13 @@ https://youtu.be/cOVrKPDaxbU
 <br>
 <br>
 <br>
+Stage 19 suited a breakaway and soon two large groups had separated themselves from the peleton. Before the final climb of the day the two had become one and on the slopes of the Alto de San Martín Ivan Garcia took off in search of Spain's first stage victory at this year's Vuelta. The Bahrain-Merida rider was soon chased by the baguette-eating Roman Bardet, also looking to salvage something from his Vuelta. However these two rider could not capitalise on the gap they'd established and were caught by a small group of their breakaway companions on the descent and flat run into Gijón. With lots of jostling it was finally Belgian Thomas de Gendt who secured the second win for Lotto-Soudal in as many days. He won the small bunch sprint ahead of Jarlinson Pantano and Ivan Garcia Cortina.
+<br>
+<br>
+Further back, Alberto Contador again attempted to light things up for the overall contenders by attacking on the final climb. There will be no claims that Alberto cruised through his final race. Unfortunately he was caught on the flat run to the finish and the big names all finished together. 
+<br>
+<br>
+Tonight is the final real test for the GC combatants and has a particularly nasty finish on the ridiculous Angliru which has several sections pointing upwards with gradients at over 20%. Ouch!
 <br>
 <br>
 Results on cycling news:
