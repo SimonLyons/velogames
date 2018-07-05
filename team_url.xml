@@ -1,0 +1,2091 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en-US">
+
+<head>
+<meta charset="UTF-8">
+
+
+
+
+
+
+
+
+<title>Velogames Fantasy Cycling | Fantasy Tour de France 2017</title>
+
+
+
+
+
+ <link rel="icon" href="//www.velogames.com/tour-de-france/2017/images/favicon.png" type="image/x-icon" />
+
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="keywords" content="fantasy cycling, bicycling, cycling, tour de france, giro d'italia, vuelta a espana"> 
+<meta name="description" content="Fantasy Cycling games based on the professional cycling season, including Tour de France, Giro d'Italia, Vuelta a Espana and Spring Classics">
+
+
+
+<link rel="stylesheet" type="text/css" media="all" href="//www.velogames.com/tour-de-france/2017/style.css" />
+
+
+
+
+<!--[if lt IE 9]>
+<script src="//html5shim.googlecode.com/svn/trunk/html5.js">
+</script><![endif]-->
+
+
+<style type="text/css">
+
+		body 
+<!--		{
+  
+
+background-image: linear-gradient(to bottom, #1c1c1c, #1c1c1c 111px, #424242 111px, #424242 169px, #FAAB00 169px, #FAAB00 206px, #d8d8d8 206px, #d8d8d8 206px, #d8d8d8 240px ); 
+background-size:   100% 400px;
+background-repeat: no-repeat;
+   
+
+  
+  
+  
+  }
+  -->
+	
+	
+
+	
+
+
+
+.mts-subscribe input[type=submit],.title_box,.title_box_small,#commentform input#submit:hover,.post-info,.reply,.category-head,.currenttext,.pagination a:hover,.trend,.tagcloud a,.header-social a:hover {
+background-color:#FAAB00;
+}
+
+#navigation .menu .trending,.rtrm a,.related-posts a:hover span,.textwidget a,#commentform a,.copyrights a:hover,a,.sidebar.c-4-12 a:hover,footer .widget li a:hover {
+color:#ff5a0b;
+}
+
+
+	#leaderboard_box {
+    float: left;
+    width: 100%;
+    /* margin-top: 8px; */
+    padding-top: 12px;
+    padding-bottom: 12px;
+    background: #d8d8d8;
+}
+
+
+
+</style>
+
+
+
+
+
+<script type='text/javascript' src='//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js?ver=1.7.1'>
+</script>
+<script type='text/javascript' src='//ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/jquery-ui.min.js?ver=1.8.16'>
+</script>
+<script type='text/javascript' src='//www.velogames.com/tour-de-france/2017/js/modernizr.min.js?ver=4.0'>
+</script>
+<script type='text/javascript' src='//www.velogames.com/tour-de-france/2017/js/customscript.js?ver=4.0'>
+</script>
+<script type='text/javascript' src='//www.velogames.com/tour-de-france/2017/js/jquery.prettyPhoto.js?ver=4.0'>
+</script>
+
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+
+
+<!-- START 2014 STUFF-->
+
+
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-49496985-1', 'velogames.com');
+  ga('send', 'pageview');
+
+</script>
+
+
+
+
+
+<script type="text/javascript" src="//www.velogames.com/tour-de-france/2017/jquery.js"></script>
+<script type="text/javascript" src="//www.velogames.com/tour-de-france/2017/jquery-migrate.min.js"></script>
+
+
+
+<link type="text/css" media="screen" rel="stylesheet" href="//www.velogames.com/tour-de-france/2017/responsive-tables.css" />
+<script type="text/javascript" src="responsive-tables.js"></script>
+
+
+
+
+
+
+		
+		<script type="text/javascript" src="//www.velogames.com/tour-de-france/2017/jquery.ui.core.js"></script>
+		<script type="text/javascript" src="//www.velogames.com/tour-de-france/2017/jquery.ui.widget.js"></script>
+
+
+	<style type="text/css">
+		#owl-demo .item{
+  background: #b7bfc8;
+  padding: 5px 0px;
+  margin: 10px;
+  height: 22px;
+  color: #FFF;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  text-align: center;
+}
+.customNavigation{
+  text-align: center; 
+}
+//use styles below to disable ugly selection
+.customNavigation a{
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);  
+
+			}
+			
+			
+			
+			
+			.button {
+  background: #1c1c1c url(/images/image-shade.png) no-repeat right top;
+  color: #FFFFFF;
+  font-size: 13px;
+  display: inline-block;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.button.small {
+  padding: 12px;
+  padding-left: 20px;
+  padding-right: 45px;
+}
+
+.button:hover {
+  background: #FAAB00 url(/images/image-shade.png) no-repeat right top;
+  color: #1c1c1c;
+}
+
+			
+			
+		</style>
+
+		
+		
+		<!-- Important Owl stylesheet -->
+<link rel="stylesheet" href="//www.velogames.com/tour-de-france/2017/owl.carousel.css">
+ 
+<!-- Default Theme -->
+<link rel="stylesheet" href="//www.velogames.com/tour-de-france/2017/owl.theme.css">
+ 
+ 
+<!-- Include js plugin -->
+<script src="//www.velogames.com/tour-de-france/2017/owl.carousel.js"></script> 
+		
+		
+		
+<script type='text/javascript'>
+  var googletag = googletag || {};
+  googletag.cmd = googletag.cmd || [];
+  (function() {
+    var gads = document.createElement('script');
+    gads.async = true;
+    gads.type = 'text/javascript';
+    var useSSL = 'https:' == document.location.protocol;
+    gads.src = (useSSL ? 'https:' : 'http:') +
+      '//www.googletagservices.com/tag/js/gpt.js';
+    var node = document.getElementsByTagName('script')[0];
+    node.parentNode.insertBefore(gads, node);
+  })();
+</script>
+
+<script type='text/javascript'>
+  googletag.cmd.push(function() {
+    googletag.defineSlot('/119805056/velogames-test-mpu-sidebar-top', [300, 250], 'div-gpt-ad-1429187805116-0').addService(googletag.pubads());
+    googletag.defineSlot('/119805056/test_bottom_mpu', [300, 250], 'div-gpt-ad-1429187805116-1').addService(googletag.pubads());
+    googletag.pubads().enableSingleRequest();
+    googletag.enableServices();
+  });
+</script>
+		
+		
+		
+		<style type="text/css">	
+	@font-face {
+	font-family: 'Clear Sans';
+	src: url('//www.velogames.com/shared-assets/fonts/ClearSans-Regular.eot');
+	src: url('//www.velogames.com/shared-assets/fonts/ClearSans-Regular.eot?#iefix') format('embedded-opentype'),
+		url('//www.velogames.com/shared-assets/fonts/ClearSans-Regular.woff') format('woff'),
+		url('//www.velogames.com/shared-assets/fonts/ClearSans-Regular.ttf') format('truetype'),
+		url('//www.velogames.com/shared-assets/fonts/ClearSans-Regular.svg#clear_sans_regular') format('svg');
+	font-weight: 400;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'Clear Sans';
+	src: url('//www.velogames.com/shared-assets/fonts/ClearSans-Medium.eot');
+	src: url('//www.velogames.com/shared-assets/fonts/ClearSans-Medium.eot?#iefix') format('embedded-opentype'),
+		url('//www.velogames.com/shared-assets/fonts/ClearSans-Medium.woff') format('woff'),
+		url('//www.velogames.com/shared-assets/fonts/ClearSans-Medium.ttf') format('truetype'),
+		url('//www.velogames.com/shared-assets/fonts/ClearSans-Medium.svg#clear_sans_bold') format('svg');
+	font-weight: 500;
+	font-style: normal;
+}
+
+
+
+
+body { font-family: 'Clear Sans', Arial, sans-serif; }
+</style>	
+
+		
+		
+
+
+		
+		
+
+		
+		
+<!-- START User System Plug In and User Status Check --> 
+﻿<link rel="stylesheet" href="//www.velogames.com/giro-ditalia/2014/easylogin/assets/css/easylogin.css">
+<link rel="stylesheet" href="//www.velogames.com/giro-ditalia/2014/easylogin/assets/css/imgPicker.css">
+<script src="//www.velogames.com/giro-ditalia/2014/easylogin/assets/js/bootstrap.min.js"></script>
+<script src="//www.velogames.com/giro-ditalia/2014/easylogin/assets/js/imgPicker.min.js"></script>
+<script src="//www.velogames.com/giro-ditalia/2014/easylogin/assets/js/easylogin.min.js"></script>
+<script>
+	EasyLogin.config = {
+		script_url: '//www.velogames.com/giro-ditalia/2014/easylogin/',
+		ajax_url: '//www.velogames.com/giro-ditalia/2014/easylogin/includes/ajax.php'
+	};
+</script><!-- Sign in Modal -->
+<div class="modal fade easylogin" id="EL_signin" tabindex="-1" role="dialog" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				<h4 class="modal-title">Sign in</h4>
+			</div>
+			<form action="" method="POST" class="easylogin-form">
+			<div class="modal-body">
+				<div class="alert alert-warning">
+					<button type="button" class="close dismiss">&times;</button><span></span>
+				</div>
+				<!-- <div class="form-group connect-with">
+					<div class="info">Connect with a social network</div>
+								        			        				</div> -->
+				<div class="info">Sign in with your email address or username</div>
+				<div class="form-group">
+					<label>Email or Username <br>
+						<input type="text" name="username" class="form-input">
+					</label>
+					<!-- <input type="text" name="username" class="form-input" placeholder="Enter your username or email address"> -->
+				</div>	
+				<div class="form-group">
+					<label>Password <br>
+						<input type="password" name="password" class="form-input">
+					</label>
+					<!-- <input type="password" name="password" class="form-input" placeholder="Enter your password"> -->
+				</div>
+				<div class="form-group">
+					<label style="font-weight: normal;">
+						<input type="checkbox" name="remember" value="1">
+						Remember my name
+					</label>
+				</div>
+			</div>
+			<div class="modal-footer">
+				<button type="submit" class="btn btn-primary">Sign in</button>
+				<span class="ajax-loader"></span>
+				<div class="pull-right align-right">
+					<a href="#" data-toggle="modal" data-target="#EL_forgot_pass">Forgot Password</a><br>
+				<!--	<a href="#" data-toggle="modal" data-target="#EL_resend_activation">Resend activation email</a> -->
+				</div>
+			</div>
+			<input type="hidden" name="action" value="signin">
+			</form>
+		</div>
+	</div>
+</div>
+<!-- Sign up Modal -->
+<div class="modal fade easylogin" id="EL_signup" tabindex="-1" role="dialog" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				<h4 class="modal-title">Sign up</h4>
+			</div>
+			<form action="" method="POST" class="easylogin-form">
+			<div class="modal-body">
+				<div class="alert alert-warning">
+					<button type="button" class="close dismiss">&times;</button><span></span>
+				</div>
+				<!-- <div class="form-group connect-with">
+					<div class="info">Connect with a social network</div>
+								        			        				</div> -->
+				<div class="info">Sign up with your email address</div>
+								<div class="form-group">
+					<label>Username <br>
+						<input type="text" name="username" class="form-input">
+					</label>
+					<!-- <input type="text" name="username" class="form-input" placeholder="Enter your username"> -->
+				</div>	
+								<div class="form-group">
+					<label>Email <br>
+						<input type="text" name="email" class="form-input">
+					</label>
+					<!-- <input type="text" name="email" class="form-input" placeholder="Enter your email address"> -->
+				</div>
+								<div class="form-group">
+					<label>Full Name <br>
+						<input type="text" name="name" class="form-input">
+					</label>
+					<!-- <input type="text" name="name" class="form-input" placeholder="Enter your full name"> -->
+				</div>
+								<div class="form-group">
+					<label>Password <br>
+						<input type="password" name="password" class="form-input">
+					</label>
+					<!-- <input type="text" name="password" class="form-input" placeholder="Enter your password"> -->
+				</div>
+							</div>
+			<div class="modal-footer">
+				<button type="submit" class="btn btn-primary">Sign up</button>
+				<span class="ajax-loader"></span>
+				<div class="pull-right align-right">
+					<br>
+					<a href="#" data-toggle="modal" data-target="#EL_signin">Back to Sign in</a><br>
+				</div>
+			</div>
+			<input type="hidden" name="action" value="signup">
+			</form>
+		</div>
+	</div>
+</div>
+<!-- Sign up complete Modals -->
+<div class="modal fade easylogin" id="EL_signup_complete1" tabindex="-1" role="dialog" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				<h4 class="modal-title">Confirm your account !</h4>
+			</div>
+			<div class="modal-body">
+				<p>We emailed you to make sure we have the right email address.</p>
+    			<p>Once you click the activation link in that email, you`ll be ready to sign in.</p>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="modal fade easylogin" id="EL_signup_complete2" tabindex="-1" role="dialog" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				<h4 class="modal-title">Sign up complete !</h4>
+			</div>
+			<div class="modal-body">
+				<p>Your account has been created !</p>
+				<p>You can <a href="#" data-toggle="modal" data-target="#EL_signin">sign in</a> now.</p>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- Forgot password Modal -->
+<div class="modal fade easylogin" id="EL_forgot_pass" tabindex="-1" role="dialog" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				<h4 class="modal-title">Forgot Password</h4>
+			</div>
+			<form action="" method="POST" class="easylogin-form">
+			<div class="modal-body">
+				<div class="alert alert-warning">
+					<button type="button" class="close dismiss">&times;</button><span></span>
+				</div>
+				<div class="form-group">
+					<label>Email <br>
+						<input type="text" name="email" class="form-input">
+					</label>
+					<!-- <input type="text" name="email" class="form-input" placeholder="Enter your email address"> -->
+				</div>
+							</div>
+			<div class="modal-footer">
+				<button type="submit" class="btn btn-primary">Send instructions</button>
+				<span class="ajax-loader"></span>
+				<div class="pull-right align-right">
+					<br>
+					<a href="#" data-toggle="modal" data-target="#EL_signin">Back to Sign in</a><br>
+				</div>
+			</div>
+			<input type="hidden" name="action" value="forgot_pass">
+			</form>
+		</div>
+	</div>
+</div>
+<div class="modal fade easylogin" id="EL_recover_sent" tabindex="-1" role="dialog" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				<h4 class="modal-title">Forgot Password</h4>
+			</div>
+			<div class="modal-body">
+				<p>A recover link has been sent to your email address.</p>
+				<p>Once you click that link you`ll be able to change your password.</p>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- Resend activation email Modal -->
+<div class="modal fade easylogin" id="EL_resend_activation" tabindex="-1" role="dialog" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				<h4 class="modal-title">Activation email</h4>
+			</div>
+			<form action="" method="POST" class="easylogin-form">
+			<div class="modal-body">
+				<div class="alert alert-warning">
+					<button type="button" class="close dismiss">&times;</button><span></span>
+				</div>
+				<div class="form-group">
+					<label>Email <br>
+						<input type="text" name="email" class="form-input">
+					</label>
+					<!-- <input type="text" name="email" class="form-input" placeholder="Enter your email address"> -->
+				</div>
+							</div>
+			<div class="modal-footer">
+				<button type="submit" class="btn btn-primary">Send</button>
+				<span class="ajax-loader"></span>
+				<div class="pull-right align-right">
+					<br>
+					<a href="#" data-toggle="modal" data-target="#EL_signin">Back to Sign in</a><br>
+				</div>
+			</div>
+			<input type="hidden" name="action" value="resend_activation">
+			</form>
+		</div>
+	</div>
+</div>
+<div class="modal fade easylogin" id="EL_recover_sent" tabindex="-1" role="dialog" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				<h4 class="modal-title">Forgot Password</h4>
+			</div>
+			<div class="modal-body">
+				<p>A recover link has been sent to your email address.</p>
+				<p>Once you click that link you`ll be able to change your password.</p>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- Activate completed Modal -->
+<div class="modal fade easylogin" id="EL_account_activated" tabindex="-1" role="dialog" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				<h4 class="modal-title">Account activated</h4>
+			</div>
+			<div class="modal-body">
+				<p>Your account has been activated !</p>
+				<p>You can <a href="#" data-toggle="modal" data-target="#EL_signin">sign in</a> now.</p>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- Recover password Modal -->
+<div class="modal fade easylogin" id="EL_recover_pass" tabindex="-1" role="dialog" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				<h4 class="modal-title">Change Password</h4>
+			</div>
+			<form action="" method="POST" class="easylogin-form">
+			<div class="modal-body">
+				<div class="alert alert-warning">
+					<button type="button" class="close dismiss">&times;</button><span></span>
+				</div>
+				<div class="form-group">
+					<label>New Password <br>
+						<input type="password" name="password" class="form-input">
+					</label>
+				</div>	
+				<div class="form-group">
+					<label>Confirm Password <br>
+						<input type="password" name="confirm_password" class="form-input">
+					</label>
+				</div>
+			</div>
+			<div class="modal-footer">
+				<button type="submit" class="btn btn-primary">Change Password</button>
+				<span class="ajax-loader"></span>
+			</div>
+			<input type="hidden" name="action" value="recover_pass">
+			<input type="hidden" name="recover_key">
+			</form>
+		</div>
+	</div>
+</div>
+
+		
+		
+		
+	
+<!-- END User System Plug In and User Status Check -->
+	
+
+
+	
+	<!-- START Button Styling -->
+
+	<style type="text/css">		
+		* {
+  -webkit-border-radius: 0 !important;
+     -moz-border-radius: 0 !important;
+          border-radius: 0 !important;
+}
+
+
+
+.btn {
+display: inline-block;
+font-weight: normal;
+text-align: center;
+vertical-align: middle;
+cursor: pointer;
+background-image: none;
+border: 1px solid transparent;
+white-space: nowrap;
+padding: 12px 12px;
+font-size: 14px;
+line-height: 1.428571429;
+border-radius: 4px;
+-webkit-user-select: none;
+-moz-user-select: none;
+-ms-user-select: none;
+-o-user-select: none;
+user-select: none;
+margin: 2px;
+width: 88%;
+}
+
+
+	</style>
+	
+	<!-- END Button Styling -->
+	
+		<!-- START Table Styling -->
+	<style type="text/css">		
+	
+
+tbody tr:nth-child(odd) {
+    background-color: #ffffff;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #efefef;
+}
+
+
+thead tr:first-child {
+    background-color: #FAAB00;
+    color: #FFFFFF;
+}
+
+  
+	</style>
+	
+		<!-- END Table Styling -->
+	
+	
+		<style type="text/css">	
+	table.team-info-panel {
+text-align: center;
+margin-bottom: 0px;
+font-size: 12px;
+background: #F2F2F2;
+min-height: 400px;
+}
+
+	table.premium-panel {
+text-align: center;
+margin-bottom: 0px;
+font-size: 12px;
+background: #F2F2F2;
+}
+
+
+.subcategory-item {
+    background-color: #DDD;
+  font-size: 13px;
+  text-align: center;
+  display: block;
+  margin: 1px 0 1px 1px;
+  padding: 8px 0 8px 0;
+  color: #5a584f;
+    min-height: 100px;
+  }
+  
+  .subcategory-item-selected {
+    background-color: #006600;
+  font-size: 13px;
+  text-align: center;
+  display: block;
+  margin: 1px 0 1px 1px;
+  padding: 8px 0 8px 0;
+  color: #eee;
+    min-height: 100px;
+  }
+  
+  
+  .subcategory-item a{
+  color: #5a584f;
+  }
+  
+    .subcategory-item-selected a{
+  color: #000000;
+  }
+  
+  
+  .subcategories-carousel {
+  background-color: #eaeaea;
+  margin-bottom: 15px;
+}
+
+.subcategories-carousel .owl-prev, .subcategories-carousel .owl-next {
+  margin-top: 6px;
+  text-align: center;
+  font-size: 14px;
+  width: 22px;
+  right: 0px;
+  top: 32%;
+}
+
+.subcategories-carousel .owl-prev, .subcategories-carousel .owl-next, .subcategories-carousel .owl-nav .fa {
+  line-height: 26px;
+}
+
+.owl-prev {
+  left: 0;
+}
+
+.owl-prev, .owl-next {
+  position: absolute;
+  display: inline-block;
+  top: 50%;
+  margin-top: -18px;
+  text-align: center;
+  font-size: 28px;
+  width: 36px;
+  line-height: 36px;
+  color: #ffffff;
+  background-color: #d2d5da;
+}
+
+		</style>
+		
+<link rel="stylesheet" id="jqeasytooltip.css" href="jquery.qtip.css" type="text/css" media="all">
+<link rel="stylesheet" href="accordion.css" type="text/css">
+
+
+</head>
+
+
+
+
+
+
+<body id ="blog" class="home blog main cat-32-id cat-49-id"> 
+
+<header class="main-header">
+
+
+
+<div class="top_leaderboard">
+
+</div>
+
+
+<div class="logo-wrap">
+<div class="main-container">
+<a href="https://www.velogames.com/"><img src="//www.velogames.com/tour-de-france/2017/images/velogames_header.png" alt="Velogames Fantasy Cycling"></a>
+</div>
+</div>
+
+
+
+
+
+
+</header>
+<header class="main-header" style="background: #424242";>
+<div class="main-navigation"  style="background-color: #3c3c3c";> <nav id="navigation" >
+
+<ul id="menu-main-navigation" class="menu">
+
+
+
+
+<li style="float:right; background-color: #1c1c1c;"><a href="//www.velogames.com/giro-rosa/2017/" style="background-color: #424242;">Giro Rosa 2017</a></li>
+<li style="float:right;"><a href="//www.velogames.com/king-of-mountains-tdf/2017/" style="background-color: #424242;">King of the Mountains 2017</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+</div>
+
+</header>
+
+<header class="main-header">
+
+<div class="main-navigation"> <nav id="navigation" >
+
+<ul id="menu-main-navigation" class="menu">
+<li><a href="//www.velogames.com/tour-de-france/2017">Home</a></li>
+
+
+<li><a href="//www.velogames.com/tour-de-france/2017/rules.php">Rules</a>
+<ul class="sub-menu">
+<li><a href="//www.velogames.com/tour-de-france/2017/rules.php">Rules</a></li>
+<li><a href="//www.velogames.com/tour-de-france/2017/scores.php">Scoring System</a></li>
+</ul></li>
+
+
+<li><a href="//www.velogames.com/tour-de-france/2017/teamscores.php">Standings</a>
+<ul class="sub-menu">
+<li><a href="//www.velogames.com/tour-de-france/2017/ridescore.php">Rider Standings</a></li>
+<li><a href="//www.velogames.com/tour-de-france/2017/teamscore.php">Team Standings</a></li>
+<li><a href="//www.velogames.com/tour-de-france/2017/grand_tour_ranking.php">Grand Tours Combined</a></li>
+</ul>
+</li>
+
+<li><a href="//www.velogames.com/tour-de-france/2017/riders.php">Riders</a></li>
+<li><a href="//www.velogames.com/tour-de-france/2017/races.php">Stages</a></li>
+<li><a href="//www.velogames.com/tour-de-france/2017/prizes.php">Prizes</a></li>
+
+<li><a href="#">|</a></li>
+<li><a href="//www.velogames.com/">Other Games</a>
+<ul class="sub-menu">
+<li><a href="//www.velogames.com/king-of-mountains-tdf/2017/">King of the Mountains 2017</a></li>
+<li><a href="//www.velogames.com/giro-rosa/2017/">Giro Rosa 2017</a></li>
+<li><a href="//www.velogames.com/tour-de-france/2016/">Tour de France 2016</a></li>
+<li><a href="//www.velogames.com/giro-ditalia/2017/">Giro d'Italia 2017</a></li>
+<li><a href="//www.velogames.com/tour-de-suisse/2017/">Tour de Suisse 2017</a></li>
+<li><a href="//www.velogames.com/criterium-du-dauphine/2017/">Criterium du Dauphine 2017</a></li>
+<li><a href="//www.velogames.com/spring-classics/2017/">Spring Classics 2017</a></li>
+<li><a href="//www.velogames.com/vuelta-a-espana/2016/">Vuelta a Espana 2016</a></li>
+</ul></li>
+<li><a href="#">|</a></li>
+
+
+
+
+
+
+ 
+<li style="float:right; background-color: #faab00;"><a href="#">ENTRIES CLOSED</a></li>
+
+
+ 
+<li style="float:right; background-color: #faab00;"><a href="#"  data-toggle="modal" data-target="#EL_signin">Log In</a></li>
+
+
+ 
+
+
+
+
+
+
+
+
+
+</nav>
+
+</div>
+
+
+<div class="secondary-navigation" style="background: #faab00;"> <nav id="navigation" >
+<ul id="menu-main-navigation-1" class="menu">
+
+
+
+ 
+<li class="trending"><a href="#">ENTRIES CLOSED</a></li>
+
+
+ 
+<li class="trending"><a href="#"  data-toggle="modal" data-target="#EL_signin">Log In</a></li>
+
+
+ 
+
+
+
+
+
+
+
+
+</ul> </nav>
+</div>
+
+
+
+<div id="leaderboard_box" >
+<div style="text-align: center; vertical-align: middle;">
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Velogames Responsive Leaderboard -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-3108706310483609"
+     data-ad-slot="5911758853"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+</div>
+</div>
+
+
+
+
+
+
+
+
+</header>
+
+
+<link rel="stylesheet" type="text/css" media="all" href="//www.velogames.com/tour-de-france/2017/style_teamroster.css" />
+
+
+
+	<!-- Start Variables Gathering -->
+	
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+	
+	
+	
+	
+	
+	
+	<!-- End Variables Gathering -->
+
+<div class="main-container">
+
+<div id="page">
+
+<div class="content"> <article class="article">
+
+
+
+
+
+				<div class="title title--reviews cf">
+					<div class="brand">
+						<a href="#"><img src="images/logos/VEL.png" width="42"></a>
+					</div>
+
+					<h1 class="kilo">Maluka</h1>
+					<h2 span style="float:right;">MurrayMaluka</h2>
+				</div>
+				
+				
+				
+				
+
+<div class="featuredBox">
+
+
+
+
+
+
+
+
+
+
+
+<div class="firstpost excerpt"> 
+
+
+  <!-- Start Accordion wrapper (UL) - must have a class="dopt-accordion" // arrow-img is the indicator arrow type -->
+<ul class="dopt-accordion arrow-tri">
+ 
+    <!-- Start Accordion Panel - 1 - each panel in the accordion must be enclosed in a list item (li) -->
+    <li>
+     
+        <!-- Start Accordion Title Panel - each title panel must have an input (radio OR checkbox) and a lablel with a span inside it -->
+        <!-- The input id="accord-01" MUST be the same as the for="accord-01" label attribute -->
+        <!-- Each input (radio or checkbox) must have a class="title-option" and the label must have a class="title-panel" --->
+        <input id="accord-01" class="title-option" name="accordion-01" type="checkbox">
+        <label for="accord-01" class="title-panel" onclick=""> <span>Team Details: End-Of-Tour</span> </label>
+
+
+ <!-- Start Accordion Content Panel - leave both divs intact for easy styling and animation -->
+        <div class="accordion-content">
+            <div class="wrap-content">
+             
+
+
+<a href="teamroster.php?tid=59575e750727c106&ga=13">Overall</a> - 
+
+<a href="teamroster.php?tid=59575e750727c106&ga=13&st=1">Stage 1 (ITT)</a> - <a href="teamroster.php?tid=59575e750727c106&ga=13&st=2">Stage 2</a> - <a href="teamroster.php?tid=59575e750727c106&ga=13&st=3">Stage 3</a> - <a href="teamroster.php?tid=59575e750727c106&ga=13&st=4">Stage 4</a> - <a href="teamroster.php?tid=59575e750727c106&ga=13&st=5">Stage 5</a> - <a href="teamroster.php?tid=59575e750727c106&ga=13&st=6">Stage 6</a> - <a href="teamroster.php?tid=59575e750727c106&ga=13&st=7">Stage 7</a> - <a href="teamroster.php?tid=59575e750727c106&ga=13&st=8">Stage 8</a> - <a href="teamroster.php?tid=59575e750727c106&ga=13&st=9">Stage 9</a> - <a href="teamroster.php?tid=59575e750727c106&ga=13&st=10">Stage 10</a> - <a href="teamroster.php?tid=59575e750727c106&ga=13&st=11">Stage 11</a> - <a href="teamroster.php?tid=59575e750727c106&ga=13&st=12">Stage 12</a> - <a href="teamroster.php?tid=59575e750727c106&ga=13&st=13">Stage 13</a> - <a href="teamroster.php?tid=59575e750727c106&ga=13&st=14">Stage 14</a> - <a href="teamroster.php?tid=59575e750727c106&ga=13&st=15">Stage 15</a> - <a href="teamroster.php?tid=59575e750727c106&ga=13&st=16">Stage 16</a> - <a href="teamroster.php?tid=59575e750727c106&ga=13&st=17">Stage 17</a> - <a href="teamroster.php?tid=59575e750727c106&ga=13&st=18">Stage 18</a> - <a href="teamroster.php?tid=59575e750727c106&ga=13&st=19">Stage 19</a> - <a href="teamroster.php?tid=59575e750727c106&ga=13&st=20">Stage 20 (ITT)</a> - <a href="teamroster.php?tid=59575e750727c106&ga=13&st=21">Stage 21</a> -            
+
+
+
+                             <a href="teamroster.php?tid=59575e750727c106&ga=13&st=22">Final</a>
+
+                          
+           
+         
+      
+            </div>
+        </div> 
+        <!-- End Accordion Content Panel -->
+             
+    </li>
+    <!--  End Accordion Panel - 1 -->
+         
+</ul>
+<!-- End Accordion wrapper -->  		
+
+
+<div class="three_fifth"> 
+
+
+				
+
+
+
+
+
+
+
+<table class="team-info-panel">
+
+
+<tbody>
+
+
+
+<tr>
+<td><img src="/shared-assets/images/shirts/2017/BMC.png"><BR>Porte<br>0 pts</td>
+<td><img src="/shared-assets/images/shirts/2017/CDT.png"><BR>Uran<br>410 pts</td>
+<td><img src="/shared-assets/images/shirts/2017/BOH.png"><BR>Majka<br>0 pts</td>
+</tr>
+<tr>
+<td><img src="/shared-assets/images/shirts/2017/AST.png"><BR>Fuglsang<br>0 pts</td>
+<td><img src="/shared-assets/images/shirts/2017/DDD.png"><BR>Cavendish<br>0 pts</td>
+<td><img src="/shared-assets/images/shirts/2017/LTS.png"><BR>Gallopin<br>50 pts</td>
+</tr>
+<tr>
+<td><img src="/shared-assets/images/shirts/2017/LTS.png"><BR>De Gendt<br>90 pts</td>
+<td><img src="/shared-assets/images/shirts/2017/LTS.png"><BR>Hansen<br>0 pts</td>
+<td><img src="/shared-assets/images/shirts/2017/FDJ.png"><BR>Pinot<br>0 pts</td>
+</tr>
+
+
+
+</tbody>
+</table>
+
+
+
+
+	
+
+</div>
+
+
+
+
+
+
+
+
+<div class="two_fifth"> 
+
+<div class="pp-wrapper"><ul class="popular-posts">
+<li>
+<img height="48" width="48" src="images/logos/VEL.png" class="wp-post-image"><span style="font-size:14px"><b>Maluka</b><br>MurrayMaluka</span><time><i><span style="font-size:12px">Australia</span></i></time></li>
+<li>Team Cost: <b>100</b><time>Unused Credits: 0</time></li>
+<li><span class="wp-post-image">End-Of-Tour Score: <b>550</b><time>End-Of-Tour Rank: 31549 of 54711</time></span> Overall Score: <b>3177</b><time>Overall Rank: 40831 of 54711</time>
+</li>
+
+<li>Grand Tour Combined: <b>3177</b><time>Grand Tour Rank: 44361</time>
+</li>
+
+</ul></div>
+
+
+
+
+			
+
+
+
+
+
+
+
+
+
+
+
+ 
+</div>
+
+
+
+
+</div>
+
+
+
+<div class="secondpost excerpt"> 
+
+<div class="ad_background"> 
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Velogames MPU -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:300px;height:250px"
+     data-ad-client="ca-pub-3108706310483609"
+     data-ad-slot="1393829059"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+                                            
+</div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<div id="content_box">
+
+
+
+
+			
+			
+			
+			
+			<div class="post text-full-width ">
+			
+			
+		
+			
+			
+			
+			<h4 class="teamtitle" style="background-color:#1c1c1c">Scoring Details: End-Of-Tour</h4>
+			
+			</div>
+
+
+			
+				
+
+	
+
+
+
+
+
+
+
+
+
+
+
+<div class="post text-full-width ">
+
+
+
+
+
+	
+
+<table class="responsive">
+<thead> 
+
+<th width = "25%"></td>
+<th width = "20%" align="center">Team</td>
+<th width = "5%" align="center">Cost</td>
+<th width = "5%" align="center">Starter</td>
+<th width = "5%" align="center">Stg</td>
+<th width = "5%" align="center">GC</td>
+<th width = "5%" align="center">PC</td>
+<th width = "5%" align="center">KOM</td>
+<th width = "5%" align="center">Spr</td>
+<th width = "5%" align="center">Sum</td>
+<th width = "5%" align="center">Bky</td>
+<th width = "5%" align="center">Ass</td>
+<th width = "5%" align="center">Tot</td>
+</tr>
+</thead>
+<tbody>
+
+
+
+<tr><td><a href="riderprofile.php?rider=20170101">Richie Porte</a></td><td align="center">BMC Racing Team</td>
+<td align="center">22</td>
+
+<td align="center"><i class="fa fa-check fa-lg"></i></td>
+
+<td align="center">-</td>
+	
+
+
+
+<td align="center">-</td>
+	
+
+
+
+
+<td align="center">-</td>
+	
+
+
+<td align="center">-</td>
+	
+
+
+
+
+<td align="center">-</td>
+	
+
+
+
+
+<td align="center">-</td>
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<td align="center">-</td>
+	
+
+
+
+
+
+
+
+
+
+<td align="center">-</td>
+	
+
+
+
+
+
+<td align="center"><b>0</b></td></tr>
+
+
+<tr><td><a href="riderprofile.php?rider=20170162">Rigoberto Uran</a></td><td align="center">Cannondale-Drapac Pro Cycling Team</td>
+<td align="center">8</td>
+
+<td align="center"><i class="fa fa-check fa-lg"></i></td>
+
+<td align="center">-</td>
+	
+
+
+
+	
+<td align="center" rel="tip"  title="
+
+400 | 105km - 2nd in the overall classification<br />">
+400</td>
+
+
+
+
+
+
+	
+<td align="center" rel="tip"  title="
+
+10 | 105km - 9th in the points classification<br />">
+10</td>
+
+
+
+
+<td align="center">-</td>
+	
+
+
+
+
+<td align="center">-</td>
+	
+
+
+
+
+<td align="center">-</td>
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<td align="center">-</td>
+	
+
+
+
+
+
+
+
+
+
+<td align="center">-</td>
+	
+
+
+
+
+
+<td align="center"><b>410</b></td></tr>
+
+
+<tr><td><a href="riderprofile.php?rider=20170128">Rafal Majka</a></td><td align="center">Bora - Hansgrohe</td>
+<td align="center">12</td>
+
+<td align="center"><i class="fa fa-check fa-lg"></i></td>
+
+<td align="center">-</td>
+	
+
+
+
+<td align="center">-</td>
+	
+
+
+
+
+<td align="center">-</td>
+	
+
+
+<td align="center">-</td>
+	
+
+
+
+
+<td align="center">-</td>
+	
+
+
+
+
+<td align="center">-</td>
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<td align="center">-</td>
+	
+
+
+
+
+
+
+
+
+
+<td align="center">-</td>
+	
+
+
+
+
+
+<td align="center"><b>0</b></td></tr>
+
+
+
+
+
+
+<tr><td><a href="riderprofile.php?rider=20170039">Jakob Fuglsang</a></td><td align="center">Astana Pro Team</td>
+<td align="center">14</td>
+
+<td align="center"><i class="fa fa-check fa-lg"></i></td>
+
+<td align="center">-</td>
+	
+
+
+
+<td align="center">-</td>
+	
+
+
+
+
+<td align="center">-</td>
+	
+
+
+<td align="center">-</td>
+	
+
+
+
+
+<td align="center">-</td>
+	
+
+
+
+
+<td align="center">-</td>
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<td align="center">-</td>
+	
+
+
+
+
+
+
+
+
+
+<td align="center">-</td>
+	
+
+
+
+
+
+<td align="center"><b>0</b></td></tr>
+
+
+
+<tr><td><a href="riderprofile.php?rider=20170172">Mark Cavendish</a></td><td align="center">Dimension Data</td>
+<td align="center">10</td>
+
+<td align="center"><i class="fa fa-check fa-lg"></i></td>
+
+<td align="center">-</td>
+	
+
+
+
+<td align="center">-</td>
+	
+
+
+
+
+<td align="center">-</td>
+	
+
+
+<td align="center">-</td>
+	
+
+
+
+
+<td align="center">-</td>
+	
+
+
+
+
+<td align="center">-</td>
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<td align="center">-</td>
+	
+
+
+
+
+
+
+
+
+
+<td align="center">-</td>
+	
+
+
+
+
+
+<td align="center"><b>0</b></td></tr>
+
+
+<tr><td><a href="riderprofile.php?rider=20170237">Tony Gallopin</a></td><td align="center">Lotto Soudal</td>
+<td align="center">8</td>
+
+<td align="center"><i class="fa fa-check fa-lg"></i></td>
+
+<td align="center">-</td>
+	
+
+
+
+	
+<td align="center" rel="tip"  title="
+
+50 | 105km - 21st in the overall classification<br />">
+50</td>
+
+
+
+
+
+
+<td align="center">-</td>
+	
+
+
+<td align="center">-</td>
+	
+
+
+
+
+<td align="center">-</td>
+	
+
+
+
+
+<td align="center">-</td>
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<td align="center">-</td>
+	
+
+
+
+
+
+
+
+
+
+<td align="center">-</td>
+	
+
+
+
+
+
+<td align="center"><b>50</b></td></tr>
+
+
+
+
+<tr><td><a href="riderprofile.php?rider=20170232">Thomas De Gendt</a></td><td align="center">Lotto Soudal</td>
+<td align="center">6</td>
+
+<td align="center"><i class="fa fa-check fa-lg"></i></td>
+
+<td align="center">-</td>
+	
+
+
+
+<td align="center">-</td>
+	
+
+
+
+
+	
+<td align="center" rel="tip"  title="
+
+30 | 105km - 6th in the points classification<br />">
+30</td>
+
+
+
+
+	
+<td align="center" rel="tip"  title="
+
+60 | 105km - 3rd in the mountains classification<br />">
+60</td>
+
+
+
+
+
+
+<td align="center">-</td>
+	
+
+
+
+
+<td align="center">-</td>
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<td align="center">-</td>
+	
+
+
+
+
+
+
+
+
+
+<td align="center">-</td>
+	
+
+
+
+
+
+<td align="center"><b>90</b></td></tr>
+
+
+
+
+<tr><td><a href="riderprofile.php?rider=20170239">Adam Hansen</a></td><td align="center">Lotto Soudal</td>
+<td align="center">6</td>
+
+<td align="center"><i class="fa fa-check fa-lg"></i></td>
+
+<td align="center">-</td>
+	
+
+
+
+<td align="center">-</td>
+	
+
+
+
+
+<td align="center">-</td>
+	
+
+
+<td align="center">-</td>
+	
+
+
+
+
+<td align="center">-</td>
+	
+
+
+
+
+<td align="center">-</td>
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<td align="center">-</td>
+	
+
+
+
+
+
+
+
+
+
+<td align="center">-</td>
+	
+
+
+
+
+
+<td align="center"><b>0</b></td></tr>
+
+<tr><td><a href="riderprofile.php?rider=20170218">Thibaut Pinot</a></td><td align="center">FDJ</td>
+<td align="center">14</td>
+
+<td align="center"><i class="fa fa-check fa-lg"></i></td>
+
+<td align="center">-</td>
+	
+
+
+
+<td align="center">-</td>
+	
+
+
+
+
+<td align="center">-</td>
+	
+
+
+<td align="center">-</td>
+	
+
+
+
+
+<td align="center">-</td>
+	
+
+
+
+
+<td align="center">-</td>
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<td align="center">-</td>
+	
+
+
+
+
+
+
+
+
+
+<td align="center">-</td>
+	
+
+
+
+
+
+<td align="center"><b>0</b></td></tr>
+
+
+</tbody>
+</table>
+
+	
+
+
+
+
+
+</div>
+
+
+
+	
+
+<div class="firstpost excerpt"> 
+
+
+<h4 class="teamtitle" style="background-color:#1c1c1c">League Manager</h4>
+
+
+
+<table>
+<thead> 
+<tr>
+<th colspan = "2">Leagues</th>
+
+</thead>
+<tbody>
+
+<tr><td><a href="leaguescores.php?league=644381813">4051 Rouleurs</a></td><td><a href="leaguescores.php?league=644381813">View League</a></TR><tr><td colspan = "2" align="right" valign="middle"></td></TR>
+
+
+</tbody>
+</table>
+
+
+</div>
+
+
+
+<div class="secondpost excerpt"> 
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Velogames MPU -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:300px;height:250px"
+     data-ad-client="ca-pub-3108706310483609"
+     data-ad-slot="1393829059"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ </article>
+</div>
+</div>
+</div> 
+
+	<!-- FOOTER START -->
+
+<footer>
+<div class="logo-wrap">
+<div class="main-container">
+<div class="footer-widgets">
+<div class="f-widget f-widget-1">
+<div class="widget"><h3>About Velogames</h3>
+<div class="textwidget">Velogames Fantasy Cycling has been providing fantasy cycling contests since 1997, including games based around all three Grand Tours and the One Day Classics.
+<br /> 
+<br /> 
+The centrepiece event is the Velogames Fantasy Tour de France, which attracted over 42,000 teams in 2016.
+</div>
+</div>
+</div>
+<div class="f-widget f-widget-2">
+<div class="widget"><h3>Site Information</h3>
+<div class="tagcloud"><a href='http://www.velogames.com/tour-de-france/2017/about.php' class='tag-link-30' title='1 topic' style='font-size: 8pt;'>About Velogames</a> <a href='http://www.velogames.com/tour-de-france/2017/contact.php' class='tag-link-32' title='1 topic' style='font-size: 8pt;'>Contact Velogames</a> <a href='http://www.velogames.com/tour-de-france/2017/privacy.php' class='tag-link-234' title='1 topic' style='font-size: 8pt;'>Privacy Policy</a>
+</div>
+</div>
+</div>
+<div class="f-widget last">
+<div class="widget">
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="copyrights">
+<div class="row" id="copyright-note"> 
+<span><a href="http://www.velogames.com/" title="Velogames Fantasy Cycling">Velogames Fantasy Cycling</a> Copyright &copy; 2017.
+</span>
+<div class="top"><a href="#top" class="toplink">Back to Top &uarr;</a>
+</div>
+</div>
+</div></footer> 
+
+<script type="text/javascript" src="jquery.qtip.js"></script>
+
+ <script type="text/javascript">
+               
+                    $(document).ready(function() {
+
+                    $('[title!=""]').qtip({
+							 
+					position: {
+					my: 'left center',
+					target: 'mouse',
+					adjust: { x: 10, y: 2 }
+										},
+					
+					
+					
+					style: {
+					classes: 'qtip-tipsy'},
+                           
+					content: { text: true
+                            },
+                       
+                
+                        });
+                    });
+          </script>
+<script type="text/javascript">
+			$(document).ready(function() {
+ 
+  var owl = $("#owl-demo");
+ 
+  owl.owlCarousel({
+
+      items : 5, //10 items above 1000px browser width
+      itemsDesktop : [1000,5], //5 items between 1000px and 901px
+      itemsDesktopSmall : [900,3], // betweem 900px and 601px
+      itemsTablet: [600,3], //2 items between 600 and 0
+      itemsMobile : false, // itemsMobile disabled - inherit from itemsTablet option
+	  pagination : false,
+	  navRewind: false,
+	  navigation: true,
+	  navigationText:	["<i class=\"fa fa-angle-left\"><i></i></i>","<i class=\"fa fa-angle-right\"><i></i></i>"],
+	      afterInit: function(){
+        this.jumpTo(21)
+      }
+	  
+	  
+  });
+ 
+  // Custom Navigation Events
+  $(".next").click(function(){
+    owl.trigger('owl.next');
+  })
+  $(".prev").click(function(){
+    owl.trigger('owl.prev');
+  })
+ 
+ 
+});
+		</script>
+
+</body>
+</html>
