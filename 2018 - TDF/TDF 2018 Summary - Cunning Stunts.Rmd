@@ -1,0 +1,150 @@
+---
+title: "Cunning Stunts TDF 2018 The Non-Event"
+date: "10 Jul 18"
+output: 
+  html_document:
+    theme: "cosmo"   # I also like 'spacelab' and 'yeti'
+    highlight: "default"   # I also like 'tango'
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+### Introduction
+
+Although I'm not likely to live up to Ralphy's standard, I'm going to attempt daily scoring updates as we press on through the first of the Grand Tours this year. As a bit of a warm up, I thought it would be interesting to recap our 2016 Giro competition.
+
+With a full complement of 7 teams in our 2016 Giro Velogames competition there was the opportunity for 7 unique teams and 63 riders in total. However the short list of favoured athletes in each category ultimately led us to select our squads from only 41 of the overall 198 riders starting the Giro in Apeldoorn on the 6th of May, 2016.
+
+```{r cars, echo=FALSE, warning=FALSE, message=FALSE}
+
+setwd("/home/a_friend/data_analysis/projects/velogames/2018 - TDF/")
+league_codes <- read.csv("2018_TDF_velogames_leagues.csv", stringsAsFactors = FALSE)
+# Change the number below maually from 1 to 2 to generate data
+# for each of the four velogames leagues
+league_no <-1
+league_code <- league_codes$league_no[league_no]
+league <- league_codes$league[league_no]
+
+# Open .csv file with 2018 TDF data
+
+tdf_table_master <- read.csv(paste("tdf_table_master_", league_code, ".csv", sep = ""))
+# I don't know why, but 'periods' are being introduced into the column names
+# of the giro master table. The line below substitutes these out. Annoying!
+colnames(tdf_table_master) <- gsub("\\.", "", colnames(tdf_table_master))
+require(dplyr)
+require(knitr)
+
+# Calculate which riders were the most selected by our teams
+rider_cost <- tdf_table_master %>% 
+  filter(stage == 1) %>% 
+  group_by("Rider" = rider) %>% 
+  summarise("Times Selected" = n()) %>% 
+  arrange(desc(`Times Selected`))
+kable(rider_cost[1:12,])
+
+```
+
+The most popular rider by far was Dutchman `r rider_cost$Rider[1]` with five of us selecting the man who defaulted to a pro cycling career after not securing a place in medical school.
+
+
+```
+
+
+
+### Team Cross Reference
+<br>
+
+Here's the team breakdown for each of squads. 
+<br>
+<br>
+
+``` {r, echo=FALSE, warning=FALSE, message=FALSE}
+
+  # Build a list of the riders selected by the mini-league and the number
+  # of times they have been selected
+  rider_list <- tdf_table_master %>% 
+    filter(stage == 1) %>% 
+    group_by(rider) %>% 
+    summarise("Times_Selected" = n()) %>% 
+    arrange(desc(Times_Selected))
+  
+  # Build a list of the directeurs in the mini-league
+  directeur_list <- tdf_table_master %>% 
+    select(directeur) %>% 
+    distinct() %>% 
+    arrange(directeur)
+  
+  # Now create the cross-reference matrix which shows which riders have been selected by which directeurs
+  for (d in 1:length(directeur_list$directeur)){   # FOR loop to run through the list of team directeurs
+    rider_list[ , d+2] <- NA
+    colnames(rider_list)[(d+2)] <- toString(directeur_list$directeur[d])
+    
+    # Build list of team rider for specific team directeur 'd'
+    team_list <- tdf_table_master %>% 
+      filter(directeur == directeur_list$directeur[d]) %>% 
+      select(rider) %>% 
+      distinct()
+    
+    # Next, for each directeur, run through the complete list of mini-league riders
+    # and check to see if they are in 
+    for (r in 1:length(rider_list$rider)){   # FOR loop to run through the total list of riders in the mini-league
+      if(unlist(rider_list[r, 1]) %in% unlist(team_list)){
+        rider_list[r, d+2] <- "Yes"
+      } else  # End IF statement checking to see if rider exists in the directeur's team
+      {rider_list[r, d+2] <- ""}
+    }   # End FOR loop 'r'
+  }   # END FOR loop running through all of the directeurs
+  
+
+
+kable(rider_list)
+
+```
+
+
+### DNF Riders
+
+Of interest to many of us at this point is which riders are no longer part of the peloton, either through accident, illness or missing the time-cut.
+
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE, results='asis'}
+
+# Temporary list of DNF riders
+
+# Wikipedia list of 2017 Vuelta riders
+wiki_tdf_2018 <- "https://en.wikipedia.org/wiki/List_of_teams_and_cyclists_in_the_2018_Tour_de_France"
+# Scrape web data
+download.file(wiki_tdf_2018, "wiki_tdf_2018.xml")
+wiki_tdf_2018_parse <- read_html("wiki_tdf_2018.xml")
+
+# Extract table with riders
+riders_tdf <- wiki_tdf_2018_parse %>% 
+   html_nodes(xpath = "//table") %>% 
+   html_table(fill = TRUE)
+riders_tdf <- as.data.frame(riders_tdf[2])
+
+# Filter DNF riders
+riders_DNF <- riders_tdf %>% 
+   filter(!Pos. == "") %>% 
+   select(Name, Nationality, Team, Pos.)
+
+for (d in 1: length(riders_DNF$Name)){
+  riders_DNF[d , 5] <- tdf_table_master %>% 
+    filter(rider == riders_DNF$Name[d]) %>% 
+    distinct(directeur) %>% 
+    unlist() %>% 
+    paste(collapse = ",")
+}
+
+colnames(riders_DNF)[5] <- "Selected by"
+
+# Print (kable)
+print(kable(riders_DNF), row.names = FALSE)
+
+############################
+
+
+```
+
