@@ -283,7 +283,7 @@ body { font-family: 'Clear Sans', Arial, sans-serif; }
 
 		
 		
-<!-- START User System Plug In and User Status Check -->
+<!-- START User System Plug In and User Status Check --> 
 ﻿<link rel="stylesheet" href="//www.velogames.com/giro-ditalia/2014/easylogin/assets/css/easylogin.css">
 <link rel="stylesheet" href="//www.velogames.com/giro-ditalia/2014/easylogin/assets/css/imgPicker.css">
 <script src="//www.velogames.com/giro-ditalia/2014/easylogin/assets/js/bootstrap.min.js"></script>
@@ -579,6 +579,7 @@ body { font-family: 'Clear Sans', Arial, sans-serif; }
 	
 
 
+	
 	<!-- START Button Styling -->
 
 	<style type="text/css">		
@@ -608,15 +609,38 @@ border-radius: 4px;
 -ms-user-select: none;
 -o-user-select: none;
 user-select: none;
-width: 90%;
 margin: 2px;
+width: 88%;
 }
 
 
 	</style>
 	
 	<!-- END Button Styling -->
-		
+	
+		<!-- START Table Styling -->
+	<style type="text/css">		
+	
+
+tbody tr:nth-child(odd) {
+    background-color: #ffffff;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #efefef;
+}
+
+
+thead tr:first-child {
+    background-color: #FAAB00;
+    color: #FFFFFF;
+}
+
+  
+	</style>
+	
+		<!-- END Table Styling -->
+	
 	
 		<style type="text/css">	
 	table.team-info-panel {
@@ -635,15 +659,77 @@ background: #F2F2F2;
 }
 
 
+.subcategory-item {
+    background-color: #DDD;
+  font-size: 13px;
+  text-align: center;
+  display: block;
+  margin: 1px 0 1px 1px;
+  padding: 8px 0 8px 0;
+  color: #5a584f;
+    min-height: 100px;
+  }
+  
+  .subcategory-item-selected {
+    background-color: #006600;
+  font-size: 13px;
+  text-align: center;
+  display: block;
+  margin: 1px 0 1px 1px;
+  padding: 8px 0 8px 0;
+  color: #eee;
+    min-height: 100px;
+  }
+  
+  
+  .subcategory-item a{
+  color: #5a584f;
+  }
+  
+    .subcategory-item-selected a{
+  color: #000000;
+  }
+  
+  
+  .subcategories-carousel {
+  background-color: #eaeaea;
+  margin-bottom: 15px;
+}
+
+.subcategories-carousel .owl-prev, .subcategories-carousel .owl-next {
+  margin-top: 6px;
+  text-align: center;
+  font-size: 14px;
+  width: 22px;
+  right: 0px;
+  top: 32%;
+}
+
+.subcategories-carousel .owl-prev, .subcategories-carousel .owl-next, .subcategories-carousel .owl-nav .fa {
+  line-height: 26px;
+}
+
+.owl-prev {
+  left: 0;
+}
+
+.owl-prev, .owl-next {
+  position: absolute;
+  display: inline-block;
+  top: 50%;
+  margin-top: -18px;
+  text-align: center;
+  font-size: 28px;
+  width: 36px;
+  line-height: 36px;
+  color: #ffffff;
+  background-color: #d2d5da;
+}
 
 		</style>
-	
-	
-	<link rel="stylesheet" href="accordion.css" type="text/css">		
-	
-	
 		
-
+<link rel="stylesheet" id="jqeasytooltip.css" href="jquery.qtip.css" type="text/css" media="all">
+<link rel="stylesheet" href="accordion.css" type="text/css">
 
 
 </head>
@@ -656,6 +742,9 @@ background: #F2F2F2;
 <body id ="blog" class="home blog main cat-32-id cat-49-id"> 
 
 <header class="main-header">
+
+
+
 <div class="top_leaderboard">
 
 </div>
@@ -666,6 +755,11 @@ background: #F2F2F2;
 <a href="https://www.velogames.com/"><img src="//www.velogames.com/tour-de-france/2018/images/velogames_header.png" alt="Velogames Fantasy Cycling"></a>
 </div>
 </div>
+
+
+
+
+
 
 </header>
 <header class="main-header" style="background: #424242";>
@@ -775,33 +869,117 @@ googletag.cmd.push(function() { googletag.display('div-gpt-ad-1523548839456-0');
 </div>
 </div>
 
+
+
+
+
+
+
+
 </header>
 
-<div class="main-container">
 
-
-<div id="page" class="single">
-
-<div class="content"> <article class="article">
-
-<div id="content_box" >
+<link rel="stylesheet" type="text/css" media="all" href="//www.velogames.com/tour-de-france/2018/style_teamroster.css" />
 
 
 
-
-
-<div id="post-935" class="post-935 post type-post status-publish format-standard has-post-thumbnail hentry category-featured category-mobiles tag-featured tag-tag-2 g cat-32-id cat-49-id has_thumb">
-
-<div class="single_post"> 
-
-
-						       	
- 
-					
+	<!-- Start Variables Gathering -->
+	
 	
 
 
-    <!-- Start Accordion wrapper (UL) - must have a class="dopt-accordion" // arrow-img is the indicator arrow type -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+	
+	
+	
+	
+	
+	
+	<!-- End Variables Gathering -->
+
+<div class="main-container">
+
+<div id="page">
+
+<div class="content"> <article class="article">
+
+
+
+
+
+				<div class="title title--reviews cf">
+					<div class="brand">
+						<a href="#"><img src="images/logos/VEL.png" width="42"></a>
+					</div>
+
+					<h1 class="kilo">winging it</h1>
+					<h2 span style="float:right;">Dean McBeath</h2>
+				</div>
+				
+				
+				
+				
+
+<div class="featuredBox">
+
+
+
+
+
+
+
+
+
+
+
+<div class="firstpost excerpt"> 
+
+
+  <!-- Start Accordion wrapper (UL) - must have a class="dopt-accordion" // arrow-img is the indicator arrow type -->
 <ul class="dopt-accordion arrow-tri">
  
     <!-- Start Accordion Panel - 1 - each panel in the accordion must be enclosed in a list item (li) -->
@@ -811,21 +989,22 @@ googletag.cmd.push(function() { googletag.display('div-gpt-ad-1523548839456-0');
         <!-- The input id="accord-01" MUST be the same as the for="accord-01" label attribute -->
         <!-- Each input (radio or checkbox) must have a class="title-option" and the label must have a class="title-panel" --->
         <input id="accord-01" class="title-option" name="accordion-01" type="checkbox">
-        <label for="accord-01" class="title-panel" onclick=""> <span style="text-align: center;">League Standings: Overall Race</span> </label>
-         
-        <!-- Start Accordion Content Panel - leave both divs intact for easy styling and animation -->
+        <label for="accord-01" class="title-panel" onclick=""> <span>Team Details: Stage 1</span> </label>
+
+
+ <!-- Start Accordion Content Panel - leave both divs intact for easy styling and animation -->
         <div class="accordion-content">
             <div class="wrap-content">
              
 
 
-<b><a href="leaguescores.php?league=924206313&ga=13">OVERALL RACE</a></b> | <b><a href="leaguescores.php?league=924206313&ga=13&st=100">OVERALL SEASON CHAMPIONSHIP</a></b><br>
-<a href="leaguescores.php?league=924206313&ga=13&st=1">Stage 1</a> | <a href="leaguescores.php?league=924206313&ga=13&st=2">Stage 2</a> | <a href="leaguescores.php?league=924206313&ga=13&st=3">Stage 3 (TTT)</a> | <a href="leaguescores.php?league=924206313&ga=13&st=4">Stage 4</a> | <a href="leaguescores.php?league=924206313&ga=13&st=5">Stage 5</a> | <a href="leaguescores.php?league=924206313&ga=13&st=6">Stage 6</a> | <a href="leaguescores.php?league=924206313&ga=13&st=7">Stage 7</a> | <a href="leaguescores.php?league=924206313&ga=13&st=8">Stage 8</a> | <a href="leaguescores.php?league=924206313&ga=13&st=9">Stage 9</a> | <a href="leaguescores.php?league=924206313&ga=13&st=10">Stage 10</a> | <a href="leaguescores.php?league=924206313&ga=13&st=11">Stage 11</a> | <a href="leaguescores.php?league=924206313&ga=13&st=12">Stage 12</a> | <a href="leaguescores.php?league=924206313&ga=13&st=13">Stage 13</a> | <a href="leaguescores.php?league=924206313&ga=13&st=14">Stage 14</a> | <a href="leaguescores.php?league=924206313&ga=13&st=15">Stage 15</a> | <a href="leaguescores.php?league=924206313&ga=13&st=16">Stage 16</a> | <a href="leaguescores.php?league=924206313&ga=13&st=17">Stage 17</a> | <a href="leaguescores.php?league=924206313&ga=13&st=18">Stage 18</a> | <a href="leaguescores.php?league=924206313&ga=13&st=19">Stage 19</a> | <a href="leaguescores.php?league=924206313&ga=13&st=20">Stage 20 (ITT)</a> | <a href="leaguescores.php?league=924206313&ga=13&st=21">Stage 21</a> |            
+<a href="teamroster.php?tid=11hc28642af8dfa097499cf4fa62a2e601cD&ga=13">Overall</a> - 
+
+<a href="teamroster.php?tid=11hc28642af8dfa097499cf4fa62a2e601cD&ga=13&st=1">Stage 1</a> - <a href="teamroster.php?tid=11hc28642af8dfa097499cf4fa62a2e601cD&ga=13&st=2">Stage 2</a> - <a href="teamroster.php?tid=11hc28642af8dfa097499cf4fa62a2e601cD&ga=13&st=3">Stage 3 (TTT)</a> - <a href="teamroster.php?tid=11hc28642af8dfa097499cf4fa62a2e601cD&ga=13&st=4">Stage 4</a> - <a href="teamroster.php?tid=11hc28642af8dfa097499cf4fa62a2e601cD&ga=13&st=5">Stage 5</a> - <a href="teamroster.php?tid=11hc28642af8dfa097499cf4fa62a2e601cD&ga=13&st=6">Stage 6</a> - <a href="teamroster.php?tid=11hc28642af8dfa097499cf4fa62a2e601cD&ga=13&st=7">Stage 7</a> - <a href="teamroster.php?tid=11hc28642af8dfa097499cf4fa62a2e601cD&ga=13&st=8">Stage 8</a> - <a href="teamroster.php?tid=11hc28642af8dfa097499cf4fa62a2e601cD&ga=13&st=9">Stage 9</a> - <a href="teamroster.php?tid=11hc28642af8dfa097499cf4fa62a2e601cD&ga=13&st=10">Stage 10</a> - <a href="teamroster.php?tid=11hc28642af8dfa097499cf4fa62a2e601cD&ga=13&st=11">Stage 11</a> - <a href="teamroster.php?tid=11hc28642af8dfa097499cf4fa62a2e601cD&ga=13&st=12">Stage 12</a> - <a href="teamroster.php?tid=11hc28642af8dfa097499cf4fa62a2e601cD&ga=13&st=13">Stage 13</a> - <a href="teamroster.php?tid=11hc28642af8dfa097499cf4fa62a2e601cD&ga=13&st=14">Stage 14</a> - <a href="teamroster.php?tid=11hc28642af8dfa097499cf4fa62a2e601cD&ga=13&st=15">Stage 15</a> - <a href="teamroster.php?tid=11hc28642af8dfa097499cf4fa62a2e601cD&ga=13&st=16">Stage 16</a> - <a href="teamroster.php?tid=11hc28642af8dfa097499cf4fa62a2e601cD&ga=13&st=17">Stage 17</a> - <a href="teamroster.php?tid=11hc28642af8dfa097499cf4fa62a2e601cD&ga=13&st=18">Stage 18</a> - <a href="teamroster.php?tid=11hc28642af8dfa097499cf4fa62a2e601cD&ga=13&st=19">Stage 19</a> - <a href="teamroster.php?tid=11hc28642af8dfa097499cf4fa62a2e601cD&ga=13&st=20">Stage 20 (ITT)</a> - <a href="teamroster.php?tid=11hc28642af8dfa097499cf4fa62a2e601cD&ga=13&st=21">Stage 21</a> -            
 
 
 
-                             <a href="leaguescores.php?league=924206313&ga=13&st=22">End-of-Tour Points</a><br><br>
-							
+                             <a href="teamroster.php?tid=11hc28642af8dfa097499cf4fa62a2e601cD&ga=13&st=22">Final</a>
 
                           
            
@@ -839,15 +1018,75 @@ googletag.cmd.push(function() { googletag.display('div-gpt-ad-1523548839456-0');
     <!--  End Accordion Panel - 1 -->
          
 </ul>
-<!-- End Accordion wrapper -->  
-							
-						
+<!-- End Accordion wrapper -->  		
 
 
-<div id="users">
-  <ul class="list">	
+<div class="three_fifth"> 
 
-<li><span style="float:left; margin:10px"><img src="images/logos/VEL.png" width="32" height="32"></span><span style="float:right"><p class="born"><b>0 points</b></p></span><h3 class="name"><a href="teamroster.php?tid=84d0fb3288686ea057e8d246760f24bb67M">Grinds my Gears</a></h3><p class="born">Grind my gears</p></li><li><span style="float:left; margin:10px"><img src="images/logos/VEL.png" width="32" height="32"></span><span style="float:right"><p class="born"><b>0 points</b></p></span><h3 class="name"><a href="teamroster.php?tid=526159b93c334afad91b3edff1d55dda2eJ">Cootha Kids</a></h3><p class="born">Jim Martin</p></li><li><span style="float:left; margin:10px"><img src="images/logos/VEL.png" width="32" height="32"></span><span style="float:right"><p class="born"><b>0 points</b></p></span><h3 class="name"><a href="teamroster.php?tid=6Zddc5a222430237832c049f1f99dd4fe4J">Rouleurette</a></h3><p class="born">Julie Zeller</p></li><li><span style="float:left; margin:10px"><img src="images/logos/VEL.png" width="32" height="32"></span><span style="float:right"><p class="born"><b>0 points</b></p></span><h3 class="name"><a href="teamroster.php?tid=12t8a94b5819012503b3aa5675d9d5cc56fr">Dick`s Dodgers</a></h3><p class="born">Rich Johnston</p></li><li><span style="float:left; margin:10px"><img src="images/logos/VEL.png" width="32" height="32"></span><span style="float:right"><p class="born"><b>0 points</b></p></span><h3 class="name"><a href="teamroster.php?tid=8j0a2eff437ef833347f58e474afc03c33f">Rear Derailleurs</a></h3><p class="born">Chris Fraser</p></li><li><span style="float:left; margin:10px"><img src="images/logos/VEL.png" width="32" height="32"></span><span style="float:right"><p class="born"><b>0 points</b></p></span><h3 class="name"><a href="teamroster.php?tid=5o3c14c29bbe22392dcd167cc527f72a6fL">Ricky Baker`s Bush Campers</a></h3><p class="born">David Leggett</p></li><li><span style="float:left; margin:10px"><img src="images/logos/VEL.png" width="32" height="32"></span><span style="float:right"><p class="born"><b>0 points</b></p></span><h3 class="name"><a href="teamroster.php?tid=7559d949214c62c4c58f154b76a7eb3154D">Brake Rub Regression</a></h3><p class="born">Simon Lyons</p></li><li><span style="float:left; margin:10px"><img src="images/logos/TT1.png" width="32" height="32"></span><span style="float:right"><p class="born"><b>0 points</b></p></span><h3 class="name"><a href="teamroster.php?tid=1427d5d73ed83e5c1ada1c78fcf5f39a241m">The Jungle Giants </a></h3><p class="born">Groom</p></li><li><span style="float:left; margin:10px"><img src="images/logos/VEL.png" width="32" height="32"></span><span style="float:right"><p class="born"><b>0 points</b></p></span><h3 class="name"><a href="teamroster.php?tid=8n9d9a3887de03cd046d71fa047c32196el">Itchy Nads</a></h3><p class="born">Dan Lewis</p></li><li><span style="float:left; margin:10px"><img src="images/logos/VEL.png" width="32" height="32"></span><span style="float:right"><p class="born"><b>0 points</b></p></span><h3 class="name"><a href="teamroster.php?tid=5tefc78f280453936f30bcf95a93fec2e8B">Innerbloom </a></h3><p class="born">Britt Groom</p></li><li><span style="float:left; margin:10px"><img src="images/logos/VEL.png" width="32" height="32"></span><span style="float:right"><p class="born"><b>0 points</b></p></span><h3 class="name"><a href="teamroster.php?tid=10t2ebbec6161514bfa1689a2ff1626ba79S">Thistles</a></h3><p class="born">Simon S</p></li><li><span style="float:left; margin:10px"><img src="images/logos/FLA.png" width="32" height="32"></span><span style="float:right"><p class="born"><b>0 points</b></p></span><h3 class="name"><a href="teamroster.php?tid=7ecbc96964ffa4cf5b6d20ea1d9beb9caeH">Howishe</a></h3><p class="born">Peter Howes</p></li><li><span style="float:left; margin:10px"><img src="images/logos/VEL.png" width="32" height="32"></span><span style="float:right"><p class="born"><b>0 points</b></p></span><h3 class="name"><a href="teamroster.php?tid=15167fcf7f208b5efc8129ab02b5f139791s">This way to my Chateau</a></h3><p class="born">Dan Chalmers</p></li><li><span style="float:left; margin:10px"><img src="images/logos/VEL.png" width="32" height="32"></span><span style="float:right"><p class="born"><b>0 points</b></p></span><h3 class="name"><a href="teamroster.php?tid=8Sce4ddffcfdf689896c4ca3833c4114f3J">Team Tarmac</a></h3><p class="born">Jackal</p></li><li><span style="float:left; margin:10px"><img src="images/logos/VEL.png" width="32" height="32"></span><span style="float:right"><p class="born"><b>0 points</b></p></span><h3 class="name"><a href="teamroster.php?tid=655965873ae6135f3f9100c9f52248175dF">Blue Baggers</a></h3><p class="born">fitz</p></li><li><span style="float:left; margin:10px"><img src="images/logos/PHO.png" width="32" height="32"></span><span style="float:right"><p class="born"><b>0 points</b></p></span><h3 class="name"><a href="teamroster.php?tid=10y350920f4bd17114e7e80205e0408cbbeM">Cana borra ya puffa Froomy?</a></h3><p class="born">Crooky</p></li><li><span style="float:left; margin:10px"><img src="images/logos/VEL.png" width="32" height="32"></span><span style="float:right"><p class="born"><b>0 points</b></p></span><h3 class="name"><a href="teamroster.php?tid=7sa86081aacf45faf9fbaf44b0cb4f9b1fb">Velociraptors</a></h3><p class="born">Brett Jensen</p></li><li><span style="float:left; margin:10px"><img src="images/logos/VEL.png" width="32" height="32"></span><span style="float:right"><p class="born"><b>0 points</b></p></span><h3 class="name"><a href="teamroster.php?tid=4ofd0ef687d8de90abb52fbac51c07ed22o">Opto`s TDF sorry lads</a></h3><p class="born">Mark Hinds</p></li><li><span style="float:left; margin:10px"><img src="images/logos/VEL.png" width="32" height="32"></span><span style="float:right"><p class="born"><b>0 points</b></p></span><h3 class="name"><a href="teamroster.php?tid=90f89a41d134a61ba23f4ea102f5ba2470C">Suicide Squad</a></h3><p class="born">Chris Fiorini</p></li><li><span style="float:left; margin:10px"><img src="images/logos/VEL.png" width="32" height="32"></span><span style="float:right"><p class="born"><b>0 points</b></p></span><h3 class="name"><a href="teamroster.php?tid=6K63c0a73925c29ea0220fcbb80cc098d9S">The Ron Burgandy All Stars</a></h3><p class="born">Steve Kelsall</p></li><li><span style="float:left; margin:10px"><img src="images/logos/VEL.png" width="32" height="32"></span><span style="float:right"><p class="born"><b>0 points</b></p></span><h3 class="name"><a href="teamroster.php?tid=11hc28642af8dfa097499cf4fa62a2e601cD">winging it</a></h3><p class="born">Dean McBeath</p></li>
+
+				
+
+
+
+
+
+
+
+<table class="team-info-panel">
+
+
+<tbody>
+
+
+
+<tr>
+<td><img src="/shared-assets/images/shirts/2018/UAD.png"><BR>Costa<br>0 pts</td>
+<td><img src="/shared-assets/images/shirts/2018/TFR.png"><BR>Mollema<br>0 pts</td>
+<td><img src="/shared-assets/images/shirts/2018/ALM.png"><BR>Bardet<br>0 pts</td>
+</tr>
+<tr>
+<td><img src="/shared-assets/images/shirts/2018/MOV.png"><BR>Landa<br>0 pts</td>
+<td><img src="/shared-assets/images/shirts/2018/DDD.png"><BR>Boasson Hagen<br>0 pts</td>
+<td><img src="/shared-assets/images/shirts/2018/LTS.png"><BR>De Gendt<br>0 pts</td>
+</tr>
+<tr>
+<td><img src="/shared-assets/images/shirts/2018/AST.png"><BR>Sanchez<br>0 pts</td>
+<td><img src="/shared-assets/images/shirts/2018/DEN.png"><BR>Chavanel<br>0 pts</td>
+<td><img src="/shared-assets/images/shirts/2018/BMC.png"><BR>Porte<br>0 pts</td>
+</tr>
+
+
+
+</tbody>
+</table>
+
+
+
+
+	
+
+</div>
+
+
+
+
+
+
+
+
+<div class="two_fifth"> 
+
+<div class="pp-wrapper"><ul class="popular-posts">
+<li>
+<img height="48" width="48" src="images/logos/VEL.png" class="wp-post-image"><span style="font-size:14px"><b>winging it</b><br>Dean McBeath</span><time><i><span style="font-size:12px">Chad</span></i></time></li>
+<li>Team Cost: <b>100</b><time>Unused Credits: 0</time></li>
+<li>Overall Race Score: <b>0</b><time>Overall Rank: 1 of 1620</time></li> 
+<li>Stage 1 Score: <b>0</b><time>Stage 1 Rank: 1 of 1620</time></span></li><!--<li>Season Championship Score: <b>4321</b><time>Season Rank: 20803 of 23602 <br> <a href="team_summary.php?tid=11hc28642af8dfa097499cf4fa62a2e601cD">View Season Stats</a></time>-->
+</li>
+
+</ul></div>
+
+
 
 
 			
@@ -858,63 +1097,837 @@ googletag.cmd.push(function() { googletag.display('div-gpt-ad-1523548839456-0');
 
 
 
+
+
+
+
+ 
 </div>
 
 
 
 
-</div> </article> 
+</div>
 
 
-<aside class="sidebar c-4-12">
 
+<div class="secondpost excerpt"> 
 
-<div class="sidebar">
+<div class="ad_background"> 
 
-<div class="ad-300">
-
-<!-- /119805056/velogames-top-mpu -->
-<div id='div-gpt-ad-velogames-top-mpu'>
+<!-- /119805056/velogames_team_roster_upper_mpu -->
+<div id='div-gpt-ad-velogames_team_roster_upper_mpu'>
 <script>
-googletag.cmd.push(function() { googletag.display('div-gpt-ad-velogames-top-mpu'); });
+googletag.cmd.push(function() { googletag.display('div-gpt-ad-velogames_team_roster_upper_mpu'); });
 </script>
 </div>
- 
+                                            
+</div>
+
 </div>
 
 
 
 
-<div class="ad-300">
 
 
-<a class="twitter-timeline" width="320" height="460" href="https://twitter.com/velogames" data-widget-id="250950779349897216">Tweets by @velogames</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
- 
- 
- 
+
+
+
+
+
+<div id="content_box">
+
+
+
+
+			
+			
+			
+			
+			<div class="post text-full-width ">
+			
+			
+		
+			
+			
+			
+			<h4 class="teamtitle" style="background-color:#1c1c1c">Scoring Details: Stage 1</h4>
+			
+			</div>
+
+
+			
+				
+
+	
+
+
+
+
+
+
+
+
+
+
+
+<div class="post text-full-width ">
+
+
+
+
+
+	
+
+<table class="responsive">
+<thead> 
+
+<th width = "25%"></td>
+<th width = "20%" align="center">Team</td>
+<th width = "5%" align="center">Cost</td>
+<th width = "5%" align="center">Starter</td>
+<th width = "5%" align="center">Stg</td>
+<th width = "5%" align="center">GC</td>
+<th width = "5%" align="center">PC</td>
+<th width = "5%" align="center">KOM</td>
+<th width = "5%" align="center">Spr</td>
+<th width = "5%" align="center">Sum</td>
+<th width = "5%" align="center">Bky</td>
+<th width = "5%" align="center">Ass</td>
+<th width = "5%" align="center">Tot</td>
+</tr>
+</thead>
+<tbody>
+
+
+
+<tr><td><a href="riderprofile.php?rider=20180957">Rui Costa</a></td><td align="center">UAE-Team Emirates</td>
+<td align="center">8</td>
+
+<td align="center"><i class="fa fa-times fa-lg"></i></td>
+
+<td align="center">-</td>
+	
+
+
+
+<td align="center">-</td>
+	
+
+
+
+
+<td align="center">-</td>
+	
+
+
+<td align="center">-</td>
+	
+
+
+
+
+<td align="center">-</td>
+	
+
+
+
+
+<td align="center">-</td>
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<td align="center">-</td>
+	
+
+
+
+
+
+
+
+
+
+<td align="center">-</td>
+	
+
+
+
+
+
+<td align="center"><b>0</b></td></tr>
+
+
+<tr><td><a href="riderprofile.php?rider=20180939">Bauke Mollema</a></td><td align="center">Trek - Segafredo</td>
+<td align="center">10</td>
+
+<td align="center"><i class="fa fa-check fa-lg"></i></td>
+
+<td align="center">-</td>
+	
+
+
+
+<td align="center">-</td>
+	
+
+
+
+
+<td align="center">-</td>
+	
+
+
+<td align="center">-</td>
+	
+
+
+
+
+<td align="center">-</td>
+	
+
+
+
+
+<td align="center">-</td>
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<td align="center">-</td>
+	
+
+
+
+
+
+
+
+
+
+<td align="center">-</td>
+	
+
+
+
+
+
+<td align="center"><b>0</b></td></tr>
+
+
+<tr><td><a href="riderprofile.php?rider=20180004">Romain Bardet</a></td><td align="center">AG2R La Mondiale</td>
+<td align="center">14</td>
+
+<td align="center"><i class="fa fa-check fa-lg"></i></td>
+
+<td align="center">-</td>
+	
+
+
+
+<td align="center">-</td>
+	
+
+
+
+
+<td align="center">-</td>
+	
+
+
+<td align="center">-</td>
+	
+
+
+
+
+<td align="center">-</td>
+	
+
+
+
+
+<td align="center">-</td>
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<td align="center">-</td>
+	
+
+
+
+
+
+
+
+
+
+<td align="center">-</td>
+	
+
+
+
+
+
+<td align="center"><b>0</b></td></tr>
+
+
+
+
+
+
+<tr><td><a href="riderprofile.php?rider=20180638">Mikel Landa</a></td><td align="center">Movistar Team</td>
+<td align="center">16</td>
+
+<td align="center"><i class="fa fa-check fa-lg"></i></td>
+
+<td align="center">-</td>
+	
+
+
+
+<td align="center">-</td>
+	
+
+
+
+
+<td align="center">-</td>
+	
+
+
+<td align="center">-</td>
+	
+
+
+
+
+<td align="center">-</td>
+	
+
+
+
+
+<td align="center">-</td>
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<td align="center">-</td>
+	
+
+
+
+
+
+
+
+
+
+<td align="center">-</td>
+	
+
+
+
+
+
+<td align="center"><b>0</b></td></tr>
+
+
+
+<tr><td><a href="riderprofile.php?rider=20180306">Edvald Boasson Hagen</a></td><td align="center">Dimension Data</td>
+<td align="center">8</td>
+
+<td align="center"><i class="fa fa-check fa-lg"></i></td>
+
+<td align="center">-</td>
+	
+
+
+
+<td align="center">-</td>
+	
+
+
+
+
+<td align="center">-</td>
+	
+
+
+<td align="center">-</td>
+	
+
+
+
+
+<td align="center">-</td>
+	
+
+
+
+
+<td align="center">-</td>
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<td align="center">-</td>
+	
+
+
+
+
+
+
+
+
+
+<td align="center">-</td>
+	
+
+
+
+
+
+<td align="center"><b>0</b></td></tr>
+
+
+<tr><td><a href="riderprofile.php?rider=20180550">Thomas De Gendt</a></td><td align="center">Lotto Soudal</td>
+<td align="center">8</td>
+
+<td align="center"><i class="fa fa-check fa-lg"></i></td>
+
+<td align="center">-</td>
+	
+
+
+
+<td align="center">-</td>
+	
+
+
+
+
+<td align="center">-</td>
+	
+
+
+<td align="center">-</td>
+	
+
+
+
+
+<td align="center">-</td>
+	
+
+
+
+
+<td align="center">-</td>
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<td align="center">-</td>
+	
+
+
+
+
+
+
+
+
+
+<td align="center">-</td>
+	
+
+
+
+
+
+<td align="center"><b>0</b></td></tr>
+
+
+
+
+<tr><td><a href="riderprofile.php?rider=20180086">Luis Leon Sanchez</a></td><td align="center">Astana Pro Team</td>
+<td align="center">8</td>
+
+<td align="center"><i class="fa fa-check fa-lg"></i></td>
+
+<td align="center">-</td>
+	
+
+
+
+<td align="center">-</td>
+	
+
+
+
+
+<td align="center">-</td>
+	
+
+
+<td align="center">-</td>
+	
+
+
+
+
+<td align="center">-</td>
+	
+
+
+
+
+<td align="center">-</td>
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<td align="center">-</td>
+	
+
+
+
+
+
+
+
+
+
+<td align="center">-</td>
+	
+
+
+
+
+
+<td align="center"><b>0</b></td></tr>
+
+
+
+
+<tr><td><a href="riderprofile.php?rider=20180334">Sylvain Chavanel</a></td><td align="center">Direct Energie</td>
+<td align="center">6</td>
+
+<td align="center"><i class="fa fa-check fa-lg"></i></td>
+
+<td align="center">-</td>
+	
+
+
+
+<td align="center">-</td>
+	
+
+
+
+
+<td align="center">-</td>
+	
+
+
+<td align="center">-</td>
+	
+
+
+
+
+<td align="center">-</td>
+	
+
+
+
+
+<td align="center">-</td>
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<td align="center">-</td>
+	
+
+
+
+
+
+
+
+
+
+<td align="center">-</td>
+	
+
+
+
+
+
+<td align="center"><b>0</b></td></tr>
+
+<tr><td><a href="riderprofile.php?rider=20180149">Richie Porte</a></td><td align="center">BMC Racing Team</td>
+<td align="center">22</td>
+
+<td align="center"><i class="fa fa-check fa-lg"></i></td>
+
+<td align="center">-</td>
+	
+
+
+
+<td align="center">-</td>
+	
+
+
+
+
+<td align="center">-</td>
+	
+
+
+<td align="center">-</td>
+	
+
+
+
+
+<td align="center">-</td>
+	
+
+
+
+
+<td align="center">-</td>
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<td align="center">-</td>
+	
+
+
+
+
+
+
+
+
+
+<td align="center">-</td>
+	
+
+
+
+
+
+<td align="center"><b>0</b></td></tr>
+
+
+</tbody>
+</table>
+
+	
+
+
+
+
+
 </div>
 
 
 
-<div class="ad-300">
+	
 
-<!-- /119805056/velogames_sidebar_lower_300x250 -->
-<div id='div-gpt-ad-velogames_sidebar_lower_300x250'>
+<div class="firstpost excerpt"> 
+
+
+<h4 class="teamtitle" style="background-color:#1c1c1c">League Manager</h4>
+
+
+
+<table>
+<thead> 
+<tr>
+<th colspan = "2">Leagues</th>
+
+</thead>
+<tbody>
+
+<tr><td><a href="leaguescores.php?league=737030020">Tour de Cupcake 2018</a></td><td><a href="leaguescores.php?league=737030020">View League</a></TR><tr><td><a href="leaguescores.php?league=839361413">4051 Rouleurs</a></td><td><a href="leaguescores.php?league=839361413">View League</a></TR><tr><td><a href="leaguescores.php?league=924206313">4051 Rouleurs</a></td><td><a href="leaguescores.php?league=924206313">View League</a></TR><tr><td colspan = "2" align="right" valign="middle"></td></TR>
+
+
+</tbody>
+</table>
+
+
+</div>
+
+
+
+<div class="secondpost excerpt"> 
+
+<!-- /119805056/velogames_team_roster_lower_mpu -->
+<div id='div-gpt-ad-velogames_team_roster_lower_mpu' style='height:250px; width:300px;'>
 <script>
-googletag.cmd.push(function() { googletag.display('div-gpt-ad-velogames_sidebar_lower_300x250'); });
+googletag.cmd.push(function() { googletag.display('div-gpt-ad-velogames_team_roster_lower_mpu'); });
 </script>
 </div>
 
+
+
+
 </div>
 
-</div></aside>
 
 
 
+
+
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ </article>
 </div>
 </div>
 </div> 
+
+	<!-- FOOTER START -->
 
 <footer>
 <div class="logo-wrap">
@@ -949,61 +1962,32 @@ googletag.cmd.push(function() { googletag.display('div-gpt-ad-velogames_sidebar_
 </div>
 </div></footer> 
 
-<style type="text/css">
-body {
-  width: 10px;
-  min-width: 100%;
-  *width: 100%;
-  }
-  
-  
-  
-  .list {
-  font-family:sans-serif;
-  margin:0;
-  padding:2px 0 0;
-}
-.list > li {
-  display:block;
-  background-color: #fff;
-  padding:10px;
-  margin-bottom: 5px;
-}
-.avatar {
-  max-width: 150px;
-}
-img {
-  max-width: 100%;
-}
-h3 {
-  font-size: 16px;
-  margin:0 0 0.3rem;
-  font-weight: normal;
-  font-weight:bold;
-}
-p {
-  margin:0;
-}
+<script type="text/javascript" src="jquery.qtip.js"></script>
 
-input {
-  border:solid 
-  
-}
-</style>
+ <script type="text/javascript">
+               
+                    $(document).ready(function() {
 
-
-<script type="text/javascript">
-   var options = {
-    valueNames: [
-        'name',
-        'born'
-    ]
-};
-var userList = new List('users', options);
-</script>
-
-
-
+                    $('[title!=""]').qtip({
+							 
+					position: {
+					my: 'left center',
+					target: 'mouse',
+					adjust: { x: 10, y: 2 }
+										},
+					
+					
+					
+					style: {
+					classes: 'qtip-tipsy'},
+                           
+					content: { text: true
+                            },
+                       
+                
+                        });
+                    });
+          </script>
 <script type="text/javascript">
 			$(document).ready(function() {
  
@@ -1038,10 +2022,6 @@ var userList = new List('users', options);
  
 });
 		</script>
-
-
-
-
 
 </body>
 </html>

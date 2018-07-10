@@ -11,8 +11,8 @@ knitr::opts_chunk$set(echo = TRUE)
 # Set stage number
 stage_no <- 1
 # Step 1: Load league details into R
-setwd("/home/a_friend/data_analysis/projects/velogames/2018 - TDF/")
-# setwd("C:/aa Simon Lyons/2.0 Work/4.0 Data Analysis/4.6 Projects/velogames/2017 - Vuelta/")
+# setwd("/home/a_friend/data_analysis/projects/velogames/2018 - TDF/")
+setwd("C:/aa Simon Lyons/2.0 Work/4.0 Data Analysis/4.6 Projects/velogames/2018 - TDF/")
 # setwd("C:/aa Simon Lyons/2.0 Work/4.0 Data Analysis/4.6 Projects/velogames/")
 league_codes <- read.csv("2018_TDF_velogames_leagues.csv", stringsAsFactors = FALSE)
 # Change the number below maually from 1 to 3 to generate data
@@ -65,7 +65,7 @@ colnames(TDF_table_master) <- gsub("\\.", "", colnames(TDF_table_master))
 
 # View(TDF_table_master)
 # Extract stage results from Cycling News
-stage_url <- paste("http://www.cyclingnews.com/races/vuelta-a-espana/stage-", stage_no, "/results/", sep = "")
+stage_url <- paste("http://www.cyclingnews.com/tour-de-france/stage-", stage_no, "/results/", sep = "")
 download.file(stage_url, "stage_url.xml")
 stage_html <- htmlParse("stage_url.xml")
 
@@ -345,19 +345,19 @@ Probably of interest to many of us at this point is which riders are no longer p
 # Temporary list of DNF riders
 
 # Wikipedia list of 2017 Vuelta riders
-wiki_vuelta_2017 <- "https://en.wikipedia.org/wiki/List_of_teams_and_cyclists_in_the_2017_Vuelta_a_Espa%C3%B1a"
+wiki_tdf_2018 <- "https://en.wikipedia.org/wiki/List_of_teams_and_cyclists_in_the_2018_Tour_de_France"
 # Scrape web data
-download.file(wiki_vuelta_2017, "wiki_vuelta_2017.xml")
-wiki_vuelta_2017_parse <- read_html("wiki_vuelta_2017.xml")
+download.file(wiki_tdf_2018, "wiki_tdf_2018.xml")
+wiki_tdf_2018_parse <- read_html("wiki_tdf_2018.xml")
 
 # Extract table with riders
-riders_vuelta <- wiki_vuelta_2017_parse %>% 
+riders_tdf <- wiki_tdf_2018_parse %>% 
    html_nodes(xpath = "//table") %>% 
    html_table(fill = TRUE)
-riders_vuelta <- as.data.frame(riders_vuelta[2])
+riders_tdf <- as.data.frame(riders_tdf[2])
 
 # Filter DNF riders
-riders_DNF <- riders_vuelta %>% 
+riders_DNF <- riders_tdf %>% 
    filter(!Pos. == "") %>% 
    select(Name, Nationality, Team, Pos.)
 

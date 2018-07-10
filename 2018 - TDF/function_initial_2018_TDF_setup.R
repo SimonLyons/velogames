@@ -13,7 +13,7 @@ require(RCurl)
 # HP Laptop directory
 setwd("/home/a_friend/data_analysis/projects/velogames/2018 - TDF")
 # Work laptop directory
-setwd("C:/aa Simon Lyons/2.0 Work/4.0 Data Analysis/4.6 Projects/velogames/")
+setwd("C:/aa Simon Lyons/2.0 Work/4.0 Data Analysis/4.6 Projects/velogames/2018 - TDF/")
 league_codes <- read.csv("2018_TDF_velogames_leagues.csv")
 
 # Step 2: For each league, extract the details for team, directeur and team_weblink

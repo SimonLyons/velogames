@@ -20,7 +20,7 @@ With a full complement of 7 teams in our 2016 Giro Velogames competition there w
 ```{r cars, echo=FALSE, warning=FALSE, message=FALSE}
 
 # Open .csv file with Cunning Stunts Giro 2016 data
-setwd("/home/a_friend/data_analysis/projects/velogames/2016 Giro - Cunning Stunts/")
+# setwd("/home/a_friend/data_analysis/projects/velogames/2016 Giro - Cunning Stunts/")
 giro_table_master <- read.csv(file = "giro_table_master.csv", sep = ",")
 # I don't know why, but 'periods' are being introduced into the column names
 # of the giro master table. The line below substitutes these out. Annoying!

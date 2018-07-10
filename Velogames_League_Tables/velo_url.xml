@@ -9,26 +9,30 @@
 
 
 
- 
-
-<title>Velogames Fantasy Cycling</title>
 
 
+<title>Velogames Fantasy Cycling | Fantasy Giro d'Italia 2017</title>
 
 
 
- <link rel="icon" href="//www.velogames.com/tour-de-france/2018/images/favicon.png" type="image/x-icon" />
+
+
+
+<link rel="icon" href="//www.velogames.com/giro-ditalia/2017/images/favicon.png" type="image/x-icon" />
 
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black">
-<meta name="keywords" content="fantasy cycling, bicycling, cycling"> 
-<meta name="description" content="Fantasy Cycling games based on the professional cycling season">
+<meta name="keywords" content="fantasy cycling, bicycling, cycling, tour de france, giro d'italia, vuelta a espana"> 
+<meta name="description" content="Fantasy Cycling games based on the professional cycling season, including Tour de France, Giro d'Italia, Vuelta a Espana and Spring Classics">
 
 
 
-<link rel="stylesheet" type="text/css" media="all" href="//www.velogames.com/tour-de-france/2018/style.css" />
+<link rel="stylesheet" type="text/css" media="all" href="//www.velogames.com/giro-ditalia/2017/style.css" />
+<link rel="stylesheet" type="text/css" media="all" href="//www.velogames.com/giro-ditalia/2017/style_teamroster.css" />
+
+ 
 
 
 
@@ -37,45 +41,33 @@
 <script src="//html5shim.googlecode.com/svn/trunk/html5.js">
 </script><![endif]-->
 
-
-<style type="text/css">
-
+<style type="text/css">body {
+background-color:#1c1c1c;
+}
 
 .mts-subscribe input[type=submit],.title_box,.title_box_small,#commentform input#submit:hover,.post-info,.reply,.category-head,.currenttext,.pagination a:hover,.trend,.tagcloud a,.header-social a:hover {
-background-color:#FAAB00;
+background-color:#ea527e;
 }
 
 #navigation .menu .trending,.rtrm a,.related-posts a:hover span,.textwidget a,#commentform a,.copyrights a:hover,a,.sidebar.c-4-12 a:hover,footer .widget li a:hover {
-color:#ff5a0b;
+color:#ea527e;
 }
-
-
-	#leaderboard_box {
-    float: left;
-    width: 100%;
-    /* margin-top: 8px; */
-    padding-top: 12px;
-    padding-bottom: 12px;
-    background: #d8d8d8;
-}
-
-
 
 </style>
 
 
 
 
-
+<link rel='stylesheet' id='prettyPhoto-css'  href='//www.velogames.com/giro-ditalia/2017/css/prettyPhoto.css?ver=4.0' type='text/css' media='all' />
 <script type='text/javascript' src='//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js?ver=1.7.1'>
 </script>
 <script type='text/javascript' src='//ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/jquery-ui.min.js?ver=1.8.16'>
 </script>
-<script type='text/javascript' src='//www.velogames.com/tour-de-france/2018/js/modernizr.min.js?ver=4.0'>
+<script type='text/javascript' src='//www.velogames.com/giro-ditalia/2017/js/modernizr.min.js?ver=4.0'>
 </script>
-<script type='text/javascript' src='//www.velogames.com/tour-de-france/2018/js/customscript.js?ver=4.0'>
+<script type='text/javascript' src='//www.velogames.com/giro-ditalia/2017/js/customscript.js?ver=4.0'>
 </script>
-<script type='text/javascript' src='//www.velogames.com/tour-de-france/2018/js/jquery.prettyPhoto.js?ver=4.0'>
+<script type='text/javascript' src='//www.velogames.com/giro-ditalia/2017/js/jquery.prettyPhoto.js?ver=4.0'>
 </script>
 
 <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
@@ -96,7 +88,6 @@ color:#ff5a0b;
   })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
   ga('create', 'UA-49496985-1', 'velogames.com');
-  ga('set', 'anonymizeIP', true);
   ga('send', 'pageview');
 
 </script>
@@ -105,14 +96,12 @@ color:#ff5a0b;
 
 
 
-
-
-<script type="text/javascript" src="//www.velogames.com/tour-de-france/2018/jquery.js"></script>
-<script type="text/javascript" src="//www.velogames.com/tour-de-france/2018/jquery-migrate.min.js"></script>
+<script type="text/javascript" src="//www.velogames.com/giro-ditalia/2017/jquery.js"></script>
+<script type="text/javascript" src="//www.velogames.com/giro-ditalia/2017/jquery-migrate.min.js"></script>
 
 
 
-<link type="text/css" media="screen" rel="stylesheet" href="//www.velogames.com/tour-de-france/2018/responsive-tables.css" />
+<link type="text/css" media="screen" rel="stylesheet" href="//www.velogames.com/giro-ditalia/2017/responsive-tables.css" />
 <script type="text/javascript" src="responsive-tables.js"></script>
 
 
@@ -121,8 +110,8 @@ color:#ff5a0b;
 
 
 		
-		<script type="text/javascript" src="//www.velogames.com/tour-de-france/2018/jquery.ui.core.js"></script>
-		<script type="text/javascript" src="//www.velogames.com/tour-de-france/2018/jquery.ui.widget.js"></script>
+		<script type="text/javascript" src="//www.velogames.com/giro-ditalia/2017/jquery.ui.core.js"></script>
+		<script type="text/javascript" src="//www.velogames.com/giro-ditalia/2017/jquery.ui.widget.js"></script>
 
 
 	<style type="text/css">
@@ -170,7 +159,7 @@ color:#ff5a0b;
 }
 
 .button:hover {
-  background: #FAAB00 url(/images/image-shade.png) no-repeat right top;
+  background: #ea527e url(/images/image-shade.png) no-repeat right top;
   color: #1c1c1c;
 }
 
@@ -181,68 +170,17 @@ color:#ff5a0b;
 		
 		
 		<!-- Important Owl stylesheet -->
-<link rel="stylesheet" href="//www.velogames.com/tour-de-france/2018/owl.carousel.css">
+<link rel="stylesheet" href="//www.velogames.com/giro-ditalia/2017/owl.carousel.css">
  
 <!-- Default Theme -->
-<link rel="stylesheet" href="//www.velogames.com/tour-de-france/2018/owl.theme.css">
+<link rel="stylesheet" href="//www.velogames.com/giro-ditalia/2017/owl.theme.css">
  
  
 <!-- Include js plugin -->
-<script src="//www.velogames.com/tour-de-france/2018/owl.carousel.js"></script> 
+<script src="//www.velogames.com/giro-ditalia/2017/owl.carousel.js"></script> 
 		
 		
-<script type='text/javascript'>
-            var gptadslots = [];
-            var googletag = googletag || {};
-            googletag.cmd = googletag.cmd || [];
-            (function () {
-                var gads = document.createElement('script');
-                gads.async = true;
-                gads.type = 'text/javascript';
-                var useSSL = 'https:' == document.location.protocol;
-                gads.src = (useSSL ? 'https:' : 'http:') + '//www.googletagservices.com/tag/js/gpt.js';
-                var node = document.getElementsByTagName('script')[0];
-                node.parentNode.insertBefore(gads, node);
-            })();
-        </script>
-<script>
-    // GPT slots
-    var gptAdSlots = [];
-    googletag.cmd.push(function () {
-        
-		var mapping = googletag.sizeMapping().
-		addSize([1024, 768], [[970, 250],[728, 90],[970, 90]]).
-		addSize([800, 600], [728, 90]).           
-		addSize([0, 0], [320, 50]).build();       
-                 
-		var mapping1 = googletag.sizeMapping().
-		addSize([0, 0], [[300, 250],[300, 600]]).build();
-                     
-        var mapping2 = googletag.sizeMapping().
-		addSize([0, 0], [[300, 250],[300, 600]]).build();
 		
-		var mapping3 = googletag.sizeMapping().
-		addSize([0, 0], [[300, 250],[300, 600]]).build();
-		
-		var mapping4 = googletag.sizeMapping().
-		addSize([0, 0], [[300, 250]]).build();
-                 
-                 
-	gptAdSlots[0] = googletag.defineSlot('/119805056/velogames-top-leaderboard', [[320, 50], [970, 250], [970, 90], [728, 90]], 'div-gpt-ad-1523548839456-0').defineSizeMapping(mapping).addService(googletag.pubads()); 
-    gptAdSlots[1] = googletag.defineSlot('/119805056/velogames-top-mpu', [[300, 250], [300, 600]], 'div-gpt-ad-velogames-top-mpu').defineSizeMapping(mapping1).addService(googletag.pubads());
-    gptAdSlots[2] = googletag.defineSlot('/119805056/velogames_sidebar_lower_300x250', [[300, 600], [300, 250]], 'div-gpt-ad-velogames_sidebar_lower_300x250').defineSizeMapping(mapping2).addService(googletag.pubads());
-    gptAdSlots[3] = googletag.defineSlot('/119805056/velogames_team_roster_upper_mpu', [[300, 250], [300, 600]], 'div-gpt-ad-velogames_team_roster_upper_mpu').defineSizeMapping(mapping3).addService(googletag.pubads());
-    gptAdSlots[4] = googletag.defineSlot('/119805056/velogames_team_roster_lower_mpu', [300, 250], 'div-gpt-ad-velogames_team_roster_lower_mpu').defineSizeMapping(mapping4).addService(googletag.pubads());
- 
-    googletag.enableServices();
-    });
-</script>
-
-
-
-
-
-
 
 		
 		
@@ -656,58 +594,55 @@ background: #F2F2F2;
 <body id ="blog" class="home blog main cat-32-id cat-49-id"> 
 
 <header class="main-header">
-<div class="top_leaderboard">
 
+<div class="container">
+
+<div id="header">
+
+<div class="top_leaderboard">
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Velogames Responsive Leaderboard -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-3108706310483609"
+     data-ad-slot="5911758853"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
 </div>
 
 
 <div class="logo-wrap">
-<div class="main-container">
-<a href="https://www.velogames.com/"><img src="//www.velogames.com/tour-de-france/2018/images/velogames_header.png" alt="Velogames Fantasy Cycling"></a>
-</div>
-</div>
-
-</header>
-<header class="main-header" style="background: #424242";>
-<div class="main-navigation"  style="background-color: #3c3c3c";> <nav id="navigation" >
-
-<ul id="menu-main-navigation" class="menu">
-
-
-<li style="float:right; background-color: #1c1c1c;"><a href="//www.velogames.com/giro-rosa/2018/" style="background-color: #424242;">Visit Fantasy Giro Rosa</a></li>
-
-<li style="float:right; background-color: #1c1c1c;"><a href="//www.velogames.com/tour-de-france/2018/season_schedule.php" style="background-color: #424242;">View Season Schedule</a></li>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-</nav>
-
+<h1>
+<a href="//www.velogames.com/"><img src="//www.velogames.com/giro-ditalia/2017/images/velogames_header.png" alt="Velogames Fantasy Cycling | Fantasy Giro d'Italia 2017"></a>
+</h1>
 </div>
 
-</header>
 
-<header class="main-header">
-<!--
+
+
+
 <div class="main-navigation"> <nav id="navigation" >
-
 <ul id="menu-main-navigation" class="menu">
-<li><a href="//www.velogames.com/tour-de-france/2018">Home</a></li>
+<li><a href="//www.velogames.com/giro-ditalia/2017">Home</a></li>
+
+
+<li><a href="//www.velogames.com/giro-ditalia/2017/rules.php">Rules</a>
+<ul class="sub-menu">
+<li><a href="//www.velogames.com/giro-ditalia/2017/rules.php">Rules</a></li>
+<li><a href="//www.velogames.com/giro-ditalia/2017/scores.php">Scoring System</a></li>
+</ul></li>
+
+
+
+<li><a href="//www.velogames.com/giro-ditalia/2017/teamscores.php">Standings</a>
+<ul class="sub-menu">
+<li><a href="//www.velogames.com/giro-ditalia/2017/ridescore.php">Rider Standings</a></li>
+<li><a href="//www.velogames.com/giro-ditalia/2017/teamscore.php">Team Standings</a></li>
+<li><a href="//www.velogames.com/giro-ditalia/2017/teamscore.php">Grand Tour Ranking</a></li>
+</ul>
+</li>
 
 
 
@@ -715,10 +650,28 @@ background: #F2F2F2;
 
 
 
+<li><a href="//www.velogames.com/giro-ditalia/2017/riders.php">Riders</a></li>
+<li><a href="//www.velogames.com/giro-ditalia/2017/races.php">Stages</a></li>
+<li><a href="//www.velogames.com/giro-ditalia/2017/leaguerequest.php">Leagues</a></li>
+
+<li><a href="//www.velogames.com/giro-ditalia/2017/prizes.php">Prizes</a></li>
 
 
 
 
+
+<li style="float:right;"><a href="//www.velogames.com/">Other Games</a>
+<ul class="sub-menu">
+<li><a href="//www.velogames.com/tour-of-california/2017/">Tour of California 2017</a></li>
+<li><a href="//www.velogames.com/tour-de-romandie/2017/">Tour de Romandie 2017</a></li>
+<li><a href="//www.velogames.com/spring-classics/2017/">Spring-Classics 2017</a></li>
+<li><a href="//www.velogames.com/giro-ditalia/2016/">Giro d'Italia 2016</a></li>
+	<li><a href="//www.velogames.com/tour-de-france/2016/">Tour de France 2016</a></li>
+	<li><a href="//www.velogames.com/vuelta-a-espana/2016/">Vuelta a Espana 2016</a></li>
+
+</ul></li>
+
+<li style="float:right;"><a href="//www.velogames.com/tour-of-california/2017">Tour of California</a></li>
 
 
 
@@ -727,18 +680,15 @@ background: #F2F2F2;
 
 
 </nav>
-
 </div>
--->
 
-
-<div class="secondary-navigation" style="background: #ff5a0b;"> <nav id="navigation" >
+<div class="secondary-navigation"> <nav id="navigation" >
 <ul id="menu-main-navigation-1" class="menu">
 
 
 
  
-<li class="trending"><a href="//www.velogames.com/tour-de-france/2018/entryform.php">ENTER NOW</a></li>
+<li class="trending"><a href="#">Entries Closed</a></li>
 
 
  
@@ -759,21 +709,9 @@ background: #F2F2F2;
 
 
 
-<div id="leaderboard_box" >
-<div style="text-align: center; vertical-align: middle;">
-
-<!-- /119805056/velogames-top-leaderboard -->
-<div id='div-gpt-ad-1523548839456-0'>
-<script>
-googletag.cmd.push(function() { googletag.display('div-gpt-ad-1523548839456-0'); });
-</script>
-</div>
-
-
-
 
 </div>
-</div>
+</div> 
 
 </header>
 
@@ -792,16 +730,20 @@ googletag.cmd.push(function() { googletag.display('div-gpt-ad-1523548839456-0');
 
 <div id="post-935" class="post-935 post type-post status-publish format-standard has-post-thumbnail hentry category-featured category-mobiles tag-featured tag-tag-2 g cat-32-id cat-49-id has_thumb">
 
+
 <div class="single_post"> 
 
 
 						       	
- 
+ <h4 class="teamtitle" style="background-color:#1c1c1c">AusBus Rouleurs</h4>
 					
 	
 
 
-    <!-- Start Accordion wrapper (UL) - must have a class="dopt-accordion" // arrow-img is the indicator arrow type -->
+
+							
+						
+            <!-- Start Accordion wrapper (UL) - must have a class="dopt-accordion" // arrow-img is the indicator arrow type -->
 <ul class="dopt-accordion arrow-tri">
  
     <!-- Start Accordion Panel - 1 - each panel in the accordion must be enclosed in a list item (li) -->
@@ -811,7 +753,7 @@ googletag.cmd.push(function() { googletag.display('div-gpt-ad-1523548839456-0');
         <!-- The input id="accord-01" MUST be the same as the for="accord-01" label attribute -->
         <!-- Each input (radio or checkbox) must have a class="title-option" and the label must have a class="title-panel" --->
         <input id="accord-01" class="title-option" name="accordion-01" type="checkbox">
-        <label for="accord-01" class="title-panel" onclick=""> <span style="text-align: center;">League Standings: Overall Race</span> </label>
+        <label for="accord-01" class="title-panel" onclick=""> <span>Team Details: Overall</span> </label>
          
         <!-- Start Accordion Content Panel - leave both divs intact for easy styling and animation -->
         <div class="accordion-content">
@@ -819,13 +761,13 @@ googletag.cmd.push(function() { googletag.display('div-gpt-ad-1523548839456-0');
              
 
 
-<b><a href="leaguescores.php?league=924206313&ga=13">OVERALL RACE</a></b> | <b><a href="leaguescores.php?league=924206313&ga=13&st=100">OVERALL SEASON CHAMPIONSHIP</a></b><br>
-<a href="leaguescores.php?league=924206313&ga=13&st=1">Stage 1</a> | <a href="leaguescores.php?league=924206313&ga=13&st=2">Stage 2</a> | <a href="leaguescores.php?league=924206313&ga=13&st=3">Stage 3 (TTT)</a> | <a href="leaguescores.php?league=924206313&ga=13&st=4">Stage 4</a> | <a href="leaguescores.php?league=924206313&ga=13&st=5">Stage 5</a> | <a href="leaguescores.php?league=924206313&ga=13&st=6">Stage 6</a> | <a href="leaguescores.php?league=924206313&ga=13&st=7">Stage 7</a> | <a href="leaguescores.php?league=924206313&ga=13&st=8">Stage 8</a> | <a href="leaguescores.php?league=924206313&ga=13&st=9">Stage 9</a> | <a href="leaguescores.php?league=924206313&ga=13&st=10">Stage 10</a> | <a href="leaguescores.php?league=924206313&ga=13&st=11">Stage 11</a> | <a href="leaguescores.php?league=924206313&ga=13&st=12">Stage 12</a> | <a href="leaguescores.php?league=924206313&ga=13&st=13">Stage 13</a> | <a href="leaguescores.php?league=924206313&ga=13&st=14">Stage 14</a> | <a href="leaguescores.php?league=924206313&ga=13&st=15">Stage 15</a> | <a href="leaguescores.php?league=924206313&ga=13&st=16">Stage 16</a> | <a href="leaguescores.php?league=924206313&ga=13&st=17">Stage 17</a> | <a href="leaguescores.php?league=924206313&ga=13&st=18">Stage 18</a> | <a href="leaguescores.php?league=924206313&ga=13&st=19">Stage 19</a> | <a href="leaguescores.php?league=924206313&ga=13&st=20">Stage 20 (ITT)</a> | <a href="leaguescores.php?league=924206313&ga=13&st=21">Stage 21</a> |            
+<a href="leaguescores.php?league=673022392215&ga=13">Overall</a> - 
+
+<a href="leaguescores.php?league=673022392215&ga=13&st=1">Stage 1</a> - <a href="leaguescores.php?league=673022392215&ga=13&st=2">Stage 2</a> - <a href="leaguescores.php?league=673022392215&ga=13&st=3">Stage 3</a> - <a href="leaguescores.php?league=673022392215&ga=13&st=4">Stage 4</a> - <a href="leaguescores.php?league=673022392215&ga=13&st=5">Stage 5</a> - <a href="leaguescores.php?league=673022392215&ga=13&st=6">Stage 6</a> - <a href="leaguescores.php?league=673022392215&ga=13&st=7">Stage 7</a> - <a href="leaguescores.php?league=673022392215&ga=13&st=8">Stage 8</a> - <a href="leaguescores.php?league=673022392215&ga=13&st=9">Stage 9</a> - <a href="leaguescores.php?league=673022392215&ga=13&st=10">Stage 10 (ITT)</a> - <a href="leaguescores.php?league=673022392215&ga=13&st=11">Stage 11</a> - <a href="leaguescores.php?league=673022392215&ga=13&st=12">Stage 12</a> - <a href="leaguescores.php?league=673022392215&ga=13&st=13">Stage 13</a> - <a href="leaguescores.php?league=673022392215&ga=13&st=14">Stage 14</a> - <a href="leaguescores.php?league=673022392215&ga=13&st=15">Stage 15</a> - <a href="leaguescores.php?league=673022392215&ga=13&st=16">Stage 16</a> - <a href="leaguescores.php?league=673022392215&ga=13&st=17">Stage 17</a> - <a href="leaguescores.php?league=673022392215&ga=13&st=18">Stage 18</a> - <a href="leaguescores.php?league=673022392215&ga=13&st=19">Stage 19</a> - <a href="leaguescores.php?league=673022392215&ga=13&st=20">Stage 20</a> - <a href="leaguescores.php?league=673022392215&ga=13&st=21">Stage 21 (ITT)</a> -            
 
 
 
-                             <a href="leaguescores.php?league=924206313&ga=13&st=22">End-of-Tour Points</a><br><br>
-							
+                             <a href="leaguescores.php?league=673022392215&ga=13&st=22">Final</a>
 
                           
            
@@ -840,14 +782,21 @@ googletag.cmd.push(function() { googletag.display('div-gpt-ad-1523548839456-0');
          
 </ul>
 <!-- End Accordion wrapper -->  
-							
-						
+
+
+  
+
+
+
+
+	
+
 
 
 <div id="users">
   <ul class="list">	
 
-<li><span style="float:left; margin:10px"><img src="images/logos/VEL.png" width="32" height="32"></span><span style="float:right"><p class="born"><b>0 points</b></p></span><h3 class="name"><a href="teamroster.php?tid=84d0fb3288686ea057e8d246760f24bb67M">Grinds my Gears</a></h3><p class="born">Grind my gears</p></li><li><span style="float:left; margin:10px"><img src="images/logos/VEL.png" width="32" height="32"></span><span style="float:right"><p class="born"><b>0 points</b></p></span><h3 class="name"><a href="teamroster.php?tid=526159b93c334afad91b3edff1d55dda2eJ">Cootha Kids</a></h3><p class="born">Jim Martin</p></li><li><span style="float:left; margin:10px"><img src="images/logos/VEL.png" width="32" height="32"></span><span style="float:right"><p class="born"><b>0 points</b></p></span><h3 class="name"><a href="teamroster.php?tid=6Zddc5a222430237832c049f1f99dd4fe4J">Rouleurette</a></h3><p class="born">Julie Zeller</p></li><li><span style="float:left; margin:10px"><img src="images/logos/VEL.png" width="32" height="32"></span><span style="float:right"><p class="born"><b>0 points</b></p></span><h3 class="name"><a href="teamroster.php?tid=12t8a94b5819012503b3aa5675d9d5cc56fr">Dick`s Dodgers</a></h3><p class="born">Rich Johnston</p></li><li><span style="float:left; margin:10px"><img src="images/logos/VEL.png" width="32" height="32"></span><span style="float:right"><p class="born"><b>0 points</b></p></span><h3 class="name"><a href="teamroster.php?tid=8j0a2eff437ef833347f58e474afc03c33f">Rear Derailleurs</a></h3><p class="born">Chris Fraser</p></li><li><span style="float:left; margin:10px"><img src="images/logos/VEL.png" width="32" height="32"></span><span style="float:right"><p class="born"><b>0 points</b></p></span><h3 class="name"><a href="teamroster.php?tid=5o3c14c29bbe22392dcd167cc527f72a6fL">Ricky Baker`s Bush Campers</a></h3><p class="born">David Leggett</p></li><li><span style="float:left; margin:10px"><img src="images/logos/VEL.png" width="32" height="32"></span><span style="float:right"><p class="born"><b>0 points</b></p></span><h3 class="name"><a href="teamroster.php?tid=7559d949214c62c4c58f154b76a7eb3154D">Brake Rub Regression</a></h3><p class="born">Simon Lyons</p></li><li><span style="float:left; margin:10px"><img src="images/logos/TT1.png" width="32" height="32"></span><span style="float:right"><p class="born"><b>0 points</b></p></span><h3 class="name"><a href="teamroster.php?tid=1427d5d73ed83e5c1ada1c78fcf5f39a241m">The Jungle Giants </a></h3><p class="born">Groom</p></li><li><span style="float:left; margin:10px"><img src="images/logos/VEL.png" width="32" height="32"></span><span style="float:right"><p class="born"><b>0 points</b></p></span><h3 class="name"><a href="teamroster.php?tid=8n9d9a3887de03cd046d71fa047c32196el">Itchy Nads</a></h3><p class="born">Dan Lewis</p></li><li><span style="float:left; margin:10px"><img src="images/logos/VEL.png" width="32" height="32"></span><span style="float:right"><p class="born"><b>0 points</b></p></span><h3 class="name"><a href="teamroster.php?tid=5tefc78f280453936f30bcf95a93fec2e8B">Innerbloom </a></h3><p class="born">Britt Groom</p></li><li><span style="float:left; margin:10px"><img src="images/logos/VEL.png" width="32" height="32"></span><span style="float:right"><p class="born"><b>0 points</b></p></span><h3 class="name"><a href="teamroster.php?tid=10t2ebbec6161514bfa1689a2ff1626ba79S">Thistles</a></h3><p class="born">Simon S</p></li><li><span style="float:left; margin:10px"><img src="images/logos/FLA.png" width="32" height="32"></span><span style="float:right"><p class="born"><b>0 points</b></p></span><h3 class="name"><a href="teamroster.php?tid=7ecbc96964ffa4cf5b6d20ea1d9beb9caeH">Howishe</a></h3><p class="born">Peter Howes</p></li><li><span style="float:left; margin:10px"><img src="images/logos/VEL.png" width="32" height="32"></span><span style="float:right"><p class="born"><b>0 points</b></p></span><h3 class="name"><a href="teamroster.php?tid=15167fcf7f208b5efc8129ab02b5f139791s">This way to my Chateau</a></h3><p class="born">Dan Chalmers</p></li><li><span style="float:left; margin:10px"><img src="images/logos/VEL.png" width="32" height="32"></span><span style="float:right"><p class="born"><b>0 points</b></p></span><h3 class="name"><a href="teamroster.php?tid=8Sce4ddffcfdf689896c4ca3833c4114f3J">Team Tarmac</a></h3><p class="born">Jackal</p></li><li><span style="float:left; margin:10px"><img src="images/logos/VEL.png" width="32" height="32"></span><span style="float:right"><p class="born"><b>0 points</b></p></span><h3 class="name"><a href="teamroster.php?tid=655965873ae6135f3f9100c9f52248175dF">Blue Baggers</a></h3><p class="born">fitz</p></li><li><span style="float:left; margin:10px"><img src="images/logos/PHO.png" width="32" height="32"></span><span style="float:right"><p class="born"><b>0 points</b></p></span><h3 class="name"><a href="teamroster.php?tid=10y350920f4bd17114e7e80205e0408cbbeM">Cana borra ya puffa Froomy?</a></h3><p class="born">Crooky</p></li><li><span style="float:left; margin:10px"><img src="images/logos/VEL.png" width="32" height="32"></span><span style="float:right"><p class="born"><b>0 points</b></p></span><h3 class="name"><a href="teamroster.php?tid=7sa86081aacf45faf9fbaf44b0cb4f9b1fb">Velociraptors</a></h3><p class="born">Brett Jensen</p></li><li><span style="float:left; margin:10px"><img src="images/logos/VEL.png" width="32" height="32"></span><span style="float:right"><p class="born"><b>0 points</b></p></span><h3 class="name"><a href="teamroster.php?tid=4ofd0ef687d8de90abb52fbac51c07ed22o">Opto`s TDF sorry lads</a></h3><p class="born">Mark Hinds</p></li><li><span style="float:left; margin:10px"><img src="images/logos/VEL.png" width="32" height="32"></span><span style="float:right"><p class="born"><b>0 points</b></p></span><h3 class="name"><a href="teamroster.php?tid=90f89a41d134a61ba23f4ea102f5ba2470C">Suicide Squad</a></h3><p class="born">Chris Fiorini</p></li><li><span style="float:left; margin:10px"><img src="images/logos/VEL.png" width="32" height="32"></span><span style="float:right"><p class="born"><b>0 points</b></p></span><h3 class="name"><a href="teamroster.php?tid=6K63c0a73925c29ea0220fcbb80cc098d9S">The Ron Burgandy All Stars</a></h3><p class="born">Steve Kelsall</p></li><li><span style="float:left; margin:10px"><img src="images/logos/VEL.png" width="32" height="32"></span><span style="float:right"><p class="born"><b>0 points</b></p></span><h3 class="name"><a href="teamroster.php?tid=11hc28642af8dfa097499cf4fa62a2e601cD">winging it</a></h3><p class="born">Dean McBeath</p></li>
+<li><span style="float:left; margin:10px"><img src="images/logos/VEL.png" width="32" height="32"></span><span style="float:right"><p class="born"><b>6375 points</b></p></span><h3 class="name"><a href="teamroster.php?tid=590be1973c784830">Sandbaggers</a></h3><p class="born">Dave Hazzard</p></li><li><span style="float:left; margin:10px"><img src="images/logos/VEL.png" width="32" height="32"></span><span style="float:right"><p class="born"><b>5850 points</b></p></span><h3 class="name"><a href="teamroster.php?tid=5907dc5945ac4522">Use Rule #5</a></h3><p class="born">Athol Underwood</p></li><li><span style="float:left; margin:10px"><img src="images/logos/SKU.png" width="32" height="32"></span><span style="float:right"><p class="born"><b>5556 points</b></p></span><h3 class="name"><a href="teamroster.php?tid=59064f226b93e391">Tiger Power</a></h3><p class="born">Ian Cunningham</p></li><li><span style="float:left; margin:10px"><img src="images/logos/VEL.png" width="32" height="32"></span><span style="float:right"><p class="born"><b>5332 points</b></p></span><h3 class="name"><a href="teamroster.php?tid=5907b5946ca26925">Orange Flatlanders</a></h3><p class="born">Alex</p></li><li><span style="float:left; margin:10px"><img src="images/logos/VEL.png" width="32" height="32"></span><span style="float:right"><p class="born"><b>5220 points</b></p></span><h3 class="name"><a href="teamroster.php?tid=59092f09eec43613">Brake Rub Regression</a></h3><p class="born">Simon Lyons</p></li><li><span style="float:left; margin:10px"><img src="images/logos/BIG.png" width="32" height="32"></span><span style="float:right"><p class="born"><b>4617 points</b></p></span><h3 class="name"><a href="teamroster.php?tid=590815fd5942a729">Big Men in Lycra</a></h3><p class="born">Big Matt</p></li><li><span style="float:left; margin:10px"><img src="images/logos/VEL.png" width="32" height="32"></span><span style="float:right"><p class="born"><b>4481 points</b></p></span><h3 class="name"><a href="teamroster.php?tid=5906594202c8b344">Wanderers</a></h3><p class="born">Dan Longauer</p></li><li><span style="float:left; margin:10px"><img src="images/logos/VEL.png" width="32" height="32"></span><span style="float:right"><p class="born"><b>4404 points</b></p></span><h3 class="name"><a href="teamroster.php?tid=590a811cae2a3951">Team Skylark</a></h3><p class="born">William Brown</p></li><li><span style="float:left; margin:10px"><img src="images/logos/JSH.png" width="32" height="32"></span><span style="float:right"><p class="born"><b>4164 points</b></p></span><h3 class="name"><a href="teamroster.php?tid=5907d8992b751493">HillsnHeadwinds</a></h3><p class="born">Jared O`Toole</p></li><li><span style="float:left; margin:10px"><img src="images/logos/VEL.png" width="32" height="32"></span><span style="float:right"><p class="born"><b>3895 points</b></p></span><h3 class="name"><a href="teamroster.php?tid=590933953c928683">Bails Bunch</a></h3><p class="born">Terry Bailey</p></li><li><span style="float:left; margin:10px"><img src="images/logos/VEL.png" width="32" height="32"></span><span style="float:right"><p class="born"><b>3612 points</b></p></span><h3 class="name"><a href="teamroster.php?tid=59085600e5f83828">First in, more fatigued</a></h3><p class="born">Jack</p></li><li><span style="float:left; margin:10px"><img src="images/logos/VEL.png" width="32" height="32"></span><span style="float:right"><p class="born"><b>3278 points</b></p></span><h3 class="name"><a href="teamroster.php?tid=590999ff2d88e393">Crispy toufu riders</a></h3><p class="born">Chris Voight</p></li>
 
 
 			
@@ -867,23 +816,30 @@ googletag.cmd.push(function() { googletag.display('div-gpt-ad-1523548839456-0');
 
 
 <aside class="sidebar c-4-12">
-
+<div id="sidebars" class="g">
 
 <div class="sidebar">
+<ul class="sidebar_list">
+<li id="mts_ad_300_widget" class="widget widget-sidebar">
 
 <div class="ad-300">
 
-<!-- /119805056/velogames-top-mpu -->
-<div id='div-gpt-ad-velogames-top-mpu'>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Velogames MPU -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:300px;height:250px"
+     data-ad-client="ca-pub-3108706310483609"
+     data-ad-slot="1393829059"></ins>
 <script>
-googletag.cmd.push(function() { googletag.display('div-gpt-ad-velogames-top-mpu'); });
+(adsbygoogle = window.adsbygoogle || []).push({});
 </script>
-</div>
- 
-</div>
 
 
+</div></li>
 
+
+<li id="mts_ad_300_widget" class="widget widget-sidebar">
 
 <div class="ad-300">
 
@@ -893,22 +849,36 @@ googletag.cmd.push(function() { googletag.display('div-gpt-ad-velogames-top-mpu'
  
  
  
-</div>
+</div></li>
 
 
+<li id="mts_ad_300_widget" class="widget widget-sidebar">
 
 <div class="ad-300">
 
-<!-- /119805056/velogames_sidebar_lower_300x250 -->
-<div id='div-gpt-ad-velogames_sidebar_lower_300x250'>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Double MPU -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:300px;height:600px"
+     data-ad-client="ca-pub-3108706310483609"
+     data-ad-slot="9508660451"></ins>
 <script>
-googletag.cmd.push(function() { googletag.display('div-gpt-ad-velogames_sidebar_lower_300x250'); });
+(adsbygoogle = window.adsbygoogle || []).push({});
 </script>
-</div>
 
-</div>
+</div></li>
 
-</div></aside>
+
+
+
+
+
+
+
+</ul>
+</div>
+</div> </aside>
 
 
 
@@ -917,18 +887,20 @@ googletag.cmd.push(function() { googletag.display('div-gpt-ad-velogames_sidebar_
 </div> 
 
 <footer>
-<div class="logo-wrap">
-<div class="main-container">
+<div class="container">
 <div class="footer-widgets">
 <div class="f-widget f-widget-1">
 <div class="widget"><h3>About Velogames</h3>
 <div class="textwidget">Velogames Fantasy Cycling has been providing fantasy cycling contests since 1997.
+<br /> 
+<br /> 
+The centrepiece event is the Velogames Fantasy Tour de France, which attracted almost 40,000 teams in 2015.
 </div>
 </div>
 </div>
 <div class="f-widget f-widget-2">
 <div class="widget"><h3>Site Information</h3>
-<div class="tagcloud"><a href='http://www.velogames.com/tour-de-france/2018/about.php' class='tag-link-30' title='1 topic' style='font-size: 8pt;'>About Velogames</a> <a href='http://www.velogames.com/tour-de-france/2018/contact.php' class='tag-link-32' title='1 topic' style='font-size: 8pt;'>Contact Velogames</a> <a href='http://www.velogames.com/tour-de-france/2018/privacy.php' class='tag-link-234' title='1 topic' style='font-size: 8pt;'>Privacy Policy</a>
+<div class="tagcloud"><a href='http://www.velogames.com/giro-ditalia/2017/about.php' class='tag-link-30' title='1 topic' style='font-size: 8pt;'>About Velogames</a> <a href='http://www.velogames.com/giro-ditalia/2017/contact.php' class='tag-link-32' title='1 topic' style='font-size: 8pt;'>Contact Velogames</a> <a href='http://www.velogames.com/giro-ditalia/2017/privacy.php' class='tag-link-234' title='1 topic' style='font-size: 8pt;'>Privacy Policy</a>
 </div>
 </div>
 </div>
@@ -938,11 +910,9 @@ googletag.cmd.push(function() { googletag.display('div-gpt-ad-velogames_sidebar_
 </div>
 </div>
 </div>
-</div>
-
 <div class="copyrights">
 <div class="row" id="copyright-note"> 
-<span><a href="http://www.velogames.com/" title="Velogames Fantasy Cycling">Velogames Fantasy Cycling</a> Copyright &copy; 2017.
+<span><a href="http://www.velogames.com/" title="Velogames Fantasy Cycling">Velogames Fantasy Cycling</a> Copyright &copy; 2015.
 </span>
 <div class="top"><a href="#top" class="toplink">Back to Top &uarr;</a>
 </div>
@@ -961,13 +931,13 @@ body {
   .list {
   font-family:sans-serif;
   margin:0;
-  padding:2px 0 0;
+  padding:20px 0 0;
 }
 .list > li {
   display:block;
-  background-color: #fff;
+  background-color: #eee;
   padding:10px;
-  margin-bottom: 5px;
+  box-shadow: inset 0 1px 0 #fff;
 }
 .avatar {
   max-width: 150px;
